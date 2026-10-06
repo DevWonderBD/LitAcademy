@@ -2,48 +2,62 @@
 @plugin "daisyui";
 
 :root {
-  /* Brand Primary (Teal variations) */
-  --color-primary: #149988;
-  --color-primary-light: #1bb59f;
-  --color-primary-dark: #0f7d6f;
-  --color-primary-darker: #0a5249;
-  --color-primary-alt1: #158d7b;
-  --color-primary-alt2: #117a6d;
-  --color-primary-alt3: #107568;
+  /* ==========================================================================
+     Brand Primary (Teal ও তার বিভিন্ন শেড - মূল বাটন, হেডার, লিংকের জন্য)
+     ========================================================================== */
+  --color-primary: #149988;         /* মূল ব্র্যান্ড কালার: Hero/About বাটন, Profile ব্যানার ও ইনপুট ফোকাস, Allcourses হেডার, Course কার্ড বাটন, 404 বাটন */
+  --color-primary-light: #1bb59f;   /* Hero তে Explore Courses বাটন, AboutUs ব্যাজ ব্যাকগ্রাউন্ড */
+  --color-primary-dark: #0f7d6f;    /* বাটন হোভার ইফেক্ট: Login, Register, Profile, 404 পৃষ্ঠার প্রাইমারি বাটন হোভার */
+  --color-primary-darker: #0a5249;  /* 404 হেডিং গ্রেডিয়েন্ট টেক্সটের এন্ডিং কালার */
+  --color-primary-alt1: #158d7b;    /* Hero বাটন হোভার স্টেট */
+  --color-primary-alt2: #117a6d;    /* Profile পৃষ্ঠার টপ কভার গ্রেডিয়েন্ট কালার */
+  --color-primary-alt3: #107568;    /* CourseCard বাটনের হোভার স্টেট */
 
-  /* Accent (Orange variations) */
-  --color-accent: #F97416;
-  --color-accent-light: #fe6e38;
-  --color-accent-lighter: #f8b188;
-  --color-accent-lightest: #fad4c4;
-  --color-accent-dark: #e66509;
-  --color-accent-darker: #e06510;
-  --color-accent-deep: #D35400;
+  /* ==========================================================================
+     Accent (Orange শেড - হাইলাইট, স্পেশাল বাটন, রেটিং ও ব্যাজের জন্য)
+     ========================================================================== */
+  --color-accent: #F97416;          /* মূল অ্যাকসেন্ট কালার: Navbar 'Join Free' বাটন, Login/Register লোগো ও হাইলাইট টেক্সট, Course Star/Play আইকন */
+  --color-accent-light: #fe6e38;    /* Navbar ও Footer লোগোর 'Sphere' টেক্সট, সক্রিয় নেভিগেশন লিংক */
+  --color-accent-lighter: #f8b188;  /* Allcourses হেডারের 'Course Catalog' হাইলাইট টেক্সট */
+  --color-accent-lightest: #fad4c4; /* Hero সেকশনের টপ ব্যাজ ব্যাকগ্রাউন্ড (-rotate-12 ট্যাগ) */
+  --color-accent-dark: #e66509;     /* CourseSection এর 'Browse All Courses' বাটন হোভার */
+  --color-accent-darker: #e06510;   /* Navbar, Course বিস্তারিত পেজ ও Allcourses-এর অ্যাকসেন্ট বাটন হোভার */
+  --color-accent-deep: #D35400;     /* Navbar মোবাইল মেনু ওপেন/টগল আইকন বাটন */
 
-  /* Brand Navy */
-  --color-navy: #1A1F71;
-  --color-navy-dark: #002E6E;
-  --color-navy-light: #00457C;
+  /* ==========================================================================
+     Brand Navy (Footer এ পেমেন্ট গেটওয়ের আইকন হোভারের জন্য)
+     ========================================================================== */
+  --color-navy: #1A1F71;            /* Footer এ Visa কার্ড আইকন হোভার */
+  --color-navy-dark: #002E6E;       /* Footer এ Paytm আইকন হোভার */
+  --color-navy-light: #00457C;      /* Footer এ PayPal আইকন হোভার */
 
-  /* Surfaces & Backgrounds */
-  --color-surface: #FAF9F6;
-  --color-surface-alt: #F9F1EF;
-  --color-surface-alt2: #FCF9F8;
-  --color-surface-peach: #FFEFE8;
-  --color-surface-peach-light: #FDF1EE;
-  --color-surface-gray: #F9FAFB;
+  /* ==========================================================================
+     Surfaces & Backgrounds (হালকা ব্যাকগ্রাউন্ড ও সেকশনের বিভিন্ন শেড)
+     ========================================================================== */
+  --color-surface: #FAF9F6;         /* মূল বডি ও পেজ ব্যাকগ্রাউন্ড: Login, Register, Profile, Allcourses, Course Details, Loading, 404 */
+  --color-surface-alt: #F9F1EF;     /* Navbar ব্যাকগ্রাউন্ড */
+  --color-surface-alt2: #FCF9F8;    /* FAQ সেকশন ব্যাকগ্রাউন্ড */
+  --color-surface-peach: #FFEFE8;   /* LearningTips সেকশনের ক্যাটাগরি পিল/ট্যাগ ব্যাকগ্রাউন্ড */
+  --color-surface-peach-light: #FDF1EE; /* Hero, LearningTips এবং Footer সেকশন ব্যাকগ্রাউন্ড */
+  --color-surface-gray: #F9FAFB;    /* CourseCard কার্ড ব্যাকগ্রাউন্ড */
 
-  /* Typography / Text */
-  --color-text-main: #111827;
-  --color-text-muted: #2C3E50;
+  /* ==========================================================================
+     Typography / Text (হেডিং ও ব্র্যান্ড টেক্সট)
+     ========================================================================== */
+  --color-text-main: #111827;       /* মূল ডিপ হেডিং কালার: Hero Title, CourseSection Heading, AboutUs Headings ও কাউন্টার সংখ্যা */
+  --color-text-muted: #2C3E50;      /* Navbar লোগোর প্রথম অংশ ('Skill') টেক্সট কালার */
 
-  /* Status Colors */
-  --color-success: #21C55D;
-  --color-success-light: #D1FAE5;
-  --color-brand-purple: #635BFF;
+  /* ==========================================================================
+     Status & Miscellaneous
+     ========================================================================== */
+  --color-success: #21C55D;         /* Hero সেকশনের ব্যাকগ্রাউন্ড ব্লিঙ্ক গ্লো / আকৃতি এবং LearningTips বুলেট পয়েন্ট */
+  --color-success-light: #D1FAE5;   /* AboutUs টপ ব্যাজের ভেতরের টেক্সট কালার */
+  --color-brand-purple: #635BFF;    /* Footer এ Stripe পেমেন্ট আইকন হোভার */
 
-  /* Arbitrary rgba */
-  --color-overlay: rgba(20, 153, 136, 0.03);
+  /* ==========================================================================
+     Overlay
+     ========================================================================== */
+  --color-overlay: rgba(20, 153, 136, 0.03); /* FAQ সেকশনের ওয়াটারমার্ক ও রিডিয়াল গ্রেডিয়েন্ট গ্লো */
 }
 
 @theme {
