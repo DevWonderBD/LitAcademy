@@ -1,2 +1,54 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+:root {
+  /* Brand Primary (Teal variations) */
+  --color-primary: #149988;
+  --color-primary-light: #1bb59f;
+  --color-primary-dark: #0f7d6f;
+  --color-primary-darker: #0a5249;
+  --color-primary-alt1: #158d7b;
+  --color-primary-alt2: #117a6d;
+  --color-primary-alt3: #107568;
+
+  /* Accent (Orange variations) */
+  --color-accent: #F97416;
+  --color-accent-light: #fe6e38;
+  --color-accent-lighter: #f8b188;
+  --color-accent-lightest: #fad4c4;
+  --color-accent-dark: #e66509;
+  --color-accent-darker: #e06510;
+  --color-accent-deep: #D35400;
+
+  /* Brand Navy */
+  --color-navy: #1A1F71;
+  --color-navy-dark: #002E6E;
+  --color-navy-light: #00457C;
+
+  /* Surfaces & Backgrounds */
+  --color-surface: #FAF9F6;
+  --color-surface-alt: #F9F1EF;
+  --color-surface-alt2: #FCF9F8;
+  --color-surface-peach: #FFEFE8;
+  --color-surface-peach-light: #FDF1EE;
+  --color-surface-gray: #F9FAFB;
+
+  /* Typography / Text */
+  --color-text-main: #111827;
+  --color-text-muted: #2C3E50;
+
+  /* Status Colors */
+  --color-success: #21C55D;
+  --color-success-light: #D1FAE5;
+  --color-brand-purple: #635BFF;
+
+  /* Arbitrary rgba */
+  --color-overlay: rgba(20, 153, 136, 0.03);
+}
+
+@theme {
+  --color-brand-primary: var(--color-primary);
+  --color-brand-accent: var(--color-accent);
+  --color-brand-navy: var(--color-navy);
+  --color-brand-surface: var(--color-surface);
+}
