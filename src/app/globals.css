@@ -5,13 +5,9 @@
   /* ==========================================================================
      Brand Primary (Teal ও তার বিভিন্ন শেড - মূল বাটন, হেডার, লিংকের জন্য)
      ========================================================================== */
-  --color-primary: #149988;         /* মূল ব্র্যান্ড কালার: Hero/About বাটন, Profile ব্যানার ও ইনপুট ফোকাস, Allcourses হেডার, Course কার্ড বাটন, 404 বাটন */
-  --color-primary-light: #1bb59f;   /* Hero তে Explore Courses বাটন, AboutUs ব্যাজ ব্যাকগ্রাউন্ড */
-  --color-primary-dark: #0f7d6f;    /* বাটন হোভার ইফেক্ট: Login, Register, Profile, 404 পৃষ্ঠার প্রাইমারি বাটন হোভার */
-  --color-primary-darker: #0a5249;  /* 404 হেডিং গ্রেডিয়েন্ট টেক্সটের এন্ডিং কালার */
-  --color-primary-alt1: #158d7b;    /* Hero বাটন হোভার স্টেট */
-  --color-primary-alt2: #117a6d;    /* Profile পৃষ্ঠার টপ কভার গ্রেডিয়েন্ট কালার */
-  --color-primary-alt3: #107568;    /* CourseCard বাটনের হোভার স্টেট */
+  --color-primary: #149988;         /* মূল ব্র্যান্ড কালার: বাটন, হেডার, ইনপুট ফোকাস */
+  --color-primary-hover: #0f7d6f;   /* একটি সুনির্দিষ্ট হোভার স্টেট (আগের #0f7d6f, #158d7b, #107568, #117a6d, #0a5249 মার্জ করে একটি করা হয়েছে) */
+  --color-primary-light: #1bb59f;   /* লাইট শেড (ব্যাজ, সেকেন্ডারি এলিমেন্টের জন্য) */
 
   /* ==========================================================================
      Accent (Orange শেড - হাইলাইট, স্পেশাল বাটন, রেটিং ও ব্যাজের জন্য)
@@ -62,6 +58,8 @@
 
 @theme {
   --color-brand-primary: var(--color-primary);
+  --color-brand-primary-hover: var(--color-primary-hover);
+  --color-brand-primary-light: var(--color-primary-light);
   --color-brand-accent: var(--color-accent);
   --color-brand-navy: var(--color-navy);
   --color-brand-surface: var(--color-surface);
