@@ -25,14 +25,12 @@
   --color-navy-light: #00457C;      /* Footer এ PayPal আইকন হোভার */
 
   /* ==========================================================================
-     Surfaces & Backgrounds (হালকা ব্যাকগ্রাউন্ড ও সেকশনের বিভিন্ন শেড)
+     Surfaces & Backgrounds (হালকা ব্যাকগ্রাউন্ড ও সেকশনের শেড)
      ========================================================================== */
-  --color-surface: #FAF9F6;         /* মূল বডি ও পেজ ব্যাকগ্রাউন্ড: Login, Register, Profile, Allcourses, Course Details, Loading, 404 */
-  --color-surface-alt: #F9F1EF;     /* Navbar ব্যাকগ্রাউন্ড */
-  --color-surface-alt2: #FCF9F8;    /* FAQ সেকশন ব্যাকগ্রাউন্ড */
-  --color-surface-peach: #FFEFE8;   /* LearningTips সেকশনের ক্যাটাগরি পিল/ট্যাগ ব্যাকগ্রাউন্ড */
-  --color-surface-peach-light: #FDF1EE; /* Hero, LearningTips এবং Footer সেকশন ব্যাকগ্রাউন্ড */
-  --color-surface-gray: #F9FAFB;    /* CourseCard কার্ড ব্যাকগ্রাউন্ড */
+  --color-footer-bg: #fde8e3;       /* নতুন ডার্কার ফুটার ব্যাকগ্রাউন্ড কালার */
+  --color-navbar-bg: #FDF1EE;       /* পূর্বের ফুটার কালার এখন Navbar এ ব্যবহার করা হবে */
+  --color-surface-shade-1: #FFFAF8;  /* সেকশন ব্যাকগ্রাউন্ড শেড ১ (একটু ক্লিন/সাদাটে ওয়ার্ম শেড) */
+  --color-surface-shade-2: #F9F1EF;  /* সেকশন ব্যাকগ্রাউন্ড শেড ২ (আগের Navbar কালার, খুব সফট পিচ শেড) */
 
   /* ==========================================================================
      Typography / Text (হেডিং ও ব্র্যান্ড টেক্সট)
@@ -62,5 +60,8 @@
   --color-brand-accent-highlight: var(--color-accent-highlight);
   --color-brand-accent-badge-bg: var(--color-accent-badge-bg);
   --color-brand-navy: var(--color-navy);
-  --color-brand-surface: var(--color-surface);
+  --color-brand-footer-bg: var(--color-footer-bg);
+  --color-brand-navbar-bg: var(--color-navbar-bg);
+  --color-brand-surface-shade-1: var(--color-surface-shade-1);
+  --color-brand-surface-shade-2: var(--color-surface-shade-2);
 }
