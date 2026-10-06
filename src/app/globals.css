@@ -10,15 +10,12 @@
   --color-primary-light: #1bb59f;   /* লাইট শেড (ব্যাজ, সেকেন্ডারি এলিমেন্টের জন্য) */
 
   /* ==========================================================================
-     Accent (Orange শেড - হাইলাইট, স্পেশাল বাটন, রেটিং ও ব্যাজের জন্য)
+     Accent (Warm Reddish-Orange - লোগো 'Sphere', বাটন, হাইলাইট ও ব্যাজের জন্য)
      ========================================================================== */
-  --color-accent: #F97416;          /* মূল অ্যাকসেন্ট কালার: Navbar 'Join Free' বাটন, Login/Register লোগো ও হাইলাইট টেক্সট, Course Star/Play আইকন */
-  --color-accent-light: #fe6e38;    /* Navbar ও Footer লোগোর 'Sphere' টেক্সট, সক্রিয় নেভিগেশন লিংক */
-  --color-accent-lighter: #f8b188;  /* Allcourses হেডারের 'Course Catalog' হাইলাইট টেক্সট */
-  --color-accent-lightest: #fad4c4; /* Hero সেকশনের টপ ব্যাজ ব্যাকগ্রাউন্ড (-rotate-12 ট্যাগ) */
-  --color-accent-dark: #e66509;     /* CourseSection এর 'Browse All Courses' বাটন হোভার */
-  --color-accent-darker: #e06510;   /* Navbar, Course বিস্তারিত পেজ ও Allcourses-এর অ্যাকসেন্ট বাটন হোভার */
-  --color-accent-deep: #D35400;     /* Navbar মোবাইল মেনু ওপেন/টগল আইকন বাটন */
+  --color-accent: #fe6e38;             /* মূল অ্যাকসেন্ট কালার (লোগোর 'Sphere' এর একটু রেডিশ-অরেঞ্জ কালার) */
+  --color-accent-hover: #e06510;       /* অ্যাকসেন্ট বাটন হোভার স্টেট (#e06510, #e66509, #D35400 মার্জ করে একটি করা হয়েছে) */
+  --color-accent-highlight: #f8b188;   /* লাইটার কালার: হেডার টেক্সট হাইলাইট / সফট অ্যাকসেন্ট এলিমেন্ট */
+  --color-accent-badge-bg: #fad4c4;    /* লাইটেস্ট কালার: ব্যাজ, পিল ও স্টিকার ব্যাকগ্রাউন্ড */
 
   /* ==========================================================================
      Brand Navy (Footer এ পেমেন্ট গেটওয়ের আইকন হোভারের জন্য)
@@ -61,6 +58,9 @@
   --color-brand-primary-hover: var(--color-primary-hover);
   --color-brand-primary-light: var(--color-primary-light);
   --color-brand-accent: var(--color-accent);
+  --color-brand-accent-hover: var(--color-accent-hover);
+  --color-brand-accent-highlight: var(--color-accent-highlight);
+  --color-brand-accent-badge-bg: var(--color-accent-badge-bg);
   --color-brand-navy: var(--color-navy);
   --color-brand-surface: var(--color-surface);
 }
