@@ -49,7 +49,7 @@ const FAQ = () => {
               <span className="text-[#149988]">Questions</span>
             </h2>
             <p className="text-slate-500 font-medium leading-relaxed mb-8">
-              For any unanswered questions, reach out to our support team via email. We'll respond as soon as possible to assist you.
+              For any unanswered questions, reach out to our support team via email. We&apos;ll respond as soon as possible to assist you.
             </p>
             
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start gap-4">

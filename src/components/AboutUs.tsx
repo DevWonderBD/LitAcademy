@@ -29,7 +29,7 @@ const AboutUs = () => {
                         <div className="flex gap-1 md:gap-3 items-center md:items-start">
                             <span className="text-5xl md:text-6xl font-[900] text-[#111827]">170+</span>
                             <p className="text-gray-500 text-sm font-bold mt-2 text-center md:text-left leading-tight max-w-[180px]">
-                                Experienced Teacher's service.
+                                Experienced Teacher&apos;s service.
                             </p>
                         </div>
                     </div>

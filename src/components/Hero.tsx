@@ -49,7 +49,7 @@ const Hero = () => {
                 <div className="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center text-white font-bold">✓</div>
             </div>
             <div className="absolute top-10 right-10 bg-white p-3 rounded-2xl shadow-2xl z-20">
-                <img src="https://www.google.com/favicon.ico" alt="google" className="w-6 h-6" />
+                <Image src="https://www.google.com/favicon.ico" width={24} height={24} alt="google" className="w-6 h-6" unoptimized />
             </div>
 
             <div className="relative">

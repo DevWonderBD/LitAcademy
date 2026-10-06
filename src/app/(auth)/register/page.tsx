@@ -88,7 +88,7 @@ const RegisterPage = () => {
                     </div>
 
                     <div className="relative z-10 pt-8 border-t border-white/10">
-                        <p className="text-white/90 font-bold mb-4 italic">"Invest in yourself, it pays the best interest."</p>
+                        <p className="text-white/90 font-bold mb-4 italic">&quot;Invest in yourself, it pays the best interest.&quot;</p>
                         <div className="flex items-center gap-4">
                             <p className="text-white/80 text-xs font-bold">Over 20k students already joined!</p>
                         </div>

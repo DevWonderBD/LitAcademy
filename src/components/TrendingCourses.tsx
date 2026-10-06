@@ -21,7 +21,7 @@ const TrendingCourses = () => {
             <div className="flex items-center gap-2 mb-3">
               <FaFire className="text-[#F97416] animate-pulse" />
               <span className="text-[#F97416] font-black uppercase tracking-widest text-xs">
-                What's Hot Right Now
+                What&apos;s Hot Right Now
               </span>
             </div>
             <h2 className="text-4xl font-[900] text-slate-900">
