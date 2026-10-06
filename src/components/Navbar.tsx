@@ -17,7 +17,7 @@ const Navbar = () => {
     { name: 'FAQ', href: '/#faq' },
   ];
   return (
-    <nav className="bg-[#F9F1EF] py-4 px-6 sticky top-0 z-50 shadow-sm">
+    <nav className="bg-[#FDF1EE] py-4 px-6 sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto flex items-center justify-between">
 
         <div className="flex-start">
