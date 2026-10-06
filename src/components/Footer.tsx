@@ -29,7 +29,7 @@ const Footer = () => {
               Skill<span className="text-[#fe6e38]">Sphere</span>.
             </h2>
             <p className="text-slate-500 font-medium leading-relaxed mb-8 pr-4">
-              We're always in search for talented and motivated people. Don't be shy introduce yourself! Subscribe to our newsletter.
+              We&apos;re always in search for talented and motivated people. Don&apos;t be shy introduce yourself! Subscribe to our newsletter.
             </p>
             
             {/* Social Media */}

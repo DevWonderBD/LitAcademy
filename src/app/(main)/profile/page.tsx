@@ -10,11 +10,11 @@ const ProfilePage = () => {
     const user = userData.data?.user;
 
     const openModal = () => {
-        document.getElementById('edit_profile_modal').showModal();
+        (document.getElementById('edit_profile_modal') as HTMLDialogElement).showModal();
     };
 
     const closeModal = () => {
-        document.getElementById('edit_profile_modal').close();
+        (document.getElementById('edit_profile_modal') as HTMLDialogElement).close();
     };
 
     const onSubmit = async(e)=>{

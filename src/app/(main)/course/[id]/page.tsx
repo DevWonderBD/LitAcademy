@@ -71,7 +71,7 @@ const CourseDetails = async({ params }) => {
 
                     <div className="w-full lg:w-2/3">
                         <div className="bg-white rounded-[32px] p-8 md:p-10 shadow-xl shadow-slate-200/50 mb-8 border border-slate-100">
-                            <h2 className="text-2xl font-bold text-slate-900 mb-6">What you'll learn</h2>
+                            <h2 className="text-2xl font-bold text-slate-900 mb-6">What you&apos;ll learn</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {[
                                     "Build a sustainable content strategy",
