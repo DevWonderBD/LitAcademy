@@ -40,7 +40,15 @@ const Logo = () => (
 
 const AuthSection = ({ isPending, user }: { isPending: boolean; user: any }) => {
   if (isPending) {
-    return <Loader2 className="w-5 h-5 animate-spin text-primary" />;
+    return (
+      <div className="flex items-center gap-3 p-1.5 md:pr-3">
+        <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-primary/10 animate-pulse border border-primary/20"></div>
+        <div className="hidden lg:flex flex-col gap-1.5">
+          <div className="h-3 w-20 bg-primary/10 rounded animate-pulse"></div>
+          <div className="h-2 w-12 bg-primary/5 rounded animate-pulse"></div>
+        </div>
+      </div>
+    );
   }
 
   if (user) {
@@ -48,7 +56,7 @@ const AuthSection = ({ isPending, user }: { isPending: boolean; user: any }) => 
       <DropdownMenu>
         <DropdownMenuTrigger className="outline-none">
           <div className="flex items-center gap-3 bg-transparent hover:bg-muted/50 p-1.5 md:pr-3 rounded-full border border-transparent transition-all cursor-pointer">
-            <div className="w-9 h-9 md:w-10 md:h-10 rounded-full relative overflow-hidden border border-border bg-card flex items-center justify-center">
+            <div className="w-9 h-9 md:w-10 md:h-10 rounded-full relative overflow-hidden border border-border bg-primary/10 flex items-center justify-center">
               {user.image ? (
                 <Image
                   src={user.image}
@@ -58,7 +66,9 @@ const AuthSection = ({ isPending, user }: { isPending: boolean; user: any }) => 
                   className="object-cover"
                 />
               ) : (
-                <User className="w-5 h-5 text-primary" />
+                <span className="font-bold text-primary uppercase text-sm md:text-base">
+                  {user.name ? user.name.charAt(0) : "U"}
+                </span>
               )}
             </div>
             <div className="hidden lg:flex flex-col text-left">
@@ -154,17 +164,17 @@ const Navbar = () => {
           <NavigationMenu align="center" positionerClassName="!fixed !left-1/2 !-translate-x-1/2 !top-[70px]">
             <NavigationMenuList className="gap-2">
               <NavigationMenuItem>
-                <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={cn(
-                      navigationMenuTriggerStyle(),
-                      "bg-transparent hover:bg-transparent hover:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent font-bold text-sm",
-                      pathname === "/" ? "text-primary" : "text-foreground"
-                    )}
-                  >
-                    Home
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink 
+                  render={<Link href="/" />}
+                  active={pathname === "/"}
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    "bg-transparent hover:bg-transparent hover:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent font-bold text-sm",
+                    pathname === "/" ? "text-primary" : "text-foreground"
+                  )}
+                >
+                  Home
+                </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
@@ -259,33 +269,33 @@ const Navbar = () => {
 
               {navLinks.slice(1).map((link, index) => (
                 <NavigationMenuItem key={index}>
-                  <Link href={link.href} legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={cn(
-                        navigationMenuTriggerStyle(),
-                        "bg-transparent hover:bg-transparent hover:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent font-bold text-sm",
-                        pathname === link.href ? "text-primary" : "text-foreground"
-                      )}
-                    >
-                      {link.name}
-                    </NavigationMenuLink>
-                  </Link>
+                  <NavigationMenuLink 
+                    render={<Link href={link.href} />}
+                    active={pathname === link.href}
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      "bg-transparent hover:bg-transparent hover:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent font-bold text-sm",
+                      pathname === link.href ? "text-primary" : "text-foreground"
+                    )}
+                  >
+                    {link.name}
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               ))}
 
               {user && (
                 <NavigationMenuItem>
-                  <Link href="/dashboard" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={cn(
-                        navigationMenuTriggerStyle(),
-                        "bg-transparent hover:bg-transparent hover:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent font-bold text-sm",
-                        pathname.startsWith("/dashboard") ? "text-primary" : "text-foreground"
-                      )}
-                    >
-                      Dashboard
-                    </NavigationMenuLink>
-                  </Link>
+                  <NavigationMenuLink 
+                    render={<Link href="/dashboard" />}
+                    active={pathname.startsWith("/dashboard")}
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      "bg-transparent hover:bg-transparent hover:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent font-bold text-sm",
+                      pathname.startsWith("/dashboard") ? "text-primary" : "text-foreground"
+                    )}
+                  >
+                    Dashboard
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               )}
             </NavigationMenuList>
