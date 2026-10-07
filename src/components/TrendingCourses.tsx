@@ -13,7 +13,7 @@ import Link from "next/link";
 const TrendingCourses = () => {
 
   return (
-    <section className="py-14 bg-white px-6 lg:px-20">
+    <section className="py-14 bg-background px-6 lg:px-20">
       <div className="container mx-auto">
 
         <div className="flex items-center justify-between mb-8">

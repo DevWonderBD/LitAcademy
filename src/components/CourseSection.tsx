@@ -12,7 +12,7 @@ import CourseCard from './CourseCard';
 const CourseSection = () => {
 
   return (
-    <section className="bg-gray-100 pt-18 px-6 lg:px-20">
+    <section className="bg-muted pt-18 px-6 lg:px-20">
       <div className="container mx-auto">
 
         {/* Section Header */}
