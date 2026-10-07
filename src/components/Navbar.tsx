@@ -22,8 +22,8 @@ const Navbar = () => {
 
         <div className="flex-start">
           <Link href="/" className="text-xl md:text-2xl font-black flex items-center">
-            <span className="text-[#2C3E50]">Skill</span>
-            <span className="text-[#fe6e38]">Sphere</span>
+            <span className="text-[#2C3E50]">Lit</span>
+            <span className="text-[#fe6e38]">Academy</span>
             <span className="w-2 h-2 bg-[#fe6e38] rounded-full ml-1 self-end mb-1"></span>
           </Link>
         </div>
