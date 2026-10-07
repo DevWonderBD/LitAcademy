@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className="max-w-[95%] lg:max-w-[92%] mx-auto flex items-center justify-between">
 
         <div className="flex-start">
-          <Link href="/" className="text-xl md:text-2xl font-black flex items-center">
+          <Link href="/" className="text-2xl md:text-2xl font-black flex items-center">
             <span className="text-foreground">Lit</span>
             <span className="text-primary">Academy</span>
             <span className="w-2 h-2 bg-primary rounded-full ml-1 self-end mb-1"></span>

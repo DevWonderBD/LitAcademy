@@ -18,7 +18,7 @@ export default function Loading() {
 
         <div className="text-center">
           <h2 className="text-3xl font-black text-slate-900 tracking-tight flex items-center justify-center gap-1">
-            Skill<span className="text-accent">Sphere</span>
+            Lit<span className="text-accent">Academy</span>
             <span className="flex gap-1.5 ml-2 items-end pb-1">
               <span className="w-2 h-2 bg-primary rounded-full animate-bounce"></span>
               <span className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.15s' }}></span>
@@ -26,7 +26,7 @@ export default function Loading() {
             </span>
           </h2>
           <p className="text-slate-400 font-bold text-xs mt-3 uppercase tracking-[0.2em] animate-pulse">
-            Curating your experience
+            Seeding your Literary experience
           </p>
         </div>
 
