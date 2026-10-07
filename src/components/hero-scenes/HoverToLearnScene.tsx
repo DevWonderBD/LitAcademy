@@ -1,9 +1,22 @@
 import React from 'react';
-import { MousePointer2, BookOpen } from 'lucide-react';
+import { MousePointer2, BookOpen, Quote, CheckCircle2 } from 'lucide-react';
 
 export default function HoverToLearnScene() {
   return (
     <div className="relative w-full max-w-lg mx-auto flex flex-col items-center justify-center animate-in fade-in zoom-in duration-700 min-h-[450px]">
+      
+      {/* Floating Elements */}
+      <div className="absolute -top-6 -left-8 bg-card/80 backdrop-blur-md border border-border/50 shadow-xl p-3 rounded-2xl animate-float z-10 hidden md:flex items-center gap-3">
+        <div className="bg-primary/10 p-2 rounded-full">
+          <Quote className="w-4 h-4 text-primary fill-primary" />
+        </div>
+      </div>
+
+      <div className="absolute -bottom-4 -right-6 bg-card/80 backdrop-blur-md border border-border/50 shadow-xl px-4 py-3 rounded-full animate-float-delayed z-10 hidden md:flex items-center gap-2">
+        <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+        <span className="text-xs font-bold text-foreground pr-1">Topic Completed</span>
+      </div>
+
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10 opacity-50">
         <div className="absolute -top-10 -left-10 w-80 h-80 bg-primary/40 rounded-full blur-3xl animate-pulse"></div>
