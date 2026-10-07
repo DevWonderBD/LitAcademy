@@ -1,25 +1,15 @@
 import { 
-  Inter, 
   Playfair_Display, 
   Lora, 
   Anek_Bangla, 
   Noto_Serif_Bengali,
-  Plus_Jakarta_Sans,
-  Manrope,
-  DM_Sans,
-  Outfit
+  Plus_Jakarta_Sans
 } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import { cn } from "@/lib/utils";
 
 // PRD 8.2 Fonts configured via CSS variables
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
@@ -44,28 +34,10 @@ const notoSerifBengali = Noto_Serif_Bengali({
   display: "swap",
 });
 
-// UI Font alternatives
+// UI Font
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-plus-jakarta",
-  display: "swap",
-});
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-  display: "swap",
-});
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
   display: "swap",
 });
 
@@ -86,15 +58,11 @@ export default function RootLayout({
         "h-full",
         "antialiased",
         "overflow-x-hidden",
-        inter.variable,
         playfairDisplay.variable,
         lora.variable,
         anekBangla.variable,
         notoSerifBengali.variable,
-        plusJakartaSans.variable,
-        manrope.variable,
-        dmSans.variable,
-        outfit.variable
+        plusJakartaSans.variable
       )}
       suppressHydrationWarning
     >
