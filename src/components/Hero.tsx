@@ -1,6 +1,6 @@
 "use client";
 
-import { Play, ArrowRight } from 'lucide-react';
+import { Play, ArrowRight, BookOpen } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { HowItWorksModal } from '@/components/modals/HowItWorksModal';
 import HoverToLearnScene from '@/components/hero-scenes/HoverToLearnScene';
@@ -82,10 +82,30 @@ const Hero = () => {
 
           {/* Left Content */}
           <div className="lg:w-[55%] lg:py-10 z-10 flex flex-col justify-center">
-            <div>
-              <span className="bg-accent/10 border border-accent/20 text-accent-hover px-6 py-1 rounded-xl text-[12px] lg:text-[12px] font-black tracking-wider shadow-sm inline-block uppercase font-reading gap-1 italic">
-                Literature Learning Made Easy
-              </span>
+            <div className="flex flex-col gap-6 mb-2">
+              {/* Idea 1: Classic Academic Line */}
+              <div className="flex items-center gap-3">
+                <span className="w-8 h-px bg-primary/50"></span>
+                <span className="uppercase tracking-[0.2em] text-xs font-bold text-primary">
+                  Literature Learning Made Easy
+                </span>
+              </div>
+
+              {/* Idea 2: Minimal Dot Badge */}
+              <div>
+                <span className="inline-flex items-center gap-2 bg-slate-100/80 px-3 py-1 rounded-full text-xs font-bold text-slate-600 uppercase tracking-widest">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                  Literature Learning Made Easy
+                </span>
+              </div>
+
+              {/* Idea 3: The Literature Ribbon */}
+              <div>
+                <div className="inline-flex items-center gap-2 border border-primary/30 bg-transparent px-4 py-1.5 rounded-md text-xs font-bold text-primary uppercase tracking-widest">
+                  <BookOpen className="w-3.5 h-3.5" />
+                  Literature Learning Made Easy
+                </div>
+              </div>
             </div>
 
             <div className="my-6 min-h-[140px]" suppressHydrationWarning>
