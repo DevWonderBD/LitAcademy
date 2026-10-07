@@ -11,6 +11,10 @@ type HeroVariant = {
   description: string;
 };
 
+// Rules:
+// - All titles contain "literature"
+// - title + highlight combined: ~5-6 words, ~35-43 chars (keeps height stable)
+// - All descriptions: ~140-148 chars (keeps layout stable across all variants)
 const variants: HeroVariant[] = [
   {
     title: "Where great literature",
@@ -19,69 +23,41 @@ const variants: HeroVariant[] = [
       "Structured readings for NU Honours and Masters students. Hover over any literary term to understand it on the spot — no prior background needed.",
   },
   {
-    title: "Read deeply.",
-    highlight: "Understand fully.",
+    title: "English literature,",
+    highlight: "made genuinely clear.",
     description:
-      "Explore every text in your programme with clarity. Each passage is broken down so you can follow the argument, grasp the context, and think for yourself.",
+      "From Milton to Modernism, every text in your programme is broken down so you can follow the argument, grasp the ideas, and think for yourself.",
   },
   {
-    title: "Literature for thinkers,",
-    highlight: "not just exam-takers.",
+    title: "Think through literature,",
+    highlight: "not around it.",
     description:
-      "Go beyond memorisation. Build a genuine understanding of the texts, authors, and ideas that define English literature — one topic at a time.",
+      "Go beyond memorisation. Every passage, every author, every idea — explained so you can build genuine understanding, not just exam-ready answers.",
   },
   {
-    title: "Every term explained.",
-    highlight: "Every idea unpacked.",
-    description:
-      "Encounter an unfamiliar word? Hover over it. Confused by a concept? It's explained right there. Your reading experience, finally uninterrupted.",
-  },
-  {
-    title: "Your guide to",
+    title: "Your path through",
     highlight: "English literature.",
     description:
-      "From the Romantics to the Moderns, from close reading to critical theory — everything in your NU programme, made genuinely approachable.",
+      "Encounter an unfamiliar word? Hover over it. Confused by a concept? It is explained right there — your reading, finally clear and uninterrupted.",
+  },
+  {
+    title: "Understand literature.",
+    highlight: "Build your own view.",
+    description:
+      "From close reading to critical theory, everything in your NU programme is made genuinely approachable — one text, one idea, one moment at a time.",
   },
 ];
 
-function pickRandom<T>(arr: T[]): { value: T; index: number } {
-  const index = Math.floor(Math.random() * arr.length);
-  return { value: arr[index], index };
+function pickRandom<T>(arr: T[]): T {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
-
-const INTERVAL_MS = 5500;
 
 const Hero = () => {
   const [current, setCurrent] = useState<HeroVariant>(variants[0]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [visible, setVisible] = useState(true);
 
-  // Pick a random variant on mount (client-only to avoid hydration mismatch)
+  // Pick a random variant once on mount — changes only on page reload
   useEffect(() => {
-    const { value, index } = pickRandom(variants);
-    setCurrent(value);
-    setCurrentIndex(index);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // Fade out
-      setVisible(false);
-
-      setTimeout(() => {
-        setCurrentIndex((prev) => {
-          // Pick next variant, skipping current
-          let next = Math.floor(Math.random() * (variants.length - 1));
-          if (next >= prev) next += 1;
-          setCurrent(variants[next]);
-          return next;
-        });
-        // Fade back in
-        setVisible(true);
-      }, 400);
-    }, INTERVAL_MS);
-
-    return () => clearInterval(interval);
+    setCurrent(pickRandom(variants));
   }, []);
 
   return (
@@ -95,11 +71,7 @@ const Hero = () => {
               Literature Learning Made Easy
             </span>
 
-            {/* Rotating title + description */}
-            <div
-              className="my-6 transition-opacity duration-400"
-              style={{ opacity: visible ? 1 : 0 }}
-            >
+            <div className="my-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-[700] text-foreground leading-[1.15] tracking-tight font-heading">
                 {current.title}{" "}
                 <span className="text-primary">{current.highlight}</span>
