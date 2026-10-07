@@ -1,9 +1,25 @@
 import React from 'react';
-import { Sparkles, User, ArrowRight } from 'lucide-react';
+import { Sparkles, User, ArrowRight, Brain } from 'lucide-react';
 
 export default function PythiaChatScene() {
   return (
     <div className="relative w-full max-w-lg mx-auto flex flex-col items-center justify-center animate-in fade-in zoom-in duration-700 min-h-[450px]">
+      
+      {/* Floating Elements */}
+      <div className="absolute -top-5 -right-6 bg-card/80 backdrop-blur-md border border-border/50 shadow-xl px-4 py-2.5 rounded-full animate-float z-10 hidden md:flex items-center gap-2.5">
+        <span className="relative flex h-2.5 w-2.5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+        </span>
+        <span className="text-[11px] font-bold text-foreground uppercase tracking-wider">Pythia AI</span>
+      </div>
+
+      <div className="absolute -bottom-6 -left-6 bg-card/80 backdrop-blur-md border border-border/50 shadow-xl p-3.5 rounded-2xl animate-float-delayed z-10 hidden md:flex items-center gap-3">
+        <div className="bg-accent/10 p-2 rounded-full">
+          <Brain className="w-4 h-4 text-accent" />
+        </div>
+      </div>
+
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10 opacity-30">
         <div className="absolute top-0 right-10 w-72 h-72 bg-accent/40 rounded-full blur-3xl animate-pulse"></div>

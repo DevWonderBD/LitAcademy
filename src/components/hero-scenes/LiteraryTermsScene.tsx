@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookMarked } from 'lucide-react';
+import { BookMarked, Library } from 'lucide-react';
 
 export default function LiteraryTermsScene() {
   const terms = [
@@ -14,6 +14,18 @@ export default function LiteraryTermsScene() {
 
   return (
     <div className="relative w-full max-w-lg mx-auto flex flex-col items-center justify-center animate-in fade-in zoom-in duration-700 min-h-[450px]">
+      
+      {/* Floating Elements */}
+      <div className="absolute -top-3 -right-4 bg-card/80 backdrop-blur-md border border-border/50 shadow-xl px-4 py-2.5 rounded-full animate-float z-10 hidden md:flex items-center gap-2">
+        <span className="text-[11px] font-black text-accent uppercase tracking-widest">Vocabulary</span>
+      </div>
+
+      <div className="absolute -bottom-5 -left-4 bg-card/80 backdrop-blur-md border border-border/50 shadow-xl p-3 rounded-2xl animate-float-delayed z-10 hidden md:flex items-center gap-3">
+        <div className="bg-accent/10 p-2 rounded-full">
+          <Library className="w-4 h-4 text-accent" />
+        </div>
+      </div>
+
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10 opacity-40">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse"></div>

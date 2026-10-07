@@ -165,6 +165,15 @@
   --font-reading: var(--font-lora), serif;
   --font-bangla-ui: var(--font-anek-bangla), sans-serif;
   --font-bangla-reading: var(--font-noto-serif-bengali), serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float 6s ease-in-out 3s infinite;
+  --animate-float-fast: float 4s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
 }
 
 @layer base {

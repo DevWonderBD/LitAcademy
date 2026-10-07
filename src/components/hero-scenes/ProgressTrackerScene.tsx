@@ -1,9 +1,21 @@
 import React from 'react';
-import { CheckCircle2, CircleDashed, GraduationCap, ArrowUpRight } from 'lucide-react';
+import { CheckCircle2, CircleDashed, GraduationCap, ArrowUpRight, Target } from 'lucide-react';
 
 export default function ProgressTrackerScene() {
   return (
     <div className="relative w-full max-w-lg mx-auto flex flex-col items-center justify-center animate-in fade-in zoom-in duration-700 min-h-[450px]">
+      
+      {/* Floating Elements */}
+      <div className="absolute -top-4 -left-6 bg-card/80 backdrop-blur-md border border-border/50 shadow-xl px-4 py-2.5 rounded-full animate-float z-10 hidden md:flex items-center gap-2">
+        <span className="text-[11px] font-black text-primary uppercase tracking-widest">A+ Standard</span>
+      </div>
+
+      <div className="absolute -bottom-8 -right-4 bg-card/80 backdrop-blur-md border border-border/50 shadow-xl p-3.5 rounded-2xl animate-float-delayed z-10 hidden md:flex items-center gap-3">
+        <div className="bg-primary/10 p-2 rounded-full">
+          <Target className="w-4 h-4 text-primary" />
+        </div>
+      </div>
+
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10 opacity-40">
         <div className="absolute top-20 left-20 w-64 h-64 bg-emerald-400/20 rounded-full blur-3xl animate-pulse"></div>
