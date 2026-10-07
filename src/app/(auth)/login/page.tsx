@@ -7,7 +7,6 @@ import { HiOutlineMail, HiOutlineLockClosed } from 'react-icons/hi';
 import { FaCheckCircle, FaPlayCircle, FaUserGraduate } from 'react-icons/fa';
 import { authClient } from '@/lib/auth-client';
 import { Flip, toast } from 'react-toastify';
-import { redirect } from 'next/navigation';
 
 const LoginPage = () => {
     const onSubmit = async (e) => {
@@ -26,7 +25,7 @@ const LoginPage = () => {
                     theme: 'colored',
                     transition: Flip
                 });
-                redirect('/')
+                window.location.href = '/';
             },
             onError: (ctx) => {
                 // display the error message
@@ -57,10 +56,10 @@ const LoginPage = () => {
 
                     <div className="relative z-10">
                         <Link href='/' className="text-4xl font-black text-white mb-4 tracking-tighter">
-                            Skill<span className="text-accent">Sphere</span>.
+                            Lit<span className="text-accent">Academy</span>
                         </Link>
                         <p className="text-teal-50 text-lg font-medium opacity-90 max-w-sm mt-4">
-                            Elevate your career with the most in-demand technical skills.
+                            Master your English Literature syllabus with structured, comprehensive notes.
                         </p>
                     </div>
 
@@ -70,8 +69,8 @@ const LoginPage = () => {
                                 <FaPlayCircle className="text-white" size={24} />
                             </div>
                             <div>
-                                <h4 className="text-white font-bold">10k+ Premium Courses</h4>
-                                <p className="text-teal-100/70 text-sm">Learn from industry experts.</p>
+                                <h4 className="text-white font-bold">Complete Programmes</h4>
+                                <p className="text-teal-100/70 text-sm">Honours & Masters curriculum.</p>
                             </div>
                         </div>
 
@@ -80,8 +79,8 @@ const LoginPage = () => {
                                 <FaCheckCircle className="text-white" size={24} />
                             </div>
                             <div>
-                                <h4 className="text-white font-bold">Verified Certificates</h4>
-                                <p className="text-teal-100/70 text-sm">Boost your LinkedIn profile.</p>
+                                <h4 className="text-white font-bold">Hover-to-learn Terms</h4>
+                                <p className="text-teal-100/70 text-sm">Understand literary terms instantly.</p>
                             </div>
                         </div>
 
@@ -90,8 +89,8 @@ const LoginPage = () => {
                                 <FaUserGraduate className="text-white" size={24} />
                             </div>
                             <div>
-                                <h4 className="text-white font-bold">Expert Mentorship</h4>
-                                <p className="text-teal-100/70 text-sm">Get 1-on-1 support anytime.</p>
+                                <h4 className="text-white font-bold">AI Guide Pythia</h4>
+                                <p className="text-teal-100/70 text-sm">Get answers to any topic.</p>
                             </div>
                         </div>
                     </div>
@@ -99,7 +98,7 @@ const LoginPage = () => {
                     <div className="relative z-10 pt-10 border-t border-white/10">
                         <div className="flex items-center gap-4">
                             <p className="text-white/80 text-xs font-bold">
-                                Joined by <span className="text-accent">20k+</span> students
+                                Join thousands of literature students
                             </p>
                         </div>
                     </div>

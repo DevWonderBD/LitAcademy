@@ -39,6 +39,13 @@ const Logo = () => (
 );
 
 const AuthSection = ({ isPending, user }: { isPending: boolean; user: any }) => {
+  const [imgError, setImgError] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setImgError(false);
+  }, [user?.image]);
+
   if (isPending) {
     return (
       <div className="flex items-center gap-3 p-1.5 md:pr-3">
@@ -57,13 +64,14 @@ const AuthSection = ({ isPending, user }: { isPending: boolean; user: any }) => 
         <DropdownMenuTrigger className="outline-none">
           <div className="flex items-center gap-3 bg-transparent hover:bg-muted/50 p-1.5 md:pr-3 rounded-full border border-transparent transition-all cursor-pointer">
             <div className="w-9 h-9 md:w-10 md:h-10 rounded-full relative overflow-hidden border border-border bg-primary/10 flex items-center justify-center">
-              {user.image ? (
+              {user.image && !imgError ? (
                 <Image
                   src={user.image}
                   alt={user.name || "User"}
                   fill
                   sizes="40px"
                   className="object-cover"
+                  onError={() => setImgError(true)}
                 />
               ) : (
                 <span className="font-bold text-primary uppercase text-sm md:text-base">
@@ -86,7 +94,10 @@ const AuthSection = ({ isPending, user }: { isPending: boolean; user: any }) => 
             Dashboard
           </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={async () => await authClient.signOut()}
+            onClick={async () => {
+              await authClient.signOut();
+              window.location.href = '/';
+            }}
             className="cursor-pointer text-destructive focus:text-destructive font-bold"
           >
             Sign Out
