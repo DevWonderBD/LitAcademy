@@ -1,20 +1,19 @@
 import React from 'react';
-import { MousePointer2, BookOpen, Quote, CheckCircle2 } from 'lucide-react';
+import { MousePointer2, BookOpen, PenTool } from 'lucide-react';
 
 export default function HoverToLearnScene() {
   return (
     <div className="relative w-full max-w-lg mx-auto flex flex-col items-center justify-center animate-in fade-in zoom-in duration-700 min-h-[450px]">
       
       {/* Floating Elements */}
-      <div className="absolute -top-6 -left-8 bg-card/80 backdrop-blur-md border border-border/50 shadow-xl p-3 rounded-2xl animate-float z-10 hidden md:flex items-center gap-3">
-        <div className="bg-primary/10 p-2 rounded-full">
-          <Quote className="w-4 h-4 text-primary fill-primary" />
-        </div>
+      <div className="absolute -top-6 -left-8 bg-card border border-border/60 shadow-lg w-10 h-10 rounded-full animate-float z-10 hidden md:flex items-center justify-center">
+        <PenTool className="w-4 h-4 text-primary" />
       </div>
 
-      <div className="absolute -bottom-4 -right-6 bg-card/80 backdrop-blur-md border border-border/50 shadow-xl px-4 py-3 rounded-full animate-float-delayed z-10 hidden md:flex items-center gap-2">
-        <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-        <span className="text-xs font-bold text-foreground pr-1">Topic Completed</span>
+      <div className="absolute top-1/3 -right-6 w-2.5 h-2.5 bg-accent/80 rounded-full animate-float-fast z-10 hidden md:block"></div>
+
+      <div className="absolute -bottom-4 -right-6 bg-card border border-border/60 shadow-lg w-10 h-10 rounded-full animate-float-delayed z-10 hidden md:flex items-center justify-center">
+        <span className="font-serif font-black text-xl text-primary leading-none">&amp;</span>
       </div>
 
       {/* Background decoration */}
