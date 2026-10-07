@@ -12,39 +12,39 @@ type HeroVariant = {
 };
 
 // Rules:
-// - All titles contain "literature"
-// - title + highlight combined: ~5-6 words, ~35-43 chars (keeps height stable)
-// - All descriptions: ~140-148 chars (keeps layout stable across all variants)
+// - "literature" always at the END, inside highlight (primary color)
+// - title (plain): ~20-26 chars | highlight (colored): ~18-23 chars → total stays stable
+// - descriptions: ~140-148 chars each so layout never jumps
 const variants: HeroVariant[] = [
   {
-    title: "Where great literature",
-    highlight: "finally makes sense.",
-    description:
-      "Structured readings for NU Honours and Masters students. Hover over any literary term to understand it on the spot — no prior background needed.",
-  },
-  {
-    title: "English literature,",
-    highlight: "made genuinely clear.",
-    description:
-      "From Milton to Modernism, every text in your programme is broken down so you can follow the argument, grasp the ideas, and think for yourself.",
-  },
-  {
-    title: "Think through literature,",
-    highlight: "not around it.",
-    description:
-      "Go beyond memorisation. Every passage, every author, every idea — explained so you can build genuine understanding, not just exam-ready answers.",
-  },
-  {
-    title: "Your path through",
+    title: "The perfect place to learn",
     highlight: "English literature.",
     description:
-      "Encounter an unfamiliar word? Hover over it. Confused by a concept? It is explained right there — your reading, finally clear and uninterrupted.",
+      "Structured readings crafted specifically for NU Honours and Masters students. Hover over any complex literary term to easily understand it on the spot — no prior background needed.",
   },
   {
-    title: "Understand literature.",
-    highlight: "Build your own view.",
+    title: "Think deeper, grasp",
+    highlight: "literature that matters.",
     description:
-      "From close reading to critical theory, everything in your NU programme is made genuinely approachable — one text, one idea, one moment at a time.",
+      "From Milton to Modernism, every essential text in your programme is clearly broken down so you can fully follow the argument, grasp the core ideas, and think for yourself.",
+  },
+  {
+    title: "Your journey through",
+    highlight: "English literature.",
+    description:
+      "Go beyond rote memorisation. Every passage, every author, and every complex idea — carefully explained so you can build genuine critical understanding, rather than just basic exam-ready answers.",
+  },
+  {
+    title: "Begin to truly understand",
+    highlight: "English literature.",
+    description:
+      "Encounter a totally unfamiliar word? Simply hover over it. Confused by a difficult concept? It is beautifully explained right there — keeping your reading experience finally clear, focused, and uninterrupted.",
+  },
+  {
+    title: "Where great ideas meet",
+    highlight: "English literature.",
+    description:
+      "From detailed close reading to complex critical theory, absolutely everything in your NU programme is made genuinely approachable — exploring one text, one big idea, and one moment at a time.",
   },
 ];
 
@@ -53,12 +53,8 @@ function pickRandom<T>(arr: T[]): T {
 }
 
 const Hero = () => {
-  const [current, setCurrent] = useState<HeroVariant>(variants[0]);
-
-  // Pick a random variant once on mount — changes only on page reload
-  useEffect(() => {
-    setCurrent(pickRandom(variants));
-  }, []);
+  // Initialize with a random variant immediately
+  const [current] = useState<HeroVariant>(() => pickRandom(variants));
 
   return (
     <section>
@@ -71,13 +67,13 @@ const Hero = () => {
               Literature Learning Made Easy
             </span>
 
-            <div className="my-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-[700] text-foreground leading-[1.15] tracking-tight font-heading">
+            <div className="my-6" suppressHydrationWarning>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-[700] text-foreground leading-[1.15] tracking-tight font-heading" suppressHydrationWarning>
                 {current.title}{" "}
-                <span className="text-primary">{current.highlight}</span>
+                <span className="text-primary" suppressHydrationWarning>{current.highlight}</span>
               </h1>
 
-              <p className="text-muted-foreground text-base md:text-lg max-w-lg mt-5 leading-relaxed font-medium">
+              <p className="text-muted-foreground text-base md:text-lg max-w-lg lg:max-w-[85%] mt-5 leading-relaxed font-medium" suppressHydrationWarning>
                 {current.description}
               </p>
             </div>
