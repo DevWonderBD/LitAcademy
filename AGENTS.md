@@ -48,6 +48,7 @@ Never write **Course, Lesson, Enroll, Buy, Free Trial, Trending, Best Seller, In
 - Bangla text: Anek Bangla (UI), Noto Serif Bengali (reading), line-height ≥ 1.8.
 - Accessibility is required: keyboard operable, visible focus, ARIA on accordions/dialogs/popovers, alt text on every image, `prefers-reduced-motion` respected. Term tooltips must also work on touch and focus.
 - Animations use transform/opacity only.
+- Always add `cursor-pointer` to all `<button>`, `<a>`, and other clickable elements.
 
 ## Code standards
 - TypeScript strict; no `any` without a comment explaining why.
