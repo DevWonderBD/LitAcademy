@@ -46,7 +46,7 @@ const TopInstructors = () => {
   ];
 
   return (
-    <section id='instructors' className="bg-gray-100 py-14 px-6 lg:px-20 relative overflow-hidden">
+    <section id='instructors' className="bg-muted py-14 px-6 lg:px-20 relative overflow-hidden">
       <div className="container mx-auto">
         
         {/* Section Header */}

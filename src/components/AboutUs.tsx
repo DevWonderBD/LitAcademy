@@ -3,7 +3,7 @@ import React from 'react';
 const AboutUs = () => {
     return (
         <section>
-            <div className="bg-white py-12 md:py-20 px-6 lg:px-20">
+            <div className="bg-background py-12 md:py-20 px-6 lg:px-20">
                 <div className="container mx-auto text-center">
                     <span className="text-primary-foreground bg-primary-light px-5 py-1.5 rounded-full text-sm font-black mb-8 inline-block -rotate-12">
                         About Us
