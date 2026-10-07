@@ -69,7 +69,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <h3 className="text-lg font-bold text-slate-900 mb-6">Company Info</h3>
             <ul className="space-y-4">
-              {['Home', 'About Us', 'Courses', 'Mentors', 'Contact Us', 'Privacy policy','Terms & Conditions'].map((item, index) => (
+              {['Home', 'About Us', 'Programmes', 'Mentors', 'Contact Us', 'Privacy policy','Terms & Conditions'].map((item, index) => (
                 <li key={index}>
                   <Link href="#" className="text-slate-500 font-medium hover:text-primary transition-colors text-sm flex items-center gap-2">
                     {index === 0 && <span className="w-4 h-[1px] bg-primary inline-block"></span>}

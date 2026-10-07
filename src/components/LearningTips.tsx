@@ -1,6 +1,7 @@
 import React from 'react';
 import { Lightbulb, Clock, BookOpen, Target, Zap } from 'lucide-react';
 import Link from 'next/link';
+import { SectionBadge } from '@/components/ui/section-badge';
 
 const LearningTips = () => {
  
@@ -54,10 +55,8 @@ const LearningTips = () => {
 
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-10">
-          <span className="bg-accent-badge-bg text-accent px-5 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-4 inline-block">
-            Learning Optimization
-          </span>
+        <div className="text-center mb-10 flex flex-col items-center">
+          <SectionBadge className="mx-auto">Learning Optimization</SectionBadge>
           <h2 className="text-[28px] md:text-5xl font-[900] text-slate-900 leading-tight">
             Master Your Skills with <br />
             <span className="text-primary">Expert Techniques</span>
@@ -107,7 +106,7 @@ const LearningTips = () => {
                 <p className="opacity-80 font-medium">Apply these strategies to achieve unparalleled progress in your journey.</p>
               </div>
            </div>
-           <Link href={'/allcourses'} className="bg-white text-primary px-8 py-4 rounded-2xl font-black text-sm hover:bg-slate-100 transition-all whitespace-nowrap active:scale-95">
+           <Link href={'/programs'} className="bg-white text-primary px-8 py-4 rounded-2xl font-black text-sm hover:bg-slate-100 transition-all whitespace-nowrap active:scale-95">
               Explore More Resources
            </Link>
         </div>
