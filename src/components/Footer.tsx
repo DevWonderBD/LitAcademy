@@ -19,14 +19,14 @@ import { SiPaytm } from 'react-icons/si';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#FDF1EE] pt-20 pb-8 px-6 lg:px-20 border-t border-slate-200">
+    <footer className="bg-[#fde8e3] pt-20 pb-8 px-6 lg:px-20 border-t border-slate-200">
       <div className="container mx-auto max-w-7xl">
         
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           <div className="lg:col-span-4 flex flex-col">
             <h2 className="text-2xl font-[900] text-slate-900 mb-6 tracking-tight">
-              Skill<span className="text-[#fe6e38]">Sphere</span>.
+              Lit<span className="text-[#fe6e38]">Academy</span>
             </h2>
             <p className="text-slate-500 font-medium leading-relaxed mb-8 pr-4">
               We&apos;re always in search for talented and motivated people. Don&apos;t be shy introduce yourself! Subscribe to our newsletter.
@@ -55,12 +55,12 @@ const Footer = () => {
             <div>
               <h4 className="text-sm font-bold text-slate-900 mb-4">We Accept Payment Gateway</h4>
               <div className="flex flex-wrap items-center gap-3 text-slate-400">
-                <FaPaypal size={24} className="hover:text-[#00457C] transition-colors cursor-pointer" />
-                <FaCcVisa size={24} className="hover:text-[#1A1F71] transition-colors cursor-pointer" />
-                <FaGooglePay size={32} className="hover:text-slate-800 transition-colors cursor-pointer" />
-                <FaApplePay size={32} className="hover:text-black transition-colors cursor-pointer" />
-                <FaStripe size={28} className="hover:text-[#635BFF] transition-colors cursor-pointer" />
-                <SiPaytm size={32} className="hover:text-[#002E6E] transition-colors cursor-pointer" />
+                <FaPaypal size={24} className="hover:text-[var(--color-payment-hover)] transition-colors cursor-pointer" />
+                <FaCcVisa size={24} className="hover:text-[var(--color-payment-hover)] transition-colors cursor-pointer" />
+                <FaGooglePay size={32} className="hover:text-[var(--color-payment-hover)] transition-colors cursor-pointer" />
+                <FaApplePay size={32} className="hover:text-[var(--color-payment-hover)] transition-colors cursor-pointer" />
+                <FaStripe size={28} className="hover:text-[var(--color-payment-hover)] transition-colors cursor-pointer" />
+                <SiPaytm size={32} className="hover:text-[var(--color-payment-hover)] transition-colors cursor-pointer" />
               </div>
             </div>
           </div>

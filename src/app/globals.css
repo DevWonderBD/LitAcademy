@@ -18,11 +18,9 @@
   --color-accent-badge-bg: #fad4c4;    /* লাইটেস্ট কালার: ব্যাজ, পিল ও স্টিকার ব্যাকগ্রাউন্ড */
 
   /* ==========================================================================
-     Brand Navy (Footer এ পেমেন্ট গেটওয়ের আইকন হোভারের জন্য)
+     Payment Icons (Footer এ পেমেন্ট গেটওয়ের আইকন হোভারের জন্য সুনির্দিষ্ট একটি কালার)
      ========================================================================== */
-  --color-navy: #1A1F71;            /* Footer এ Visa কার্ড আইকন হোভার */
-  --color-navy-dark: #002E6E;       /* Footer এ Paytm আইকন হোভার */
-  --color-navy-light: #00457C;      /* Footer এ PayPal আইকন হোভার */
+  --color-payment-hover: #1A1F71;   /* সব পেমেন্ট গেটওয়ে আইকনের (Visa, PayPal, Stripe, Paytm) জন্য একটি মার্জড স্ট্যান্ডার্ড কালার */
 
   /* ==========================================================================
      Surfaces & Backgrounds (হালকা ব্যাকগ্রাউন্ড ও সেকশনের শেড)
@@ -43,8 +41,6 @@
      ========================================================================== */
   --color-success: #21C55D;         /* Hero সেকশনের ব্যাকগ্রাউন্ড ব্লিঙ্ক গ্লো / আকৃতি এবং LearningTips বুলেট পয়েন্ট */
   --color-success-light: #D1FAE5;   /* AboutUs টপ ব্যাজের ভেতরের টেক্সট কালার */
-  --color-brand-purple: #635BFF;    /* Footer এ Stripe পেমেন্ট আইকন হোভার */
-
   /* ==========================================================================
      Overlay
      ========================================================================== */
@@ -59,7 +55,7 @@
   --color-brand-accent-hover: var(--color-accent-hover);
   --color-brand-accent-highlight: var(--color-accent-highlight);
   --color-brand-accent-badge-bg: var(--color-accent-badge-bg);
-  --color-brand-navy: var(--color-navy);
+  --color-brand-payment-hover: var(--color-payment-hover);
   --color-brand-footer-bg: var(--color-footer-bg);
   --color-brand-navbar-bg: var(--color-navbar-bg);
   --color-brand-surface-shade-1: var(--color-surface-shade-1);
