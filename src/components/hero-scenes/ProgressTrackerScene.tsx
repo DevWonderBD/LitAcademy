@@ -6,15 +6,15 @@ export default function ProgressTrackerScene() {
     <div className="relative w-full max-w-lg mx-auto flex flex-col items-center justify-center animate-in fade-in zoom-in duration-700 min-h-[450px]">
       
       {/* Floating Elements */}
-      <div className="absolute -top-4 -left-6 bg-card border border-border/60 shadow-lg w-10 h-10 rounded-full animate-float z-10 hidden md:flex items-center justify-center">
-        <BookOpen className="w-4 h-4 text-emerald-500" />
+      <div className="absolute -top-3 md:-top-4 -left-2 md:-left-6 bg-card border border-border/60 shadow-lg w-8 h-8 md:w-10 md:h-10 rounded-full animate-float z-10 flex items-center justify-center">
+        <BookOpen className="w-3.5 h-3.5 md:w-4 md:h-4 text-emerald-500" />
       </div>
 
-      <div className="absolute top-1/2 -right-4 w-2.5 h-2.5 bg-primary/60 rounded-full animate-float-fast z-10 hidden md:block"></div>
-      <div className="absolute top-1/4 -left-8 w-1.5 h-1.5 bg-accent/60 rounded-full animate-float z-10 hidden md:block"></div>
+      <div className="absolute top-1/2 -right-1 md:-right-4 w-2 h-2 md:w-2.5 md:h-2.5 bg-primary/60 rounded-full animate-float-fast z-10 block"></div>
+      <div className="absolute top-1/4 -left-2 md:-left-8 w-1 h-1 md:w-1.5 md:h-1.5 bg-accent/60 rounded-full animate-float z-10 block"></div>
 
-      <div className="absolute -bottom-6 -right-4 bg-card border border-border/60 shadow-lg w-10 h-10 rounded-full animate-float-delayed z-10 hidden md:flex items-center justify-center">
-        <span className="font-serif font-black text-xl text-primary leading-none">A</span>
+      <div className="absolute -bottom-3 md:-bottom-6 -right-2 md:-right-4 bg-card border border-border/60 shadow-lg w-8 h-8 md:w-10 md:h-10 rounded-full animate-float-delayed z-10 flex items-center justify-center">
+        <span className="font-serif font-black text-lg md:text-xl text-primary leading-none">A</span>
       </div>
 
       {/* Background decoration */}

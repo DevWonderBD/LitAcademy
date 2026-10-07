@@ -6,14 +6,14 @@ export default function PythiaChatScene() {
     <div className="relative w-full max-w-lg mx-auto flex flex-col items-center justify-center animate-in fade-in zoom-in duration-700 min-h-[450px]">
       
       {/* Floating Elements */}
-      <div className="absolute -top-4 -right-4 bg-card border border-border/60 shadow-lg w-10 h-10 rounded-full animate-float z-10 hidden md:flex items-center justify-center">
-        <Sparkles className="w-4 h-4 text-accent fill-accent/20" />
+      <div className="absolute -top-3 md:-top-4 -right-2 md:-right-4 bg-card border border-border/60 shadow-lg w-8 h-8 md:w-10 md:h-10 rounded-full animate-float z-10 flex items-center justify-center">
+        <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4 text-accent fill-accent/20" />
       </div>
 
-      <div className="absolute bottom-1/4 -left-6 w-3 h-3 bg-primary/80 rounded-full animate-float-fast z-10 hidden md:block"></div>
+      <div className="absolute bottom-1/4 -left-2 md:-left-6 w-2.5 h-2.5 md:w-3 md:h-3 bg-primary/80 rounded-full animate-float-fast z-10 block"></div>
 
-      <div className="absolute -bottom-6 -left-4 bg-card border border-border/60 shadow-lg w-10 h-10 rounded-full animate-float-delayed z-10 hidden md:flex items-center justify-center">
-        <span className="font-serif font-black text-2xl text-foreground leading-none pt-2">“</span>
+      <div className="absolute -bottom-3 md:-bottom-6 -left-2 md:-left-4 bg-card border border-border/60 shadow-lg w-8 h-8 md:w-10 md:h-10 rounded-full animate-float-delayed z-10 flex items-center justify-center">
+        <span className="font-serif font-black text-lg md:text-2xl text-foreground leading-none pt-1.5 md:pt-2">“</span>
       </div>
 
       {/* Background decoration */}
