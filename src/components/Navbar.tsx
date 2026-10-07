@@ -3,7 +3,7 @@ import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Loader2, Menu, BookOpen, GraduationCap, ArrowRight } from "lucide-react";
+import { Loader2, Menu, BookOpen, GraduationCap, ArrowRight, User } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -48,14 +48,18 @@ const AuthSection = ({ isPending, user }: { isPending: boolean; user: any }) => 
       <DropdownMenu>
         <DropdownMenuTrigger className="outline-none">
           <div className="flex items-center gap-3 bg-transparent hover:bg-muted/50 p-1.5 md:pr-3 rounded-full border border-transparent transition-all cursor-pointer">
-            <div className="w-9 h-9 md:w-10 md:h-10 rounded-full relative overflow-hidden border border-border bg-card">
-              <Image
-                src={user.image || "/placeholder.jpg"}
-                alt={user.name || "User"}
-                fill
-                sizes="40px"
-                className="object-cover"
-              />
+            <div className="w-9 h-9 md:w-10 md:h-10 rounded-full relative overflow-hidden border border-border bg-card flex items-center justify-center">
+              {user.image ? (
+                <Image
+                  src={user.image}
+                  alt={user.name || "User"}
+                  fill
+                  sizes="40px"
+                  className="object-cover"
+                />
+              ) : (
+                <User className="w-5 h-5 text-primary" />
+              )}
             </div>
             <div className="hidden lg:flex flex-col text-left">
               <h5 className="text-sm font-black text-foreground leading-none capitalize">
