@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookMarked, Library } from 'lucide-react';
+import { BookMarked, Library, Feather } from 'lucide-react';
 
 export default function LiteraryTermsScene() {
   const terms = [
@@ -16,14 +16,14 @@ export default function LiteraryTermsScene() {
     <div className="relative w-full max-w-lg mx-auto flex flex-col items-center justify-center animate-in fade-in zoom-in duration-700 min-h-[450px]">
       
       {/* Floating Elements */}
-      <div className="absolute -top-3 -right-4 bg-card/80 backdrop-blur-md border border-border/50 shadow-xl px-4 py-2.5 rounded-full animate-float z-10 hidden md:flex items-center gap-2">
-        <span className="text-[11px] font-black text-accent uppercase tracking-widest">Vocabulary</span>
+      <div className="absolute -top-3 -right-4 bg-card border border-border/60 shadow-lg w-10 h-10 rounded-full animate-float z-10 hidden md:flex items-center justify-center">
+        <Feather className="w-4 h-4 text-accent" />
       </div>
 
-      <div className="absolute -bottom-5 -left-4 bg-card/80 backdrop-blur-md border border-border/50 shadow-xl p-3 rounded-2xl animate-float-delayed z-10 hidden md:flex items-center gap-3">
-        <div className="bg-accent/10 p-2 rounded-full">
-          <Library className="w-4 h-4 text-accent" />
-        </div>
+      <div className="absolute top-1/4 -right-8 w-2 h-2 bg-emerald-400/80 rounded-full animate-float-fast z-10 hidden md:block"></div>
+
+      <div className="absolute -bottom-5 -left-4 bg-card border border-border/60 shadow-lg w-10 h-10 rounded-full animate-float-delayed z-10 hidden md:flex items-center justify-center">
+        <Library className="w-4 h-4 text-primary" />
       </div>
 
       {/* Background decoration */}

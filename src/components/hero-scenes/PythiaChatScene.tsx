@@ -6,18 +6,14 @@ export default function PythiaChatScene() {
     <div className="relative w-full max-w-lg mx-auto flex flex-col items-center justify-center animate-in fade-in zoom-in duration-700 min-h-[450px]">
       
       {/* Floating Elements */}
-      <div className="absolute -top-5 -right-6 bg-card/80 backdrop-blur-md border border-border/50 shadow-xl px-4 py-2.5 rounded-full animate-float z-10 hidden md:flex items-center gap-2.5">
-        <span className="relative flex h-2.5 w-2.5">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-        </span>
-        <span className="text-[11px] font-bold text-foreground uppercase tracking-wider">Pythia AI</span>
+      <div className="absolute -top-4 -right-4 bg-card border border-border/60 shadow-lg w-10 h-10 rounded-full animate-float z-10 hidden md:flex items-center justify-center">
+        <Sparkles className="w-4 h-4 text-accent fill-accent/20" />
       </div>
 
-      <div className="absolute -bottom-6 -left-6 bg-card/80 backdrop-blur-md border border-border/50 shadow-xl p-3.5 rounded-2xl animate-float-delayed z-10 hidden md:flex items-center gap-3">
-        <div className="bg-accent/10 p-2 rounded-full">
-          <Brain className="w-4 h-4 text-accent" />
-        </div>
+      <div className="absolute bottom-1/4 -left-6 w-3 h-3 bg-primary/80 rounded-full animate-float-fast z-10 hidden md:block"></div>
+
+      <div className="absolute -bottom-6 -left-4 bg-card border border-border/60 shadow-lg w-10 h-10 rounded-full animate-float-delayed z-10 hidden md:flex items-center justify-center">
+        <span className="font-serif font-black text-2xl text-foreground leading-none pt-2">“</span>
       </div>
 
       {/* Background decoration */}

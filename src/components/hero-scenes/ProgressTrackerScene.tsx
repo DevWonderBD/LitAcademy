@@ -1,19 +1,20 @@
 import React from 'react';
-import { CheckCircle2, CircleDashed, GraduationCap, ArrowUpRight, Target } from 'lucide-react';
+import { CheckCircle2, CircleDashed, GraduationCap, ArrowUpRight, Target, BookOpen } from 'lucide-react';
 
 export default function ProgressTrackerScene() {
   return (
     <div className="relative w-full max-w-lg mx-auto flex flex-col items-center justify-center animate-in fade-in zoom-in duration-700 min-h-[450px]">
       
       {/* Floating Elements */}
-      <div className="absolute -top-4 -left-6 bg-card/80 backdrop-blur-md border border-border/50 shadow-xl px-4 py-2.5 rounded-full animate-float z-10 hidden md:flex items-center gap-2">
-        <span className="text-[11px] font-black text-primary uppercase tracking-widest">A+ Standard</span>
+      <div className="absolute -top-4 -left-6 bg-card border border-border/60 shadow-lg w-10 h-10 rounded-full animate-float z-10 hidden md:flex items-center justify-center">
+        <BookOpen className="w-4 h-4 text-emerald-500" />
       </div>
 
-      <div className="absolute -bottom-8 -right-4 bg-card/80 backdrop-blur-md border border-border/50 shadow-xl p-3.5 rounded-2xl animate-float-delayed z-10 hidden md:flex items-center gap-3">
-        <div className="bg-primary/10 p-2 rounded-full">
-          <Target className="w-4 h-4 text-primary" />
-        </div>
+      <div className="absolute top-1/2 -right-4 w-2.5 h-2.5 bg-primary/60 rounded-full animate-float-fast z-10 hidden md:block"></div>
+      <div className="absolute top-1/4 -left-8 w-1.5 h-1.5 bg-accent/60 rounded-full animate-float z-10 hidden md:block"></div>
+
+      <div className="absolute -bottom-6 -right-4 bg-card border border-border/60 shadow-lg w-10 h-10 rounded-full animate-float-delayed z-10 hidden md:flex items-center justify-center">
+        <span className="font-serif font-black text-xl text-primary leading-none">A</span>
       </div>
 
       {/* Background decoration */}
