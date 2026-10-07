@@ -1,62 +1,145 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
   /* ==========================================================================
-     Brand Primary (Teal ও তার বিভিন্ন শেড - মূল বাটন, হেডার, লিংকের জন্য)
+     Shadcn UI System Tokens (Light Mode - mapped to our custom palette)
      ========================================================================== */
-  --color-primary: #149988;         /* মূল ব্র্যান্ড কালার: বাটন, হেডার, ইনপুট ফোকাস */
-  --color-primary-hover: #0f7d6f;   /* একটি সুনির্দিষ্ট হোভার স্টেট (আগের #0f7d6f, #158d7b, #107568, #117a6d, #0a5249 মার্জ করে একটি করা হয়েছে) */
-  --color-primary-light: #1bb59f;   /* লাইট শেড (ব্যাজ, সেকেন্ডারি এলিমেন্টের জন্য) */
+  --background: #FFFAF8;          /* সেকশন শেড ১ / ক্লিন ওয়ার্ম ব্যাকগ্রাউন্ড */
+  --foreground: #111827;          /* মূল টেক্সট কালার */
 
-  /* ==========================================================================
-     Accent (Warm Reddish-Orange - লোগো 'Sphere', বাটন, হাইলাইট ও ব্যাজের জন্য)
-     ========================================================================== */
-  --color-accent: #fe6e38;             /* মূল অ্যাকসেন্ট কালার (লোগোর 'Sphere' এর একটু রেডিশ-অরেঞ্জ কালার) */
-  --color-accent-hover: #e06510;       /* অ্যাকসেন্ট বাটন হোভার স্টেট (#e06510, #e66509, #D35400 মার্জ করে একটি করা হয়েছে) */
-  --color-accent-highlight: #f8b188;   /* লাইটার কালার: হেডার টেক্সট হাইলাইট / সফট অ্যাকসেন্ট এলিমেন্ট */
-  --color-accent-badge-bg: #fad4c4;    /* লাইটেস্ট কালার: ব্যাজ, পিল ও স্টিকার ব্যাকগ্রাউন্ড */
+  --card: #FFFFFF;                /* কার্ডের জন্য ক্লিন সাদা */
+  --card-foreground: #111827;
 
-  /* ==========================================================================
-     Payment Icons (Footer এ পেমেন্ট গেটওয়ের আইকন হোভারের জন্য সুনির্দিষ্ট একটি কালার)
-     ========================================================================== */
-  --color-payment-hover: #1A1F71;   /* সব পেমেন্ট গেটওয়ে আইকনের (Visa, PayPal, Stripe, Paytm) জন্য একটি মার্জড স্ট্যান্ডার্ড কালার */
+  --popover: #FFFFFF;             /* ড্রপডাউন ও পপওভার */
+  --popover-foreground: #111827;
 
-  /* ==========================================================================
-     Surfaces & Backgrounds (হালকা ব্যাকগ্রাউন্ড ও সেকশনের শেড)
-     ========================================================================== */
-  --color-footer-bg: #fde8e3;       /* নতুন ডার্কার ফুটার ব্যাকগ্রাউন্ড কালার */
-  --color-navbar-bg: #FDF1EE;       /* পূর্বের ফুটার কালার এখন Navbar এ ব্যবহার করা হবে */
-  --color-surface-shade-1: #FFFAF8;  /* সেকশন ব্যাকগ্রাউন্ড শেড ১ (একটু ক্লিন/সাদাটে ওয়ার্ম শেড) */
-  --color-surface-shade-2: #F9F1EF;  /* সেকশন ব্যাকগ্রাউন্ড শেড ২ (আগের Navbar কালার, খুব সফট পিচ শেড) */
+  --primary: #149988;             /* আমাদের Teal প্রাইমারি */
+  --primary-foreground: #FFFFFF;
+  --primary-hover: #0f7d6f;       /* প্রাইমারি হোভার */
+  --primary-light: #1bb59f;
 
-  /* ==========================================================================
-     Typography / Text (হেডিং ও ব্র্যান্ড টেক্সট)
-     ========================================================================== */
-  --color-text-main: #111827;       /* মূল ডিপ হেডিং কালার: Hero Title, CourseSection Heading, AboutUs Headings ও কাউন্টার সংখ্যা */
-  --color-text-muted: #2C3E50;      /* Navbar লোগোর প্রথম অংশ ('Skill') টেক্সট কালার */
+  --secondary: #FDF1EE;           /* আমাদের ওয়ার্ম সারফেস (Navbar/হালকা কন্টেইনার) */
+  --secondary-foreground: #111827;
 
-  /* ==========================================================================
-     Status & Miscellaneous
-     ========================================================================== */
-  --color-success: #21C55D;         /* Hero সেকশনের ব্যাকগ্রাউন্ড ব্লিঙ্ক গ্লো / আকৃতি এবং LearningTips বুলেট পয়েন্ট */
-  --color-success-light: #D1FAE5;   /* AboutUs টপ ব্যাজের ভেতরের টেক্সট কালার */
-  /* ==========================================================================
-     Overlay
-     ========================================================================== */
-  --color-overlay: rgba(20, 153, 136, 0.03); /* FAQ সেকশনের ওয়াটারমার্ক ও রিডিয়াল গ্রেডিয়েন্ট গ্লো */
+  --muted: #F9F1EF;               /* সেকশন শেড ২ / মিউটেড ব্যাকগ্রাউন্ড */
+  --muted-foreground: #64748B;
+
+  --accent: #fe6e38;              /* আমাদের লোগোর Reddish-Orange অ্যাকসেন্ট */
+  --accent-foreground: #FFFFFF;
+  --accent-hover: #e06510;
+  --accent-highlight: #f8b188;
+  --accent-badge-bg: #fad4c4;
+
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #149988;                /* ফোকাস রিং Teal কালার */
+
+  --radius: 0.75rem;
+
+  /* Custom project background tokens */
+  --footer-bg: #fde8e3;
+  --navbar-bg: #FDF1EE;
+  --payment-hover: #1A1F71;
+  --overlay: rgba(20, 153, 136, 0.03);
 }
 
-@theme {
-  --color-brand-primary: var(--color-primary);
-  --color-brand-primary-hover: var(--color-primary-hover);
-  --color-brand-primary-light: var(--color-primary-light);
-  --color-brand-accent: var(--color-accent);
-  --color-brand-accent-hover: var(--color-accent-hover);
-  --color-brand-accent-highlight: var(--color-accent-highlight);
-  --color-brand-accent-badge-bg: var(--color-accent-badge-bg);
-  --color-brand-payment-hover: var(--color-payment-hover);
-  --color-brand-footer-bg: var(--color-footer-bg);
-  --color-brand-navbar-bg: var(--color-navbar-bg);
-  --color-brand-surface-shade-1: var(--color-surface-shade-1);
-  --color-brand-surface-shade-2: var(--color-surface-shade-2);
+.dark {
+  --background: #0F172A;
+  --foreground: #F8FAFC;
+
+  --card: #1E293B;
+  --card-foreground: #F8FAFC;
+
+  --popover: #1E293B;
+  --popover-foreground: #F8FAFC;
+
+  --primary: #149988;
+  --primary-foreground: #FFFFFF;
+  --primary-hover: #1bb59f;
+  --primary-light: #0f7d6f;
+
+  --secondary: #1E293B;
+  --secondary-foreground: #F8FAFC;
+
+  --muted: #334155;
+  --muted-foreground: #94A3B8;
+
+  --accent: #fe6e38;
+  --accent-foreground: #FFFFFF;
+  --accent-hover: #f8b188;
+  --accent-highlight: #e06510;
+  --accent-badge-bg: #431407;
+
+  --destructive: #7F1D1D;
+  --destructive-foreground: #F8FAFC;
+
+  --border: #334155;
+  --input: #334155;
+  --ring: #149988;
+
+  --footer-bg: #0F172A;
+  --navbar-bg: #0F172A;
+  --payment-hover: #93C5FD;
+  --overlay: rgba(20, 153, 136, 0.1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-highlight: var(--accent-highlight);
+  --color-accent-badge-bg: var(--accent-badge-bg);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-footer-bg: var(--footer-bg);
+  --color-navbar-bg: var(--navbar-bg);
+  --color-payment-hover: var(--payment-hover);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
