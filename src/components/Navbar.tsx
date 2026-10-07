@@ -146,7 +146,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex-1 flex justify-center">
-          <NavigationMenu>
+          <NavigationMenu align="center">
             <NavigationMenuList className="gap-2">
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
@@ -189,7 +189,7 @@ const Navbar = () => {
                       <div className="relative z-10">
                         <h3 className="text-white font-heading font-bold text-2xl mb-3 tracking-tight">LitAcademy</h3>
                         <p className="text-primary-foreground/85 text-[13px] leading-relaxed font-medium">
-                          A fully structured path to mastering your National University syllabus. Hover, read, and understand English Literature effortlessly.
+                          A fully structured path to mastering your academic journey. Dive deep into essential literary texts, explore complex critical theories, and build a strong foundation in English Literature effortlessly.
                         </p>
                       </div>
 
