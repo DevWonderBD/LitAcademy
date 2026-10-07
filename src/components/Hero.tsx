@@ -2,7 +2,7 @@
 
 import HeroFigure from '@/assets/HeroFigure.png';
 import Image from 'next/image';
-import { FaPlay } from 'react-icons/fa';
+import { Play, ArrowRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 type HeroVariant = {
@@ -32,10 +32,10 @@ const variants: HeroVariant[] = [
     title: "Your journey through",
     highlight: "English literature.",
     description:
-      "Go beyond rote memorisation. Every passage, every author, and every complex idea — carefully explained so you can build genuine critical understanding, rather than just basic exam-ready answers.",
+      "Go beyond memorisation. Every passage, every author, and every complex idea — carefully explained so you can build critical understanding, rather than just basic exam-ready answers.",
   },
   {
-    title: "Begin to truly understand",
+    title: "Begin to understand",
     highlight: "English literature.",
     description:
       "Encounter a totally unfamiliar word? Simply hover over it. Confused by a difficult concept? It is beautifully explained right there — keeping your reading experience finally clear, focused, and uninterrupted.",
@@ -63,7 +63,7 @@ const Hero = () => {
 
           {/* Left Content */}
           <div className="lg:w-[60%] lg:py-10 z-10">
-            <span className="bg-accent/10 border border-accent/20 text-accent-hover px-6 py-1.5 rounded-xl text-[12px] lg:text-[13px] font-black tracking-wider shadow-sm inline-block uppercase font-reading gap-1 italic">
+            <span className="bg-accent/10 border border-accent/20 text-accent-hover px-6 py-1 rounded-xl text-[12px] lg:text-[12px] font-black tracking-wider shadow-sm inline-block uppercase font-reading gap-1 italic">
               Literature Learning Made Easy
             </span>
 
@@ -90,16 +90,18 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-2 md:gap-4 mb-6">
-              <button className="bg-primary text-white px-4 md:px-8 py-2.5 rounded-full font-extrabold text-sm flex items-center gap-2 hover:bg-primary-hover transition-all shadow-lg cursor-pointer group">
-                Choose Your Programme <span className="text-xl inline-block group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
+            <div className="flex items-center gap-2 sm:gap-4 mb-6">
+              <button className="group relative overflow-hidden flex items-center gap-1.5 sm:gap-2 bg-primary text-white px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-bold text-[11px] sm:text-sm hover:bg-primary-hover hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap">
+                <span className="relative z-10">Choose Programme</span>
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+                <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-700 ease-in-out"></div>
               </button>
 
-              <button className="flex items-center gap-2 font-extrabold text-foreground hover:text-accent transition-all group border border-accent p-1 rounded-full">
-                <span className="w-10 h-10 flex items-center justify-center bg-accent text-white rounded-full shadow-lg group-hover:scale-110 transition-transform">
-                  <FaPlay className="text-[10px] ml-0.5" />
+              <button className="group flex items-center gap-1.5 sm:gap-2.5 font-bold text-[11px] sm:text-sm text-foreground hover:text-accent transition-all duration-300 border border-accent/20 hover:border-accent/50 p-1 pr-4 sm:pr-6 rounded-full bg-white hover:bg-accent/5 hover:shadow-xl hover:shadow-accent/10 whitespace-nowrap hover:-translate-y-0.5">
+                <span className="w-7 h-7 sm:w-10 sm:h-10 flex items-center justify-center bg-accent text-white rounded-full shadow-md group-hover:scale-110 group-hover:bg-accent-hover transition-all duration-300">
+                  <Play className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 ml-0.5 fill-current" />
                 </span>
-                <span className="mr-2">See How It Works</span>
+                <span>See How It Works</span>
               </button>
             </div>
           </div>
