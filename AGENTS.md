@@ -32,7 +32,6 @@ src/server/     core/ content/ ai/   → framework-agnostic business logic
 src/db/         Drizzle schema and client
 src/lib/        adapters: auth, mongo, cache, ratelimit, storage, mail
 src/config/     brand.ts, site.ts, env.ts
-src/messages/   en.json, bn.json
 drizzle/        committed SQL migrations
 ```
 - **`src/server/*` must not import from `next/*`** (no `NextRequest`, `headers()`, `cookies()`). Pass what you need in as arguments. This keeps the later move to separate Express services on a VPS trivial.
@@ -43,10 +42,9 @@ drizzle/        committed SQL migrations
 ## Vocabulary (strict)
 Never write **Course, Lesson, Enroll, Buy, Free Trial, Trending, Best Seller, Instructor** in UI copy, routes, component names or comments. Use **Program, Paper, Topic/Reading, Begin/Continue, Most Read, Recently Added, Study Method**. No star ratings, prices, fake stats, fake people or lorem ipsum anywhere.
 
-## UI, design and i18n
+## UI and design
 - Use design tokens (`--color-primary`, etc. from `src/styles/tokens.css`); **never hard-code hex colours** in components. Palette and fonts are defined in the PRD §8.
 - Premium, calm, professional: neutral surfaces, 8 px radius, thin borders, restrained gold accent. Do not reintroduce peach sections, orange blobs, rotated pill labels or stock photos.
-- **No hard-coded UI strings.** Add keys to both `src/messages/en.json` and `src/messages/bn.json`. Notes/content are single-version (English with Bangla `bangla_note` callouts); only the interface is translated.
 - Bangla text: Anek Bangla (UI), Noto Serif Bengali (reading), line-height ≥ 1.8.
 - Accessibility is required: keyboard operable, visible focus, ARIA on accordions/dialogs/popovers, alt text on every image, `prefers-reduced-motion` respected. Term tooltips must also work on touch and focus.
 - Animations use transform/opacity only.
@@ -94,4 +92,4 @@ Never write **Course, Lesson, Enroll, Buy, Free Trial, Trending, Best Seller, In
 - If requirements are ambiguous or a change affects the data model, auth, or deployment portability, **ask before proceeding** and note the decision in `docs/PRD.md` §14 if it resolves an open item.
 
 ## Definition of done
-Typecheck, lint and tests pass · both languages updated for new UI strings · design tokens used · accessibility checked · no forbidden vocabulary · migrations reviewed · `.env.example` updated · no `src/server/*` import from `next/*` · docs updated if behaviour changed.
+Typecheck, lint and tests pass · design tokens used · accessibility checked · no forbidden vocabulary · migrations reviewed · `.env.example` updated · no `src/server/*` import from `next/*` · docs updated if behaviour changed.

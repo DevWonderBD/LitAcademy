@@ -12,30 +12,40 @@ const Hero = () => {
           {/* Left Content */}
           <div className="lg:w-1/2 z-10">
             <span className="bg-accent-badge-bg text-accent px-6 py-1 rounded-xl text-xs font-bold tracking-wide shadow-sm inline-block -rotate-12">
-              eLearning Platform
+              For National University English students
             </span>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-[700] text-foreground mt-8 mb-6 leading-[1.05] tracking-tight">
-              Smart Learning <br />
-              Deeper & More <br />
-              <span className="text-accent">-Amazing</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-[700] text-foreground mt-8 mb-6 leading-[1.05] tracking-tight font-heading">
+              The perfect place to learn English literature.
             </h1>
             
-            <p className="text-gray-600 text-base md:text-lg lg:text-lg max-w-lg mb-10 leading-relaxed font-medium">
-              Phosfluorescently deploy unique intellectual capital without enterprise-after bricks & clicks synergy. Enthusiastically revolutionize intuitive.
+            <p className="text-gray-600 text-base md:text-lg max-w-lg mb-10 leading-relaxed font-medium">
+              Syllabus-based notes for NU Honours and Masters. Hover over any literary term to understand it instantly, save your own notes, and test yourself — free.
             </p>
             
             <div className="flex items-center gap-2 md:gap-4">
-              <button className="bg-primary-light hover:bg-primary-hover text-white px-4 md:px-8 py-2.5 rounded-full font-extrabold text-sm flex items-center gap-2 transition-all shadow-lg shadow-green-100 cursor-pointer group">
-                Start Free Trial <span className="text-xl inline-block group-hover:rotate-45 group-hover:scale-130 transition-transform">↗</span>
+              <button className="bg-primary text-white px-4 md:px-8 py-2.5 rounded-full font-extrabold text-sm flex items-center gap-2 hover:bg-primary-hover transition-all shadow-lg cursor-pointer group">
+                Choose Your Program <span className="text-xl inline-block group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
               </button>
               
               <button className="flex items-center gap-2 font-extrabold text-foreground hover:text-accent transition-all group border border-accent p-1 rounded-full">
-                <span className="w-10 h-10 flex items-center justify-center bg-accent text-white rounded-full shadow-lg shadow-orange-100 group-hover:scale-110 transition-transform">
+                <span className="w-10 h-10 flex items-center justify-center bg-accent text-white rounded-full shadow-lg group-hover:scale-110 transition-transform">
                   <FaPlay className="text-[10px] ml-0.5" />
                 </span>
-                <span className='mr-2'>How it Works</span>
+                <span className='mr-2'>See How It Works</span>
               </button>
+            </div>
+
+            <div className="mt-8 flex flex-col gap-4">
+              <div className="text-sm font-semibold text-gray-500">
+                Pick your program → Read and hover → Save and practice
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-white/60 px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm border border-primary/10">Hover-to-learn terms</span>
+                <span className="bg-white/60 px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm border border-primary/10">Your own saved notes</span>
+                <span className="bg-white/60 px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm border border-primary/10">Practice quizzes</span>
+                <span className="bg-white/60 px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm border border-primary/10">Pythia, your AI guide</span>
+              </div>
             </div>
           </div>
 
