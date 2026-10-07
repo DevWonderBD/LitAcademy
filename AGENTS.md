@@ -88,6 +88,7 @@ Never write **Course, Lesson, Enroll, Buy, Free Trial, Trending, Best Seller, In
 
 ## Git and workflow
 - Small, focused commits, imperative messages (`Add term tooltip component`). One concern per PR.
+- **Every time you modify something and complete a change, add and commit it immediately.**
 - Work milestone by milestone (PRD §15). Do not build later-milestone features early.
 - Add or update tests for new server logic; add a Playwright test for any new critical user flow (auth, reading, notes).
 - If requirements are ambiguous or a change affects the data model, auth, or deployment portability, **ask before proceeding** and note the decision in `docs/PRD.md` §14 if it resolves an open item.
