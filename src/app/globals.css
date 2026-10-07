@@ -6,51 +6,68 @@
 
 :root {
   /* ==========================================================================
-     Shadcn UI System Tokens (Light Mode - mapped to our custom palette)
+     Brand Primary & Accent Tokens
      ========================================================================== */
-  --background: #FFFAF8;          /* সেকশন শেড ১ / ক্লিন ওয়ার্ম ব্যাকগ্রাউন্ড */
-  --foreground: #111827;          /* মূল টেক্সট কালার */
+  --primary: #149988;                 /* Primary brand color (Teal) */
+  --primary-foreground: #FFFFFF;
+  --primary-hover: #0f7d6f;          /* Primary hover state */
+  --primary-light: #1bb59f;          /* Primary lighter accent/badge */
 
-  --card: #FFFFFF;                /* কার্ডের জন্য ক্লিন সাদা */
+  --accent: #fe6e38;                 /* Brand accent (Warm reddish orange from logo) */
+  --accent-foreground: #FFFFFF;
+  --accent-hover: #e06510;           /* Accent hover state */
+  --accent-highlight: #f8b188;       /* Accent soft text highlight */
+  --accent-badge-bg: #fad4c4;        /* Accent light badge / pill background */
+
+  /* ==========================================================================
+     Surfaces & Background Tokens
+     ========================================================================== */
+  --background: #FFFAF8;             /* Main clean warm background (Shade 1) */
+  --foreground: #111827;             /* Main heading and body text */
+
+  --card: #FFFFFF;                   /* Card / surface background */
   --card-foreground: #111827;
 
-  --popover: #FFFFFF;             /* ড্রপডাউন ও পপওভার */
+  --popover: #FFFFFF;                /* Popover / dropdown background */
   --popover-foreground: #111827;
 
-  --primary: #149988;             /* আমাদের Teal প্রাইমারি */
-  --primary-foreground: #FFFFFF;
-  --primary-hover: #0f7d6f;       /* প্রাইমারি হোভার */
-  --primary-light: #1bb59f;
-
-  --secondary: #FDF1EE;           /* আমাদের ওয়ার্ম সারফেস (Navbar/হালকা কন্টেইনার) */
+  --secondary: #FDF1EE;              /* Warm header / section background */
   --secondary-foreground: #111827;
 
-  --muted: #F9F1EF;               /* সেকশন শেড ২ / মিউটেড ব্যাকগ্রাউন্ড */
+  --muted: #F9F1EF;                  /* Soft muted section background (Shade 2) */
   --muted-foreground: #64748B;
 
-  --accent: #fe6e38;              /* আমাদের লোগোর Reddish-Orange অ্যাকসেন্ট */
-  --accent-foreground: #FFFFFF;
-  --accent-hover: #e06510;
-  --accent-highlight: #f8b188;
-  --accent-badge-bg: #fad4c4;
+  --footer-bg: #fde8e3;              /* Dedicated footer background */
+  --navbar-bg: #FDF1EE;              /* Navbar background */
+
+  /* ==========================================================================
+     Utility & System Tokens
+     ========================================================================== */
+  --payment-hover: #1A1F71;          /* Payment gateway icons hover color */
+  --overlay: rgba(20, 153, 136, 0.03);
 
   --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
 
   --border: #E2E8F0;
   --input: #E2E8F0;
-  --ring: #149988;                /* ফোকাস রিং Teal কালার */
+  --ring: #149988;
 
   --radius: 0.75rem;
-
-  /* Custom project background tokens */
-  --footer-bg: #fde8e3;
-  --navbar-bg: #FDF1EE;
-  --payment-hover: #1A1F71;
-  --overlay: rgba(20, 153, 136, 0.03);
 }
 
 .dark {
+  --primary: #149988;
+  --primary-foreground: #FFFFFF;
+  --primary-hover: #1bb59f;
+  --primary-light: #0f7d6f;
+
+  --accent: #fe6e38;
+  --accent-foreground: #FFFFFF;
+  --accent-hover: #f8b188;
+  --accent-highlight: #e06510;
+  --accent-badge-bg: #431407;
+
   --background: #0F172A;
   --foreground: #F8FAFC;
 
@@ -60,22 +77,17 @@
   --popover: #1E293B;
   --popover-foreground: #F8FAFC;
 
-  --primary: #149988;
-  --primary-foreground: #FFFFFF;
-  --primary-hover: #1bb59f;
-  --primary-light: #0f7d6f;
-
   --secondary: #1E293B;
   --secondary-foreground: #F8FAFC;
 
   --muted: #334155;
   --muted-foreground: #94A3B8;
 
-  --accent: #fe6e38;
-  --accent-foreground: #FFFFFF;
-  --accent-hover: #f8b188;
-  --accent-highlight: #e06510;
-  --accent-badge-bg: #431407;
+  --footer-bg: #0F172A;
+  --navbar-bg: #0F172A;
+
+  --payment-hover: #93C5FD;
+  --overlay: rgba(20, 153, 136, 0.1);
 
   --destructive: #7F1D1D;
   --destructive-foreground: #F8FAFC;
@@ -83,14 +95,10 @@
   --border: #334155;
   --input: #334155;
   --ring: #149988;
-
-  --footer-bg: #0F172A;
-  --navbar-bg: #0F172A;
-  --payment-hover: #93C5FD;
-  --overlay: rgba(20, 153, 136, 0.1);
 }
 
 @theme inline {
+  /* Shadcn Core Tokens & Standard Utility Classes */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
@@ -124,9 +132,23 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
+  /* Manual Utility Classes (e.g. bg-footer-bg, bg-navbar-bg, text-payment-hover) */
   --color-footer-bg: var(--footer-bg);
   --color-navbar-bg: var(--navbar-bg);
   --color-payment-hover: var(--payment-hover);
+
+  /* Explicit Brand Aliases for Manual Usage (e.g. bg-brand-primary, text-brand-accent) */
+  --color-brand-primary: var(--primary);
+  --color-brand-primary-hover: var(--primary-hover);
+  --color-brand-primary-light: var(--primary-light);
+  --color-brand-accent: var(--accent);
+  --color-brand-accent-hover: var(--accent-hover);
+  --color-brand-accent-highlight: var(--accent-highlight);
+  --color-brand-accent-badge-bg: var(--accent-badge-bg);
+  --color-brand-footer-bg: var(--footer-bg);
+  --color-brand-navbar-bg: var(--navbar-bg);
+  --color-brand-surface-shade-1: var(--background);
+  --color-brand-surface-shade-2: var(--muted);
 
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
