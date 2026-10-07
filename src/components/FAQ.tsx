@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
+import { SectionBadge } from '@/components/ui/section-badge';
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -41,10 +42,8 @@ const FAQ = () => {
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           
           <div className="lg:w-1/3 flex flex-col justify-start">
-            <span className="text-accent bg-accent/10 px-4 py-1.5 rounded-full font-black uppercase tracking-widest text-[10px] mb-4 w-max">
-              Testimonial & FAQ
-            </span>
-            <h2 className="text-4xl md:text-4xl font-[900] text-slate-900 leading-tight mb-6">
+            <SectionBadge>Testimonial & FAQ</SectionBadge>
+            <h2 className="text-4xl md:text-4xl font-[900] text-slate-900 leading-tight mt-4 mb-6">
               Frequently asked <br />
               <span className="text-primary">Questions</span>
             </h2>
