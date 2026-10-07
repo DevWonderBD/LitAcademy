@@ -67,6 +67,7 @@ const Hero = () => {
 
   // We set it on mount to avoid hydration mismatch between server and client if we use random
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCurrent(pickRandom(variants));
   }, []);
 
