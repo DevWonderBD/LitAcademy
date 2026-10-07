@@ -1,21 +1,18 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { HiOutlineMail, HiOutlineUser, HiOutlinePhotograph, HiOutlinePencilAlt, HiOutlineX } from 'react-icons/hi';
+import { Loader2 } from 'lucide-react';
 import { authClient } from '@/lib/auth-client';
 
 const ProfilePage = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const userData = authClient.useSession();
     const user = userData.data?.user;
 
-    const openModal = () => {
-        (document.getElementById('edit_profile_modal') as HTMLDialogElement).showModal();
-    };
-
-    const closeModal = () => {
-        (document.getElementById('edit_profile_modal') as HTMLDialogElement).close();
-    };
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
 
     const onSubmit = async(e)=>{
         const name = e.target.name.value;
@@ -31,7 +28,7 @@ const ProfilePage = () => {
     if (!user) {
         return (
             <div className="min-h-screen flex items-center justify-center">
-                <span className="loading loading-dots loading-lg text-[#149988]"></span>
+                <Loader2 className="w-8 h-8 animate-spin text-[#149988]" />
             </div>
         );
     }
@@ -92,61 +89,60 @@ const ProfilePage = () => {
                 </div>
             </div>
 
-            <dialog id="edit_profile_modal" className="modal modal-bottom sm:modal-middle backdrop-blur-sm bg-slate-900/40">
-                <div className="modal-box bg-white w-full max-w-md rounded-[40px] shadow-2xl p-8">
-                    
-                    <div className="flex justify-between items-center mb-8">
-                        <h2 className="text-2xl font-black text-slate-900">Update Profile</h2>
-                        <form method="dialog">
-                            <button className="p-2 hover:bg-slate-100 rounded-full transition-colors cursor-pointer outline-none">
-                                <HiOutlineX size={24} className="text-slate-400" />
+            {/* Update Profile Modal */}
+            {isModalOpen && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in">
+                    <div className="bg-white w-full max-w-md rounded-[32px] shadow-2xl p-8 relative">
+                        <div className="flex justify-between items-center mb-6">
+                            <h2 className="text-2xl font-black text-slate-900">Update Profile</h2>
+                            <button
+                                onClick={closeModal}
+                                className="p-2 hover:bg-slate-100 rounded-full transition-colors cursor-pointer text-slate-400 hover:text-slate-600"
+                            >
+                                <HiOutlineX size={24} />
+                            </button>
+                        </div>
+
+                        <form onSubmit={onSubmit} className="space-y-6">
+                            <div>
+                                <label className="block text-xs font-black text-slate-500 uppercase mb-2 ml-1">New Name</label>
+                                <div className="relative">
+                                    <input
+                                        type="text"
+                                        name='name'
+                                        placeholder='Enter Your Name'
+                                        defaultValue={user.name}
+                                        className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-700 focus:outline-none focus:border-[#149988] focus:ring-1 focus:ring-[#149988] transition-all font-medium"
+                                    />
+                                    <HiOutlineUser className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label className="block text-xs font-black text-slate-500 uppercase mb-2 ml-1">Profile Image URL</label>
+                                <div className="relative">
+                                    <input
+                                        type="url"
+                                        name='image'
+                                        placeholder='Enter Your Image Url'
+                                        defaultValue={user.image}
+                                        className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-700 focus:outline-none focus:border-[#149988] focus:ring-1 focus:ring-[#149988] transition-all font-medium"
+                                    />
+                                    <HiOutlinePhotograph className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+                                </div>
+                            </div>
+
+                            <button
+                                type="submit"
+                                onClick={closeModal}
+                                className="w-full bg-[#149988] text-white py-4 rounded-2xl font-bold text-lg hover:bg-[#0f7d6f] shadow-lg shadow-teal-900/10 transition-all active:scale-95 cursor-pointer"
+                            >
+                                Save Changes
                             </button>
                         </form>
                     </div>
-
-                    <form onSubmit={onSubmit} className="space-y-6">
-                        <div>
-                            <label className="block text-xs font-black text-slate-500 uppercase mb-2 ml-1">New Name</label>
-                            <div className="relative">
-                                <input
-                                    type="text"
-                                    name='name'
-                                    placeholder='Enter Your Name'
-                                    defaultValue={user.name}
-                                    className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-700 focus:outline-none focus:border-[#149988] focus:ring-1 focus:ring-[#149988] transition-all font-medium"
-                                />
-                                <HiOutlineUser className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
-                            </div>
-                        </div>
-
-                        <div>
-                            <label className="block text-xs font-black text-slate-500 uppercase mb-2 ml-1">Profile Image URL</label>
-                            <div className="relative">
-                                <input
-                                    type="url"
-                                    name='image'
-                                    placeholder='Enter Your Image Url'
-                                    defaultValue={user.image}
-                                    className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-700 focus:outline-none focus:border-[#149988] focus:ring-1 focus:ring-[#149988] transition-all font-medium"
-                                />
-                                <HiOutlinePhotograph className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
-                            </div>
-                        </div>
-
-                        <button
-                            type="submit"
-                            onClick={closeModal}
-                            className="w-full bg-[#149988] text-white py-4 rounded-2xl font-bold text-lg hover:bg-[#0f7d6f] shadow-lg shadow-teal-900/10 transition-all active:scale-95 cursor-pointer"
-                        >
-                            Save Changes
-                        </button>
-                    </form>
                 </div>
-
-                <form method="dialog" className="modal-backdrop">
-                    <button>close</button>
-                </form>
-            </dialog>
+            )}
         </div>
     );
 };

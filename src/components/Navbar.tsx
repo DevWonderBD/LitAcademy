@@ -3,8 +3,11 @@ import { authClient } from '@/lib/auth-client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+import { Loader2, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const {isPending, data} = authClient.useSession()
   const user = data?.user;
 
@@ -50,7 +53,7 @@ const Navbar = () => {
         <div className="flex items-center gap-0.5 md:gap-2">
 
           {
-            isPending? <span className="loading loading-dots loading-lg text-[#149988]"></span> : user ?
+            isPending ? <Loader2 className="w-5 h-5 animate-spin text-[#149988]" /> : user ?
               <div className="flex items-center gap-3 md:gap-5 bg-white/50 backdrop-blur-md p-1.5 pr-2 md:pr-3 rounded-full border border-slate-100 shadow-sm">
                 <div className="flex items-center gap-2 pl-2">
                   <div className="hidden md:block text-right">
@@ -103,29 +106,48 @@ const Navbar = () => {
 
 
           {/* Mobile Menu Toggle */}
-          <div className="lg:hidden dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle text-[#D35400]">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
-            </label>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] px-2 py-6 shadow bg-white rounded-box w-52 text-gray-700 grid gap-2">
-              {
-                navLinks.map((link, index) => <li key={index}>
-                  <Link href={link.href} className={`${link.href == pathname ? "text-[#fe6e38]" : 'text-black'} text-base font-semibold flex items-center gap-1`}>
-                    <span>{link.href == pathname && '*'}</span> {link.name}
-                  </Link>
-                </li>
+          <div className="lg:hidden relative">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 rounded-full hover:bg-black/5 text-[#D35400] transition-colors"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
 
-                )
-              }
+            {mobileMenuOpen && (
+              <div className="absolute right-0 mt-3 w-52 bg-white rounded-2xl shadow-xl border border-slate-100 py-3 z-50">
+                <ul className="flex flex-col gap-1 px-2">
+                  {navLinks.map((link, index) => (
+                    <li key={index}>
+                      <Link
+                        href={link.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`px-3 py-2 rounded-xl text-sm font-semibold flex items-center gap-1 transition-colors ${
+                          link.href === pathname ? "text-[#fe6e38] bg-[#fe6e38]/10" : "text-gray-700 hover:bg-slate-50"
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
 
-              {
-                user && <li>
-                  <Link href='/profile' className={`${pathname == '/profile' ? "text-[#fe6e38]" : 'text-black'} text-base font-semibold flex items-center gap-1`}>
-                    <span>{pathname == '/profile' && '*'}</span> Profile
-                  </Link>
-                </li>
-              }
-            </ul>
+                  {user && (
+                    <li>
+                      <Link
+                        href="/profile"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`px-3 py-2 rounded-xl text-sm font-semibold flex items-center gap-1 transition-colors ${
+                          pathname === "/profile" ? "text-[#fe6e38] bg-[#fe6e38]/10" : "text-gray-700 hover:bg-slate-50"
+                        }`}
+                      >
+                        Profile
+                      </Link>
+                    </li>
+                  )}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
 

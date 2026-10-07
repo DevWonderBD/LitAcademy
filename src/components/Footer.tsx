@@ -115,7 +115,7 @@ const Footer = () => {
 
             {/* App Store Buttons */}
             <div className="flex flex-wrap items-center gap-3">
-              <button className="flex items-center gap-2 bg-[#F97416] text-white px-4 py-2 rounded-lg hover:bg-[#e06510] transition-colors shadow-md">
+              <button className="flex items-center gap-2 bg-[#149988] text-white px-4 py-2 rounded-lg hover:bg-[#e06510] transition-colors shadow-md">
                 <FaGooglePlay size={18} />
                 <div className="text-left">
                   <span className="text-[10px] block leading-none">GET IT ON</span>
