@@ -30,6 +30,84 @@ import {
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
+const Logo = () => (
+  <Link href="/" className="text-2xl md:text-2xl font-black flex items-center">
+    <span className="text-foreground">Lit</span>
+    <span className="text-primary">Academy</span>
+    <span className="w-2 h-2 bg-primary rounded-full ml-1 self-end mb-1"></span>
+  </Link>
+);
+
+const AuthSection = ({ isPending, user }: { isPending: boolean; user: any }) => {
+  if (isPending) {
+    return <Loader2 className="w-5 h-5 animate-spin text-primary" />;
+  }
+
+  if (user) {
+    return (
+      <DropdownMenu>
+        <DropdownMenuTrigger className="outline-none">
+          <div className="flex items-center gap-3 bg-transparent hover:bg-muted/50 p-1.5 md:pr-3 rounded-full border border-transparent transition-all cursor-pointer">
+            <div className="w-9 h-9 md:w-10 md:h-10 rounded-full relative overflow-hidden border border-border bg-card">
+              <Image
+                src={user.image || "/placeholder.jpg"}
+                alt={user.name || "User"}
+                fill
+                sizes="40px"
+                className="object-cover"
+              />
+            </div>
+            <div className="hidden lg:flex flex-col text-left">
+              <h5 className="text-sm font-black text-foreground leading-none capitalize">
+                {user.name}
+              </h5>
+              <p className="text-[11px] font-bold text-muted-foreground uppercase mt-1">
+                Student
+              </p>
+            </div>
+          </div>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end" className="w-48 bg-card border-border">
+          <DropdownMenuItem render={<Link href="/dashboard" className="cursor-pointer w-full font-bold" />}>
+            Dashboard
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={async () => await authClient.signOut()}
+            className="cursor-pointer text-destructive focus:text-destructive font-bold"
+          >
+            Sign Out
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    );
+  }
+
+  return (
+    <Link
+      href="/login"
+      className="bg-primary text-primary-foreground px-4 md:px-7 py-2 md:py-2.5 rounded-full font-bold text-xs md:text-sm hover:bg-primary-hover hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95 shadow-md"
+    >
+      Sign In
+    </Link>
+  );
+};
+
+const ProgramLink = ({ name, desc, href, onSelect }: { name: string; desc: string; href: string; onSelect: (name: string, href: string) => void }) => (
+  <Link 
+    href={href} 
+    onClick={() => onSelect(name, href)}
+    className="group flex items-start gap-3 p-3 rounded-xl hover:bg-primary/5 border border-transparent hover:border-primary/10 transition-all cursor-pointer"
+  >
+    <div className="flex flex-col gap-0.5">
+      <span className="text-sm font-bold text-foreground group-hover:text-primary transition-colors flex items-center gap-2">
+        {name}
+        <ArrowRight className="w-3.5 h-3.5 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+      </span>
+      <span className="text-[11px] text-muted-foreground font-medium leading-relaxed">{desc}</span>
+    </div>
+  </Link>
+);
+
 const Navbar = () => {
   const { isPending, data } = authClient.useSession();
   const user = data?.user;
@@ -41,6 +119,7 @@ const Navbar = () => {
     const saved = localStorage.getItem('lit_selected_program');
     if (saved) {
       try {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setSelectedProgram(JSON.parse(saved));
       } catch (e) {}
     }
@@ -58,84 +137,6 @@ const Navbar = () => {
     { name: "Study Method", href: "/study-method" },
     { name: "FAQ", href: "/faq" },
   ];
-
-  const Logo = () => (
-    <Link href="/" className="text-2xl md:text-2xl font-black flex items-center">
-      <span className="text-foreground">Lit</span>
-      <span className="text-primary">Academy</span>
-      <span className="w-2 h-2 bg-primary rounded-full ml-1 self-end mb-1"></span>
-    </Link>
-  );
-
-  const AuthSection = () => {
-    if (isPending) {
-      return <Loader2 className="w-5 h-5 animate-spin text-primary" />;
-    }
-
-    if (user) {
-      return (
-        <DropdownMenu>
-          <DropdownMenuTrigger className="outline-none">
-            <div className="flex items-center gap-3 bg-transparent hover:bg-muted/50 p-1.5 md:pr-3 rounded-full border border-transparent transition-all cursor-pointer">
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-full relative overflow-hidden border border-border bg-card">
-                <Image
-                  src={user.image || "/placeholder.jpg"}
-                  alt={user.name || "User"}
-                  fill
-                  sizes="40px"
-                  className="object-cover"
-                />
-              </div>
-              <div className="hidden lg:flex flex-col text-left">
-                <h5 className="text-sm font-black text-foreground leading-none capitalize">
-                  {user.name}
-                </h5>
-                <p className="text-[11px] font-bold text-muted-foreground uppercase mt-1">
-                  Student
-                </p>
-              </div>
-            </div>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-48 bg-card border-border">
-            <DropdownMenuItem render={<Link href="/dashboard" className="cursor-pointer w-full font-bold" />}>
-              Dashboard
-            </DropdownMenuItem>
-            <DropdownMenuItem
-              onClick={async () => await authClient.signOut()}
-              className="cursor-pointer text-destructive focus:text-destructive font-bold"
-            >
-              Sign Out
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      );
-    }
-
-    return (
-      <Link
-        href="/login"
-        className="bg-primary text-primary-foreground px-4 md:px-7 py-2 md:py-2.5 rounded-full font-bold text-xs md:text-sm hover:bg-primary-hover hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95 shadow-md"
-      >
-        Sign In
-      </Link>
-    );
-  };
-
-  const ProgramLink = ({ name, desc, href }: { name: string; desc: string; href: string }) => (
-    <Link 
-      href={href} 
-      onClick={() => handleProgramSelect(name, href)}
-      className="group flex items-start gap-3 p-3 rounded-xl hover:bg-primary/5 border border-transparent hover:border-primary/10 transition-all cursor-pointer"
-    >
-      <div className="flex flex-col gap-0.5">
-        <span className="text-sm font-bold text-foreground group-hover:text-primary transition-colors flex items-center gap-2">
-          {name}
-          <ArrowRight className="w-3.5 h-3.5 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-        </span>
-        <span className="text-[11px] text-muted-foreground font-medium leading-relaxed">{desc}</span>
-      </div>
-    </Link>
-  );
 
   return (
     <nav className="bg-navbar-bg py-4 px-6 sticky top-0 z-50 shadow-sm border-b border-border">
@@ -214,10 +215,10 @@ const Navbar = () => {
                           Honours
                         </h4>
                         <div className="flex flex-col gap-1">
-                          <ProgramLink name="1st Year" desc="Foundations of English Literature" href="/programs/honours/1st-year" />
-                          <ProgramLink name="2nd Year" desc="Romantic to Victorian Period" href="/programs/honours/2nd-year" />
-                          <ProgramLink name="3rd Year" desc="Modern Drama & Poetry" href="/programs/honours/3rd-year" />
-                          <ProgramLink name="4th Year" desc="Advanced Critical Theory" href="/programs/honours/4th-year" />
+                          <ProgramLink name="1st Year" desc="Foundations of English Literature" href="/programs/honours/1st-year" onSelect={handleProgramSelect} />
+                          <ProgramLink name="2nd Year" desc="Romantic to Victorian Period" href="/programs/honours/2nd-year" onSelect={handleProgramSelect} />
+                          <ProgramLink name="3rd Year" desc="Modern Drama & Poetry" href="/programs/honours/3rd-year" onSelect={handleProgramSelect} />
+                          <ProgramLink name="4th Year" desc="Advanced Critical Theory" href="/programs/honours/4th-year" onSelect={handleProgramSelect} />
                         </div>
                       </div>
 
@@ -228,7 +229,7 @@ const Navbar = () => {
                           Masters
                         </h4>
                         <div className="flex flex-col gap-1">
-                          <ProgramLink name="Masters Final" desc="Specialised Advanced Studies" href="/programs/masters/final" />
+                          <ProgramLink name="Masters Final" desc="Specialised Advanced Studies" href="/programs/masters/final" onSelect={handleProgramSelect} />
                         </div>
 
                         {/* Quick Links / Resources */}
@@ -288,7 +289,7 @@ const Navbar = () => {
         </div>
 
         <div className="w-[200px] flex justify-end">
-          <AuthSection />
+          <AuthSection isPending={isPending} user={user} />
         </div>
       </div>
 
@@ -353,7 +354,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex-1 flex justify-end">
-          <AuthSection />
+          <AuthSection isPending={isPending} user={user} />
         </div>
       </div>
     </nav>
