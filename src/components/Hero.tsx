@@ -91,15 +91,15 @@ const Hero = () => {
             </div>
 
             <div className="flex items-center gap-2 md:gap-4 mb-6">
-              <button className="cursor-pointer group relative overflow-hidden flex items-center gap-1.5 md:gap-2 bg-primary text-white px-5 md:px-8 py-3 md:py-3.5 rounded-full font-bold text-[15px] md:text-[15px] hover:bg-primary-hover hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap">
+              <button className="cursor-pointer group relative overflow-hidden flex items-center gap-1.5 md:gap-2 bg-primary text-white px-5 md:px-8 py-3.5 md:py-4 rounded-full font-bold text-[15px] md:text-[15px] hover:bg-primary-hover hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap">
                 <span className="relative z-10">Choose Programme</span>
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-700 ease-in-out"></div>
               </button>
 
-              <button className="cursor-pointer group flex items-center gap-2 md:gap-2.5 font-bold text-[15px] md:text-[15px] text-foreground hover:text-accent transition-all duration-300 border border-accent/20 hover:border-accent/50 p-1.5 pr-5 md:pr-7 rounded-full bg-white hover:bg-accent/5 hover:shadow-xl hover:shadow-accent/10 whitespace-nowrap hover:-translate-y-0.5">
+              <button className="cursor-pointer group flex items-center gap-2 md:gap-2.5 font-bold text-[15px] md:text-[15px] text-foreground hover:text-accent transition-all duration-300 border border-accent/20 hover:border-accent/50 p-2 pr-5 md:pr-7 rounded-full bg-white hover:bg-accent/5 hover:shadow-xl hover:shadow-accent/10 whitespace-nowrap hover:-translate-y-0.5">
                 <span className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-accent text-white rounded-full shadow-md group-hover:scale-110 group-hover:bg-accent-hover transition-all duration-300">
-                  <span className="absolute inset-0 rounded-full bg-accent animate-[ping_2.5s_cubic-bezier(0,0,0.2,1)_infinite] opacity-20"></span>
+                  <span className="absolute inset-0 rounded-full bg-accent animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] opacity-40"></span>
                   <Play className="w-3.5 h-3.5 md:w-4 md:h-4 ml-0.5 fill-current relative z-10" />
                 </span>
                 <span>How It Works</span>
