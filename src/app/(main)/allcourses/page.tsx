@@ -17,16 +17,16 @@ const AllCourses = () => {
   });
 
   return (
-    <div className="bg-[#FAF9F6] min-h-screen pb-24">
+    <div className="bg-background min-h-screen pb-24">
       
-      <div className="bg-[#149988] pt-32 pb-20 px-6 lg:px-20 text-center relative overflow-hidden">
+      <div className="bg-primary pt-32 pb-20 px-6 lg:px-20 text-center relative overflow-hidden">
 
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#F97416]/20 rounded-full blur-3xl -ml-20 -mb-20"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/20 rounded-full blur-3xl -ml-20 -mb-20"></div>
         
         <div className="relative z-10 max-w-2xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-[900] text-white mb-6">
-            Explore Our <span className="text-[#f8b188]">Course Catalog</span>
+            Explore Our <span className="text-accent-highlight">Course Catalog</span>
           </h1>
           <p className="text-teal-50 font-medium text-lg">
             Discover hundreds of premium courses taught by industry experts. Enhance your skills and advance your career today.
@@ -43,7 +43,7 @@ const AllCourses = () => {
               placeholder="Search for courses..." 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 pl-12 pr-4 text-slate-700 focus:outline-none focus:border-[#149988] focus:ring-1 focus:ring-[#149988] transition-all"
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 pl-12 pr-4 text-slate-700 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
             />
             <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
           </div>
@@ -56,7 +56,7 @@ const AllCourses = () => {
                 onClick={() => setActiveCategory(category)}
                 className={`whitespace-nowrap px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
                   activeCategory === category 
-                  ? 'bg-[#149988] text-white shadow-md' 
+                  ? 'bg-primary text-white shadow-md' 
                   : 'bg-slate-50 text-slate-500 hover:bg-slate-100 hover:text-slate-900'
                 }`}
               >
@@ -78,7 +78,7 @@ const AllCourses = () => {
             <p className="text-slate-500">Try adjusting your search or filter criteria.</p>
             <button 
               onClick={() => {setSearchQuery(''); setActiveCategory('All');}}
-              className="mt-6 bg-[#F97416] text-white px-6 py-2.5 rounded-xl font-bold hover:bg-[#e06510] transition-colors"
+              className="mt-6 bg-accent text-white px-6 py-2.5 rounded-xl font-bold hover:bg-accent-hover transition-colors"
             >
               Clear Filters
             </button>

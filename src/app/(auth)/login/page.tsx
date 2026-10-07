@@ -46,18 +46,18 @@ const LoginPage = () => {
     }
 
     return (
-        <div className="min-h-screen bg-[#FAF9F6] flex items-center justify-center py-20 px-6">
+        <div className="min-h-screen bg-background flex items-center justify-center py-20 px-6">
             <div className="max-w-[1100px] w-full bg-white rounded-[40px] shadow-2xl shadow-slate-200/60 overflow-hidden flex flex-col md:flex-row border border-slate-100">
 
                 {/* Left Side */}
-                <div className="hidden md:flex md:w-1/2 bg-[#149988] p-12 flex-col justify-between relative overflow-hidden">
+                <div className="hidden md:flex md:w-1/2 bg-primary p-12 flex-col justify-between relative overflow-hidden">
 
                     <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl animate-pulse"></div>
-                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#F97416]/10 rounded-full -ml-32 -mb-32 blur-3xl"></div>
+                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full -ml-32 -mb-32 blur-3xl"></div>
 
                     <div className="relative z-10">
                         <Link href='/' className="text-4xl font-black text-white mb-4 tracking-tighter">
-                            Skill<span className="text-[#F97416]">Sphere</span>.
+                            Skill<span className="text-accent">Sphere</span>.
                         </Link>
                         <p className="text-teal-50 text-lg font-medium opacity-90 max-w-sm mt-4">
                             Elevate your career with the most in-demand technical skills.
@@ -66,7 +66,7 @@ const LoginPage = () => {
 
                     <div className="relative z-10 space-y-13 my-10">
                         <div className="flex items-center gap-5 group">
-                            <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20 group-hover:bg-[#F97416] transition-all duration-300">
+                            <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20 group-hover:bg-accent transition-all duration-300">
                                 <FaPlayCircle className="text-white" size={24} />
                             </div>
                             <div>
@@ -76,7 +76,7 @@ const LoginPage = () => {
                         </div>
 
                         <div className="flex items-center gap-5 group">
-                            <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20 group-hover:bg-[#F97416] transition-all duration-300">
+                            <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20 group-hover:bg-accent transition-all duration-300">
                                 <FaCheckCircle className="text-white" size={24} />
                             </div>
                             <div>
@@ -86,7 +86,7 @@ const LoginPage = () => {
                         </div>
 
                         <div className="flex items-center gap-5 group">
-                            <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20 group-hover:bg-[#F97416] transition-all duration-300">
+                            <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20 group-hover:bg-accent transition-all duration-300">
                                 <FaUserGraduate className="text-white" size={24} />
                             </div>
                             <div>
@@ -99,7 +99,7 @@ const LoginPage = () => {
                     <div className="relative z-10 pt-10 border-t border-white/10">
                         <div className="flex items-center gap-4">
                             <p className="text-white/80 text-xs font-bold">
-                                Joined by <span className="text-[#F97416]">20k+</span> students
+                                Joined by <span className="text-accent">20k+</span> students
                             </p>
                         </div>
                     </div>
@@ -133,7 +133,7 @@ const LoginPage = () => {
                                     type="email"
                                     name='email'
                                     placeholder="name@example.com"
-                                    className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-700 focus:outline-none focus:border-[#149988] focus:ring-1 focus:ring-[#149988] transition-all font-medium"
+                                    className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-700 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-medium"
                                     required
                                 />
                                 <HiOutlineMail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
@@ -143,14 +143,14 @@ const LoginPage = () => {
                         <div>
                             <div className="flex justify-between items-center mb-2 ml-1">
                                 <label className="text-sm font-bold text-slate-700">Password</label>
-                                <Link href="#" className="text-xs font-bold text-[#149988] hover:underline">Forgot Password?</Link>
+                                <Link href="#" className="text-xs font-bold text-primary hover:underline">Forgot Password?</Link>
                             </div>
                             <div className="relative">
                                 <input
                                     type="password"
                                     name="password"
                                     placeholder="Enter Your Password"
-                                    className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-700 focus:outline-none focus:border-[#149988] focus:ring-1 focus:ring-[#149988] transition-all font-medium"
+                                    className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-700 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-medium"
                                     required
                                 />
                                 <HiOutlineLockClosed className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
@@ -159,7 +159,7 @@ const LoginPage = () => {
 
                         <button
                             type="submit"
-                            className="w-full bg-[#149988] text-white py-4 rounded-2xl font-bold text-lg hover:bg-[#0f7d6f] hover:-translate-y-0.5 transition-all shadow-lg shadow-teal-900/10 mt-4 cursor-pointer"
+                            className="w-full bg-primary text-white py-4 rounded-2xl font-bold text-lg hover:bg-primary-hover hover:-translate-y-0.5 transition-all shadow-lg shadow-teal-900/10 mt-4 cursor-pointer"
                         >
                             Log In
                         </button>
@@ -168,7 +168,7 @@ const LoginPage = () => {
                     {/* Register Link */}
                     <p className="text-center mt-10 text-slate-500 font-medium text-sm">
                         Don&apos;t have an account?{' '}
-                        <Link href="/register" className="text-[#F97416] font-bold hover:underline">
+                        <Link href="/register" className="text-accent font-bold hover:underline">
                             Register for free
                         </Link>
                     </p>

@@ -52,14 +52,14 @@ const TopInstructors = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-6 gap-6">
           <div className="max-w-xl">
-            <span className="text-[#F97416] font-black uppercase tracking-widest text-xs mb-3 block">
+            <span className="text-accent font-black uppercase tracking-widest text-xs mb-3 block">
               World-Class Mentors
             </span>
             <h2 className="text-4xl md:text-5xl font-[900] text-slate-900">
-              Learn from the <span className="text-[#149988]">Best Instructors</span>
+              Learn from the <span className="text-primary">Best Instructors</span>
             </h2>
           </div>
-          <Link href={'/allcourses'} className="flex items-center gap-2 text-[#149988] font-bold border-b-2 border-transparent hover:border-[#149988] pb-1 transition-all">
+          <Link href={'/allcourses'} className="flex items-center gap-2 text-primary font-bold border-b-2 border-transparent hover:border-primary pb-1 transition-all">
             See All Mentors <HiArrowNarrowRight />
           </Link>
         </div>
@@ -86,21 +86,21 @@ const TopInstructors = () => {
                   
                 </div>
                 
-                <div className="absolute inset-0 bg-[#149988]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
-                   <a href={mentor.socials.linkedin} className="bg-white p-2.5 rounded-full text-[#149988] hover:bg-[#F97416] hover:text-white transition-all shadow-lg">
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                   <a href={mentor.socials.linkedin} className="bg-white p-2.5 rounded-full text-primary hover:bg-accent hover:text-white transition-all shadow-lg">
                      <FaLinkedinIn size={16} />
                    </a>
-                   <a href={mentor.socials.twitter} className="bg-white p-2.5 rounded-full text-[#149988] hover:bg-[#F97416] hover:text-white transition-all shadow-lg">
+                   <a href={mentor.socials.twitter} className="bg-white p-2.5 rounded-full text-primary hover:bg-accent hover:text-white transition-all shadow-lg">
                      <FaTwitter size={16} />
                    </a>
-                   <a href={mentor.socials.web} className="bg-white p-2.5 rounded-full text-[#149988] hover:bg-[#F97416] hover:text-white transition-all shadow-lg">
+                   <a href={mentor.socials.web} className="bg-white p-2.5 rounded-full text-primary hover:bg-accent hover:text-white transition-all shadow-lg">
                      <FaGlobe size={16} />
                    </a>
                 </div>
               </div>
 
               <div className="text-center">
-                <h3 className="text-xl font-black text-slate-900 group-hover:text-[#149988] transition-colors">
+                <h3 className="text-xl font-black text-slate-900 group-hover:text-primary transition-colors">
                   {mentor.name}
                 </h3>
                 <p className="text-slate-500 font-medium text-sm mb-4">
@@ -109,12 +109,12 @@ const TopInstructors = () => {
 
                 <div className="flex items-center justify-between gap-4 pt-1 px-1 border-t border-slate-50">
                   <div className="flex items-center gap-1">
-                    <FaStar className="text-[#F97416]" size={12} />
+                    <FaStar className="text-accent" size={12} />
                     <span className="text-xs font-bold text-slate-700">{mentor.rating}</span>
                   </div>
                   <div className="w-1 h-1 bg-slate-300 rounded-full"></div>
                   <div className="flex items-center gap-1">
-                    <FaUsers className="text-[#149988]" size={12} />
+                    <FaUsers className="text-primary" size={12} />
                     <span className="text-xs font-bold text-slate-700">{mentor.students} Students</span>
                   </div>
                 </div>

@@ -8,7 +8,7 @@ const CourseCard = ({ course }) => {
 
     return (
         <div>
-            <div key={course.id} className="group relative bg-[#F9FAFB] rounded-[24px] p-1.5 border border-gray-200 hover:border-[#149988]/20 hover:bg-white hover:shadow-xl transition-all duration-500 flex flex-col h-full">
+            <div key={course.id} className="group relative bg-card rounded-[24px] p-1.5 border border-gray-200 hover:border-primary/20 hover:bg-white hover:shadow-xl transition-all duration-500 flex flex-col h-full">
 
                 <div className="relative h-40 w-full bg-slate-200 rounded-[18px] overflow-hidden mb-3">
                     <Image fill
@@ -25,7 +25,7 @@ const CourseCard = ({ course }) => {
                 <div className="px-3 pb-3 flex flex-col flex-grow">
                     {/* Rating & Reviews */}
                     <div className="flex items-center gap-2 mb-1.5">
-                        <div className="flex items-center gap-0.5 text-[#F97416]">
+                        <div className="flex items-center gap-0.5 text-accent">
                             <FaStar size={12} />
                             <span className="text-[12px] font-bold"> {course.rating}</span>
                         </div>
@@ -33,7 +33,7 @@ const CourseCard = ({ course }) => {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-[#149988] transition-colors line-clamp-1">
+                    <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-primary transition-colors line-clamp-1">
                         {course.title}
                     </h3>
 
@@ -53,12 +53,12 @@ const CourseCard = ({ course }) => {
                             <FaRegClock className="text-slate-400" size={14} />
                             <span className="text-[12px] font-bold text-slate-500">{course.duration}</span>
                         </div>
-                        <span className="text-lg font-black text-[#149988]">${course.price}</span>
+                        <span className="text-lg font-black text-primary">${course.price}</span>
                     </div>
 
                     {/* View Details Button */}
                     <Link href={`/course/${course.id}`}>
-                        <button className="w-full py-2.5 bg-[#149988] text-white text-[12px] font-bold rounded-xl group-hover:bg-[#107568] transition-all duration-300 active:scale-95 cursor-pointer">
+                        <button className="w-full py-2.5 bg-primary text-white text-[12px] font-bold rounded-xl group-hover:bg-primary-hover transition-all duration-300 active:scale-95 cursor-pointer">
                             View Details
                         </button>
                     </Link>

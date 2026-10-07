@@ -18,10 +18,10 @@ const CourseSection = () => {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-2 mb-12">
           <div>
-            <span className="bg-[#F97416] text-white px-6 py-1 rounded-full text-sm font-bold tracking-wider mb-5 inline-block -rotate-12">
+            <span className="bg-accent text-white px-6 py-1 rounded-full text-sm font-bold tracking-wider mb-5 inline-block -rotate-12">
               Our Courses
             </span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-[#111827]">
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
               Explore Our Popular Course
             </h2>
           </div>
@@ -29,7 +29,7 @@ const CourseSection = () => {
           {/* All Course Button*/}
 
           <div className="mt-6 text-center">
-            <Link href={"/allcourses"} className="bg-[#F97416] hover:bg-[#e66509] text-white px-10 py-3.5 rounded-full font-bold text-sm transition-all shadow-lg shadow-green-50 cursor-pointer">
+            <Link href={"/allcourses"} className="bg-accent hover:bg-accent-hover text-white px-10 py-3.5 rounded-full font-bold text-sm transition-all shadow-lg shadow-green-50 cursor-pointer">
               See All Course
             </Link>
           </div>
