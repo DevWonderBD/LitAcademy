@@ -4,7 +4,7 @@ import HeroFigure from '@/assets/HeroFigure.png';
 import Image from 'next/image';
 import { Play, ArrowRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
-
+import { HowItWorksModal } from '@/components/modals/HowItWorksModal';
 type HeroVariant = {
   title: string;
   highlight: string;
@@ -97,13 +97,15 @@ const Hero = () => {
                 <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-700 ease-in-out"></div>
               </button>
 
-              <button className="cursor-pointer group flex items-center gap-2 md:gap-2.5 font-bold text-[15px] md:text-[15px] text-foreground hover:text-accent transition-all duration-400 border border-accent/20 hover:border-accent/50 p-1.5 pr-5 md:pr-7 rounded-full bg-white hover:bg-accent/5 hover:shadow-xl hover:shadow-accent/10 whitespace-nowrap hover:-translate-y-0.5">
-                <span className="relative w-10 h-10 md:w-10 md:h-10 flex items-center justify-center bg-accent text-white rounded-full shadow-md group-hover:scale-110 group-hover:bg-accent-hover transition-all duration-500">
-                  <span className="absolute inset-0 rounded-full bg-accent animate-ping opacity-20 duration-[5000ms]"></span>
-                  <Play className="w-5 h-5 md:w-4 md:h-4 ml-0.5 fill-current relative z-10" />
-                </span>
-                <span>How It Works</span>
-              </button>
+              <HowItWorksModal>
+                <button className="cursor-pointer group flex items-center gap-2 md:gap-2.5 font-bold text-[15px] md:text-[15px] text-foreground hover:text-accent transition-all duration-400 border border-accent/20 hover:border-accent/50 p-1.5 pr-5 md:pr-7 rounded-full bg-white hover:bg-accent/5 hover:shadow-xl hover:shadow-accent/10 whitespace-nowrap hover:-translate-y-0.5">
+                  <span className="relative w-10 h-10 md:w-10 md:h-10 flex items-center justify-center bg-accent text-white rounded-full shadow-md group-hover:scale-110 group-hover:bg-accent-hover transition-all duration-500">
+                    <span className="absolute inset-0 rounded-full bg-accent animate-ping opacity-20 duration-[5000ms]"></span>
+                    <Play className="w-5 h-5 md:w-4 md:h-4 ml-0.5 fill-current relative z-10" />
+                  </span>
+                  <span>How It Works</span>
+                </button>
+              </HowItWorksModal>
             </div>
           </div>
 
