@@ -121,16 +121,19 @@ const Navbar = () => {
     );
   };
 
-  const ProgramLink = ({ name, href }: { name: string; href: string }) => (
+  const ProgramLink = ({ name, desc, href }: { name: string; desc: string; href: string }) => (
     <Link 
       href={href} 
       onClick={() => handleProgramSelect(name, href)}
-      className="group flex items-center justify-between p-3 rounded-xl hover:bg-primary/5 border border-transparent hover:border-primary/10 transition-all cursor-pointer"
+      className="group flex items-start gap-3 p-3 rounded-xl hover:bg-primary/5 border border-transparent hover:border-primary/10 transition-all cursor-pointer"
     >
-      <span className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">
-        {name}
-      </span>
-      <ArrowRight className="w-4 h-4 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+      <div className="flex flex-col gap-0.5">
+        <span className="text-sm font-bold text-foreground group-hover:text-primary transition-colors flex items-center gap-2">
+          {name}
+          <ArrowRight className="w-3.5 h-3.5 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+        </span>
+        <span className="text-[11px] text-muted-foreground font-medium leading-relaxed">{desc}</span>
+      </div>
     </Link>
   );
 
@@ -176,31 +179,75 @@ const Navbar = () => {
                   )}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="p-4 w-[500px] grid grid-cols-5 gap-4 bg-card border-none shadow-2xl rounded-2xl overflow-hidden">
+                  <div className="w-[850px] bg-card border-none shadow-2xl rounded-3xl overflow-hidden flex">
                     
-                    <div className="col-span-3 p-4">
-                      <h4 className="font-black text-foreground mb-4 text-sm flex items-center gap-2 uppercase tracking-wider">
-                        <div className="p-1.5 bg-primary/10 rounded-md"><BookOpen className="w-4 h-4 text-primary" /></div>
-                        Honours
-                      </h4>
-                      <div className="grid grid-cols-2 gap-2">
-                        <ProgramLink name="1st Year" href="/programs/honours/1st-year" />
-                        <ProgramLink name="2nd Year" href="/programs/honours/2nd-year" />
-                        <ProgramLink name="3rd Year" href="/programs/honours/3rd-year" />
-                        <ProgramLink name="4th Year" href="/programs/honours/4th-year" />
+                    {/* Left Featured Column */}
+                    <div className="w-[300px] bg-primary p-8 relative overflow-hidden flex flex-col justify-between">
+                      <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-2xl animate-pulse"></div>
+                      <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/20 rounded-full -ml-32 -mb-32 blur-2xl"></div>
+                      
+                      <div className="relative z-10">
+                        <h3 className="text-white font-heading font-bold text-2xl mb-3 tracking-tight">LitAcademy</h3>
+                        <p className="text-primary-foreground/85 text-[13px] leading-relaxed font-medium">
+                          A fully structured path to mastering your National University syllabus. Hover, read, and understand English Literature effortlessly.
+                        </p>
+                      </div>
+
+                      <div className="relative z-10 mt-12 bg-white/10 border border-white/20 p-4 rounded-2xl backdrop-blur-sm">
+                        <div className="flex items-center gap-3">
+                          <BookOpen className="w-8 h-8 text-white opacity-90" />
+                          <div>
+                            <div className="text-white font-bold text-sm">Select your year</div>
+                            <div className="text-primary-foreground/70 text-xs font-medium mt-0.5">Begin your reading journey</div>
+                          </div>
+                        </div>
                       </div>
                     </div>
 
-                    <div className="col-span-2 bg-slate-50/50 p-6 rounded-xl border border-slate-100/50">
-                      <h4 className="font-black text-foreground mb-4 text-sm flex items-center gap-2 uppercase tracking-wider">
-                        <div className="p-1.5 bg-accent/10 rounded-md"><GraduationCap className="w-4 h-4 text-accent" /></div>
-                        Masters
-                      </h4>
-                      <div className="flex flex-col gap-2">
-                        <ProgramLink name="Masters Final" href="/programs/masters/final" />
+                    {/* Right Navigation Links Column */}
+                    <div className="flex-1 p-8 grid grid-cols-2 gap-x-8 gap-y-10">
+                      
+                      {/* Honours Section */}
+                      <div className="col-span-1">
+                        <h4 className="font-black text-foreground mb-5 text-sm flex items-center gap-2 uppercase tracking-widest border-b border-border pb-3">
+                          <div className="p-1.5 bg-primary/10 rounded-md"><BookOpen className="w-4 h-4 text-primary" /></div>
+                          Honours
+                        </h4>
+                        <div className="flex flex-col gap-1">
+                          <ProgramLink name="1st Year" desc="Foundations of English Literature" href="/programs/honours/1st-year" />
+                          <ProgramLink name="2nd Year" desc="Romantic to Victorian Period" href="/programs/honours/2nd-year" />
+                          <ProgramLink name="3rd Year" desc="Modern Drama & Poetry" href="/programs/honours/3rd-year" />
+                          <ProgramLink name="4th Year" desc="Advanced Critical Theory" href="/programs/honours/4th-year" />
+                        </div>
                       </div>
-                    </div>
 
+                      {/* Masters Section & Quick Links */}
+                      <div className="col-span-1">
+                        <h4 className="font-black text-foreground mb-5 text-sm flex items-center gap-2 uppercase tracking-widest border-b border-border pb-3">
+                          <div className="p-1.5 bg-accent/10 rounded-md"><GraduationCap className="w-4 h-4 text-accent" /></div>
+                          Masters
+                        </h4>
+                        <div className="flex flex-col gap-1">
+                          <ProgramLink name="Masters Final" desc="Specialised Advanced Studies" href="/programs/masters/final" />
+                        </div>
+
+                        {/* Quick Links / Resources */}
+                        <div className="mt-8 bg-slate-50/80 border border-slate-100 p-5 rounded-2xl shadow-sm">
+                          <h5 className="font-bold text-slate-400 text-[10px] uppercase tracking-widest mb-4">Quick Resources</h5>
+                          <div className="flex flex-col gap-3">
+                            <Link href="/glossary" className="text-sm font-bold text-slate-700 hover:text-primary transition-colors flex items-center gap-2.5">
+                              <span className="w-1.5 h-1.5 rounded-full bg-primary/60"></span>
+                              Literary Terms Glossary
+                            </Link>
+                            <Link href="/study-method" className="text-sm font-bold text-slate-700 hover:text-primary transition-colors flex items-center gap-2.5">
+                              <span className="w-1.5 h-1.5 rounded-full bg-accent/60"></span>
+                              Our Study Method
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
