@@ -7,15 +7,15 @@ const Hero = () => {
   return (
     <section>
       <div className="bg-secondary pt-12 md:pt-8 px-6 lg:px-20 relative overflow-hidden">
-        <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
           
           {/* Left Content */}
-          <div className="lg:w-1/2 z-10">
-            <span className="bg-accent-badge-bg text-accent px-6 py-1 rounded-xl text-xs font-bold tracking-wide shadow-sm inline-block -rotate-12">
-              For National University English students
+          <div className="lg:w-[60%] z-10">
+            <span className="bg-primary/10 border border-primary/20 text-primary-hover px-6 py-1.5 rounded-xl text-[13px] font-black tracking-wider shadow-sm inline-block uppercase">
+              Literature Learning Made Easy
             </span>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-[700] text-foreground mt-8 mb-6 leading-[1.05] tracking-tight font-heading">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-[700] text-foreground mt-2 mb-6 leading-[1.05] tracking-tight font-heading">
               The perfect place to learn English literature.
             </h1>
             
@@ -49,7 +49,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="lg:w-1/2 relative flex justify-center">
+          <div className="lg:w-[40%] relative flex justify-center">
             <div className="absolute -z-10 w-[120%] h-[120%] -top-10 -right-10 opacity-30 pointer-events-none">
                 <div className="absolute top-20 right-10 w-64 h-96 bg-primary rounded-[40px] rotate-[35deg] blur-3xl"></div>
                 <div className="absolute bottom-10 right-20 w-64 h-80 bg-accent rounded-[40px] rotate-[15deg] blur-3xl"></div>
