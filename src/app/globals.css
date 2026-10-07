@@ -158,7 +158,10 @@
 
   /* Typography Font Families (PRD 8.2) */
   --font-heading: var(--font-playfair), serif;
-  --font-ui: var(--font-inter), sans-serif;
+  
+  /* UI FONT OPTIONS - Swap the var() below to test different fonts */
+  --font-ui: var(--font-plus-jakarta), sans-serif; /* Options: --font-inter, --font-plus-jakarta, --font-manrope, --font-dm-sans, --font-outfit */
+  
   --font-reading: var(--font-lora), serif;
   --font-bangla-ui: var(--font-anek-bangla), sans-serif;
   --font-bangla-reading: var(--font-noto-serif-bengali), serif;

@@ -3,7 +3,11 @@ import {
   Playfair_Display, 
   Lora, 
   Anek_Bangla, 
-  Noto_Serif_Bengali 
+  Noto_Serif_Bengali,
+  Plus_Jakarta_Sans,
+  Manrope,
+  DM_Sans,
+  Outfit
 } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
@@ -40,6 +44,31 @@ const notoSerifBengali = Noto_Serif_Bengali({
   display: "swap",
 });
 
+// UI Font alternatives
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
+  display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
 export const metadata = {
   title: "LitAcademy – NU English Literature Study Platform",
   description: "A premium, syllabus-based learning platform for English Literature students of National University (NU), Bangladesh.",
@@ -61,7 +90,11 @@ export default function RootLayout({
         playfairDisplay.variable,
         lora.variable,
         anekBangla.variable,
-        notoSerifBengali.variable
+        notoSerifBengali.variable,
+        plusJakartaSans.variable,
+        manrope.variable,
+        dmSans.variable,
+        outfit.variable
       )}
       suppressHydrationWarning
     >
