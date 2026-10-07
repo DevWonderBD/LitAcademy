@@ -92,7 +92,7 @@ Programs: **Honours** (Years 1–4) and **Masters** (one year only, no Year leve
 | `/api/**` | Route handlers (see §10) | mixed |
 
 ### 4.2 Navigation
-- **Navbar (sticky, white, 1px bottom border):** logo · **Programs · Glossary · Study Method · FAQ** · language toggle (EN | বাংলা) · Sign in / Get started. Logged in: Dashboard + avatar menu.
+- **Navbar (sticky, white, 1px bottom border):** logo · **Programs · Glossary · Study Method · FAQ** · Sign in / Get started. Logged in: Dashboard + avatar menu.
 - **Programs mega-menu (hover/click):** Honours (1st–4th Year) and Masters. For logged-in students, their own Program is listed first and highlighted.
 - **Guest program choice:** a Honours/Masters (+year) dropdown; value stored in cookie `la_program` (e.g. `honours:2`, `masters`). On sign-up/onboarding it is copied to the profile.
 - **Pythia:** floating button bottom-right on every page. Mobile reader: bottom bar (Outline · Notes · Pythia).
@@ -148,7 +148,7 @@ Two large cards: **Honours** (year chips 1st–4th that deep-link to `/honours/[
 Four feature blocks with small coded demos reusing the hero scenes (static on mobile).
 
 #### Footer
-Brand, short description, links (Programs, Glossary, Study Method, FAQ, About, Contact, Privacy, Terms), social links, language toggle, and a **"Remote · Bangladesh"** label. **No** street address, app-store badges, payment-gateway icons or newsletter-for-courses copy.
+Brand, short description, links (Programs, Glossary, Study Method, FAQ, About, Contact, Privacy, Terms), social links, and a **"Remote · Bangladesh"** label. **No** street address, app-store badges, payment-gateway icons or newsletter-for-courses copy.
 
 ### 5.2 Programs (`/programs`, `/honours/[year]`, `/masters`)
 Honours/Masters tabs, year pills (Honours), grid of **Paper cards** (grid, not slider): code, title, number of topics, estimated reading time, progress ring if signed in. Search box filters Papers.
@@ -213,7 +213,7 @@ Left card: profile + Program/Year with **Change program**. Center: Continue Read
 All saved notes; filter by Paper/Topic; search; edit/delete; each links to its anchor.
 
 ### 5.11 Settings (`/dashboard/settings`)
-Name, email, Program/Year, interface language, delete account/data request.
+Name, email, Program/Year, delete account/data request.
 
 ### 5.12 Legal, Contact, 404
 Privacy and Terms (required for Facebook login). Contact form (email via Resend) with topic selector including "Report an error in a note". Branded 404 with search and Pythia prompt.
@@ -416,7 +416,6 @@ All inputs validated with Zod; all admin routes check `role === 'admin'` on the 
 | Styling | Tailwind CSS + CSS-variable tokens | §8 |
 | UI | shadcn/ui (Radix), lucide-react, Embla Carousel, Motion | Accessible primitives, animation |
 | Data fetching/forms | TanStack Query, React Hook Form + Zod | Caching, validation |
-| i18n | next-intl (**interface only**) | EN/BN UI strings |
 | Fonts | next/font: Playfair Display, Inter, Lora, Anek Bangla, Noto Serif Bengali | §8.2 |
 | Editor (admin) | Tiptap with custom nodes; JSON → MongoDB | Block content |
 | Reader | Own renderer (JSON → React) | Tooltips, anchors |
@@ -461,9 +460,8 @@ src/
   server/                 core/ content/ ai/        # framework-agnostic
   db/                     schema/ client.ts
   lib/                    auth.ts auth-client.ts mongo.ts cache.ts ratelimit.ts
-                          storage.ts mail.ts content/schema.ts i18n.ts
+                          storage.ts mail.ts content/schema.ts
   config/                 brand.ts site.ts env.ts
-  messages/               en.json bn.json
   styles/                 tokens.css globals.css
 drizzle/                  generated SQL migrations (committed)
 docs/                     PRD.md
@@ -491,7 +489,6 @@ AGENTS.md
 | Security | Zod validation on all inputs; no `dangerouslySetInnerHTML` for content; CSP and security headers; server-side role checks; secrets only in env; rate limits on auth, notes, Pythia; least-privilege DB roles |
 | Privacy | Collect only name, email, program/year, usage data; notes are private to the user; chat retention 90 days; data export/delete on request |
 | Reliability | Daily backups (Phase 2), error tracking, health checks, graceful degradation (reader works if Pythia is down) |
-| i18n | UI strings only in `messages/*.json`; default locale EN, preference stored in cookie `la_locale`; content stays single-version |
 | Accessibility | WCAG 2.1 AA |
 | Content rights | Image credits file; quote policy per §6.1 |
 
@@ -514,7 +511,7 @@ AGENTS.md
 | # | Milestone | Acceptance |
 |---|---|---|
 | **M0** | Foundation | Repo from SkillSphere base; tokens, fonts, layout shell, env validation, CI, Neon/Atlas/Upstash wired, Drizzle migrations, `AGENTS.md` in place |
-| **M1** | Public site | Home (hero with animated scenes), Programs, Paper pages, Glossary, Study Method, FAQ, About, legal pages; seeded sample data; EN/BN UI |
+| **M1** | Public site | Home (hero with animated scenes), Programs, Paper pages, Glossary, Study Method, FAQ, About, legal pages; seeded sample data |
 | **M2** | Auth and onboarding | Email, Google, forgot/reset; verification email; onboarding; guest program cookie; dashboard shell; Program change |
 | **M3** | Reader and notes | Topic reader, term tooltips, highlight→note, progress, bookmarks, My Notes |
 | **M4** | Quizzes and Exam Corner | Quiz engine, attempts, scores on dashboard |
