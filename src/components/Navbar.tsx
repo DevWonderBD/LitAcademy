@@ -146,7 +146,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex-1 flex justify-center">
-          <NavigationMenu align="center">
+          <NavigationMenu align="center" positionerClassName="!fixed !left-1/2 !-translate-x-1/2 !top-[70px]">
             <NavigationMenuList className="gap-2">
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
@@ -178,8 +178,8 @@ const Navbar = () => {
                     "Programmes"
                   )}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="w-[850px] bg-card border-none shadow-2xl rounded-3xl overflow-hidden flex">
+                <NavigationMenuContent className="mt-2">
+                  <div className="w-[850px] bg-card border border-border/50 shadow-2xl rounded-3xl overflow-hidden flex">
                     
                     {/* Left Featured Column */}
                     <div className="w-[300px] bg-primary p-8 relative overflow-hidden flex flex-col justify-between">
