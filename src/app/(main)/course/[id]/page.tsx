@@ -23,17 +23,17 @@ const CourseDetails = async({ params }) => {
     }
 
     return (
-        <div className="bg-[#FAF9F6] min-h-screen pb-24">
+        <div className="bg-background min-h-screen pb-24">
 
             <div className="bg-slate-900 pt-32 pb-40 px-6 lg:px-20 relative">
                 <div className="container mx-auto max-w-7xl relative z-10">
                     <div className="max-w-3xl">
                         <div className="flex items-center gap-3 mb-6">
-                            <span className="bg-[#149988] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-md">
+                            <span className="bg-primary text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-md">
                                 {course.category}
                             </span>
                             {course.tag && (
-                                <span className="bg-[#F97416] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-md">
+                                <span className="bg-accent text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-md">
                                     {course.tag}
                                 </span>
                             )}
@@ -49,16 +49,16 @@ const CourseDetails = async({ params }) => {
 
                         <div className="flex flex-wrap items-center gap-6 text-slate-300 font-medium text-sm">
                             <div className="flex items-center gap-2">
-                                <FaStar className="text-[#F97416]" size={16} />
+                                <FaStar className="text-accent" size={16} />
                                 <span className="text-white font-bold">{course.rating}</span>
                                 <span>({course.reviews} reviews)</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <FaUserGraduate className="text-[#149988]" size={16} />
+                                <FaUserGraduate className="text-primary" size={16} />
                                 <span>Instructor: <span className="text-white font-bold">{course.instructor}</span></span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <FaGlobe className="text-[#149988]" size={16} />
+                                <FaGlobe className="text-primary" size={16} />
                                 <span>English</span>
                             </div>
                         </div>
@@ -80,7 +80,7 @@ const CourseDetails = async({ params }) => {
                                     "Monetize your social media following"
                                 ].map((item, index) => (
                                     <div key={index} className="flex items-start gap-3">
-                                        <FaCheckCircle className="text-[#149988] mt-1 flex-shrink-0" />
+                                        <FaCheckCircle className="text-primary mt-1 flex-shrink-0" />
                                         <span className="text-slate-600 font-medium">{item}</span>
                                     </div>
                                 ))}
@@ -92,13 +92,13 @@ const CourseDetails = async({ params }) => {
                             <div className="space-y-4">
                                 <div className="flex items-center justify-between p-4 border border-slate-100 rounded-2xl hover:bg-slate-50 transition-colors cursor-pointer">
                                     <div className="flex items-center gap-4">
-                                        <FaPlayCircle className="text-[#F97416]" size={24} />
+                                        <FaPlayCircle className="text-accent" size={24} />
                                         <div>
                                             <h4 className="font-bold text-slate-800">Introduction to Strategy</h4>
                                             <p className="text-sm text-slate-500">Video • 12 mins</p>
                                         </div>
                                     </div>
-                                    <span className="text-[#149988] font-bold text-sm bg-[#149988]/10 px-3 py-1 rounded-full">Preview</span>
+                                    <span className="text-primary font-bold text-sm bg-primary/10 px-3 py-1 rounded-full">Preview</span>
                                 </div>
                             </div>
                         </div>
@@ -121,10 +121,10 @@ const CourseDetails = async({ params }) => {
                                     ${course.price}
                                 </div>
 
-                                <button className="w-full bg-[#F97416] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#e06510] hover:-translate-y-1 transition-all shadow-lg shadow-[#F97416]/30 mb-4">
+                                <button className="w-full bg-accent text-white py-4 rounded-xl font-bold text-lg hover:bg-accent-hover hover:-translate-y-1 transition-all shadow-lg shadow-accent/30 mb-4">
                                     Add to Cart
                                 </button>
-                                <button className="w-full bg-[#149988]/10 text-[#149988] border border-[#149988]/20 py-4 rounded-xl font-bold text-lg hover:bg-[#149988] hover:text-white transition-all">
+                                <button className="w-full bg-primary/10 text-primary border border-primary/20 py-4 rounded-xl font-bold text-lg hover:bg-primary hover:text-white transition-all">
                                     Buy Now
                                 </button>
 
@@ -135,15 +135,15 @@ const CourseDetails = async({ params }) => {
                                 <h4 className="font-bold text-slate-900 mb-4">This course includes:</h4>
                                 <div className="space-y-4">
                                     <div className="flex items-center gap-3 text-slate-600">
-                                        <MdOutlineSignalCellularAlt className="text-[#149988]" size={20} />
+                                        <MdOutlineSignalCellularAlt className="text-primary" size={20} />
                                         <span className="font-medium text-sm">{course.level} Level</span>
                                     </div>
                                     <div className="flex items-center gap-3 text-slate-600">
-                                        <FaRegClock className="text-[#149988]" size={20} />
+                                        <FaRegClock className="text-primary" size={20} />
                                         <span className="font-medium text-sm">{course.duration} on-demand video</span>
                                     </div>
                                     <div className="flex items-center gap-3 text-slate-600">
-                                        <FaUserGraduate className="text-[#149988]" size={20} />
+                                        <FaUserGraduate className="text-primary" size={20} />
                                         <span className="font-medium text-sm">Certificate of completion</span>
                                     </div>
                                 </div>

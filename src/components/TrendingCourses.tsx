@@ -19,16 +19,16 @@ const TrendingCourses = () => {
         <div className="flex items-center justify-between mb-8">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <FaFire className="text-[#F97416] animate-pulse" />
-              <span className="text-[#F97416] font-black uppercase tracking-widest text-xs">
+              <FaFire className="text-accent animate-pulse" />
+              <span className="text-accent font-black uppercase tracking-widest text-xs">
                 What&apos;s Hot Right Now
               </span>
             </div>
             <h2 className="text-4xl font-[900] text-slate-900">
-              Trending <span className="text-[#149988]">Courses</span>
+              Trending <span className="text-primary">Courses</span>
             </h2>
           </div>
-          <Link href={'/allcourses'} className="hidden md:flex items-center gap-2 text-slate-500 font-bold hover:text-[#149988] transition-all">
+          <Link href={'/allcourses'} className="hidden md:flex items-center gap-2 text-slate-500 font-bold hover:text-primary transition-all">
             View All Trending <FaArrowRight size={14} />
           </Link>
         </div>

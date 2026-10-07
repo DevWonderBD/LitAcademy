@@ -34,31 +34,31 @@ const FAQ = () => {
   };
 
   return (
-    <section id='faq' className="bg-[#FCF9F8] py-14 px-6 lg:px-20 relative overflow-hidden">
+    <section id='faq' className="bg-background py-14 px-6 lg:px-20 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[radial-gradient(circle,rgba(20,153,136,0.03)_0%,transparent_70%)] rounded-full -mt-40 -mr-40 pointer-events-none"></div>
 
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           
           <div className="lg:w-1/3 flex flex-col justify-start">
-            <span className="text-[#F97416] bg-[#F97416]/10 px-4 py-1.5 rounded-full font-black uppercase tracking-widest text-[10px] mb-4 w-max">
+            <span className="text-accent bg-accent/10 px-4 py-1.5 rounded-full font-black uppercase tracking-widest text-[10px] mb-4 w-max">
               Testimonial & FAQ
             </span>
             <h2 className="text-4xl md:text-4xl font-[900] text-slate-900 leading-tight mb-6">
               Frequently asked <br />
-              <span className="text-[#149988]">Questions</span>
+              <span className="text-primary">Questions</span>
             </h2>
             <p className="text-slate-500 font-medium leading-relaxed mb-8">
               For any unanswered questions, reach out to our support team via email. We&apos;ll respond as soon as possible to assist you.
             </p>
             
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start gap-4">
-              <div className="bg-[#149988]/10 p-3 rounded-full text-[#149988]">
+              <div className="bg-primary/10 p-3 rounded-full text-primary">
                 <HiOutlineMail size={24} />
               </div>
               <div>
                 <h4 className="text-slate-900 font-bold mb-1">Email Us Directly</h4>
-                <a href="mailto:support@skillsphere.com" className="text-[#149988] font-medium hover:underline">
+                <a href="mailto:support@skillsphere.com" className="text-primary font-medium hover:underline">
                   support@skillsphere.com
                 </a>
               </div>
@@ -80,10 +80,10 @@ const FAQ = () => {
                       onClick={() => toggleAccordion(index)}
                       className="w-full flex justify-between items-center text-left py-2 focus:outline-none group"
                     >
-                      <h3 className={`text-lg md:text-xl font-semibold pr-8 transition-colors duration-300 ${isOpen ? 'text-[#149988]' : 'text-slate-800 group-hover:text-[#F97416]'}`}>
+                      <h3 className={`text-lg md:text-xl font-semibold pr-8 transition-colors duration-300 ${isOpen ? 'text-primary' : 'text-slate-800 group-hover:text-accent'}`}>
                         {faq.question}
                       </h3>
-                      <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ${isOpen ? 'bg-[#149988] text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-[#F97416] group-hover:text-white'}`}>
+                      <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ${isOpen ? 'bg-primary text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-accent group-hover:text-white'}`}>
                         {isOpen ? <FaMinus size={12} /> : <FaPlus size={12} />}
                       </div>
                     </button>

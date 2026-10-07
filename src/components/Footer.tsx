@@ -19,14 +19,14 @@ import { SiPaytm } from 'react-icons/si';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#fde8e3] pt-20 pb-8 px-6 lg:px-20 border-t border-slate-200">
+    <footer className="bg-footer-bg pt-20 pb-8 px-6 lg:px-20 border-t border-slate-200">
       <div className="container mx-auto max-w-7xl">
         
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           <div className="lg:col-span-4 flex flex-col">
             <h2 className="text-2xl font-[900] text-slate-900 mb-6 tracking-tight">
-              Lit<span className="text-[#fe6e38]">Academy</span>
+              Lit<span className="text-accent">Academy</span>
             </h2>
             <p className="text-slate-500 font-medium leading-relaxed mb-8 pr-4">
               We&apos;re always in search for talented and motivated people. Don&apos;t be shy introduce yourself! Subscribe to our newsletter.
@@ -36,16 +36,16 @@ const Footer = () => {
             <div className="mb-10">
               <h4 className="text-sm font-bold text-slate-900 mb-4">Social Media</h4>
               <div className="flex items-center gap-3">
-                <a href="#" className="bg-[#F97416] text-white p-2.5 rounded-full hover:bg-[#149988] transition-colors shadow-sm">
+                <a href="#" className="bg-accent text-white p-2.5 rounded-full hover:bg-primary transition-colors shadow-sm">
                   <FaTwitter size={14} />
                 </a>
-                <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-[#149988] hover:border-[#149988] transition-colors shadow-sm">
+                <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
                   <FaInstagram size={14} />
                 </a>
-                <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-[#149988] hover:border-[#149988] transition-colors shadow-sm">
+                <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
                   <FaFacebookF size={14} />
                 </a>
-                <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-[#149988] hover:border-[#149988] transition-colors shadow-sm">
+                <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
                   <FaLinkedinIn size={14} />
                 </a>
               </div>
@@ -71,8 +71,8 @@ const Footer = () => {
             <ul className="space-y-4">
               {['Home', 'About Us', 'Courses', 'Mentors', 'Contact Us', 'Privacy policy','Terms & Conditions'].map((item, index) => (
                 <li key={index}>
-                  <Link href="#" className="text-slate-500 font-medium hover:text-[#149988] transition-colors text-sm flex items-center gap-2">
-                    {index === 0 && <span className="w-4 h-[1px] bg-[#149988] inline-block"></span>}
+                  <Link href="#" className="text-slate-500 font-medium hover:text-primary transition-colors text-sm flex items-center gap-2">
+                    {index === 0 && <span className="w-4 h-[1px] bg-primary inline-block"></span>}
                     {item}
                   </Link>
                 </li>
@@ -86,7 +86,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {['Development', 'Design', 'Marketing', 'IT & Software', 'Health & Fitness', 'Math & Logic', 'Personal Development'].map((category, index) => (
                 <li key={index}>
-                  <Link href="#" className="text-slate-500 font-medium hover:text-[#149988] transition-colors text-sm">
+                  <Link href="#" className="text-slate-500 font-medium hover:text-primary transition-colors text-sm">
                     {category}
                   </Link>
                 </li>
@@ -104,18 +104,18 @@ const Footer = () => {
             {/* Contact Info */}
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-3">
-                <FaMapMarkerAlt className="text-[#F97416] mt-1 flex-shrink-0" size={14} />
+                <FaMapMarkerAlt className="text-accent mt-1 flex-shrink-0" size={14} />
                 <span className="text-slate-600 text-sm font-medium">254 Lillian Blvd, Holbrook<br />New York</span>
               </div>
               <div className="flex items-center gap-3">
-                <FaPhoneAlt className="text-[#F97416] flex-shrink-0" size={14} />
+                <FaPhoneAlt className="text-accent flex-shrink-0" size={14} />
                 <span className="text-slate-600 text-sm font-medium">+880 1175 423 512</span>
               </div>
             </div>
 
             {/* App Store Buttons */}
             <div className="flex flex-wrap items-center gap-3">
-              <button className="flex items-center gap-2 bg-[#149988] text-white px-4 py-2 rounded-lg hover:bg-[#e06510] transition-colors shadow-md">
+              <button className="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-accent-hover transition-colors shadow-md">
                 <FaGooglePlay size={18} />
                 <div className="text-left">
                   <span className="text-[10px] block leading-none">GET IT ON</span>
