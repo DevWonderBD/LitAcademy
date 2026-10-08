@@ -78,16 +78,20 @@ const AboutCombined = () => {
                             Our Proven <span className="text-primary">Methodology</span>
                         </h3>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative max-w-5xl mx-auto">
                         
-                        {/* Interactive Connecting Line */}
+                        {/* Interactive Connecting Line - Desktop */}
                         <div className="hidden md:block absolute top-10 left-[15%] right-[15%] h-[4px] bg-slate-200 z-0 rounded-full overflow-hidden">
-                            {/* Animated line sliding across */}
                             <div className="absolute w-[40%] h-full bg-gradient-to-r from-transparent via-primary to-transparent animate-slide rounded-full"></div>
                         </div>
 
+                        {/* Interactive Connecting Line - Mobile */}
+                        <div className="md:hidden absolute top-10 bottom-10 left-1/2 -translate-x-1/2 w-[4px] bg-slate-200 z-0 rounded-full overflow-hidden">
+                            <div className="absolute h-[40%] w-full bg-gradient-to-b from-transparent via-primary to-transparent animate-slide-vertical rounded-full"></div>
+                        </div>
+
                         <div className="relative z-10 flex flex-col items-center text-center group">
-                            <div className="w-20 h-20 bg-white border-4 border-slate-50 rounded-full flex items-center justify-center shadow-lg shadow-slate-200/40 mb-5 group-hover:border-primary/30 transition-all duration-300 group-hover:scale-110">
+                            <div className="w-20 h-20 bg-white border-4 border-slate-50 rounded-full flex items-center justify-center shadow-lg shadow-slate-200/40 mb-3 md:mb-5 group-hover:border-primary/30 transition-all duration-300 group-hover:scale-110">
                                 <BookOpen className="w-8 h-8 text-primary" />
                             </div>
                             <h4 className="text-xl font-black text-slate-900 mb-2 font-heading">1. Read</h4>
@@ -97,7 +101,7 @@ const AboutCombined = () => {
                         </div>
 
                         <div className="relative z-10 flex flex-col items-center text-center group">
-                            <div className="w-20 h-20 bg-white border-4 border-slate-50 rounded-full flex items-center justify-center shadow-lg shadow-slate-200/40 mb-5 group-hover:border-accent/30 transition-all duration-300 group-hover:scale-110">
+                            <div className="w-20 h-20 bg-white border-4 border-slate-50 rounded-full flex items-center justify-center shadow-lg shadow-slate-200/40 mb-3 md:mb-5 group-hover:border-accent/30 transition-all duration-300 group-hover:scale-110">
                                 <Lightbulb className="w-8 h-8 text-accent" />
                             </div>
                             <h4 className="text-xl font-black text-slate-900 mb-2 font-heading">2. Understand</h4>
@@ -107,7 +111,7 @@ const AboutCombined = () => {
                         </div>
 
                         <div className="relative z-10 flex flex-col items-center text-center group">
-                            <div className="w-20 h-20 bg-white border-4 border-slate-50 rounded-full flex items-center justify-center shadow-lg shadow-slate-200/40 mb-5 group-hover:border-primary/30 transition-all duration-300 group-hover:scale-110">
+                            <div className="w-20 h-20 bg-white border-4 border-slate-50 rounded-full flex items-center justify-center shadow-lg shadow-slate-200/40 mb-3 md:mb-5 group-hover:border-primary/30 transition-all duration-300 group-hover:scale-110">
                                 <MessageSquare className="w-8 h-8 text-primary" />
                             </div>
                             <h4 className="text-xl font-black text-slate-900 mb-2 font-heading">3. Analyze</h4>
@@ -127,9 +131,9 @@ const AboutCombined = () => {
                             <div className="bg-slate-50 p-3 rounded-2xl w-max shadow-sm border border-slate-100 mb-6 group-hover:scale-110 transition-transform">
                                 <BookOpen className="w-6 h-6 text-primary" />
                             </div>
-                            <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-4 font-heading">Dedicated to NU Students</h3>
-                            <p className="text-slate-600 text-lg leading-relaxed max-w-lg font-medium">
-                                We built this platform from the ground up for National University English Literature students. Experience authentic texts, structured programme guides, and comprehensive study materials without the clutter.
+                            <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-3 font-heading">Dedicated to NU Students</h3>
+                            <p className="text-slate-600 text-base md:text-lg leading-relaxed max-w-lg font-medium">
+                                A premium space built exclusively for National University English Literature students. Access authentic texts, structured guides, and everything you need to master your syllabus—without the clutter.
                             </p>
                         </div>
                     </div>
