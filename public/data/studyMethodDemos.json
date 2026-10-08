@@ -4,13 +4,10 @@
     "title": "Ode to a Nightingale",
     "author": "John Keats",
     "textLines": [
-      "Thou wast not born for death, immortal Bird!",
-      "No hungry generations tread thee down;",
       "The voice I hear this passing night was heard",
       "In ancient days by {term1}:",
       "Perhaps the self-same song that found a path",
-      "Through the sad heart of {term2}, when, sick for home,",
-      "She stood in tears amid the alien corn;"
+      "Through the sad heart of {term2}..."
     ],
     "terms": {
       "term1": {
@@ -36,7 +33,8 @@
     "textLines": [
       "O wild West Wind, thou breath of {term1},",
       "Thou, from whose unseen presence the leaves dead",
-      "Are driven, like ghosts from an {term2},"
+      "Are driven, like ghosts from an {term2},",
+      "Yellow, and black, and pale, and hectic red..."
     ],
     "terms": {
       "term1": {
@@ -63,7 +61,7 @@
       "I wandered {term1}",
       "That floats on high o'er vales and hills,",
       "When all at once I saw a crowd,",
-      "A {term2},"
+      "A {term2}..."
     ],
     "terms": {
       "term1": {

@@ -72,7 +72,10 @@ const TermTooltip: React.FC<TermTooltipProps> = ({
             <div className="flex items-start justify-between p-4 border-b border-slate-100 bg-gradient-to-r from-slate-50 to-white rounded-t-xl">
               <div className="pr-4">
                 <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5">Glossary Term</div>
-                <div className="font-bold text-primary text-lg leading-tight">
+                <div 
+                  className="font-bold text-primary text-lg leading-tight"
+                  style={!langEn ? { fontFamily: 'var(--font-anek-bangla)' } : {}}
+                >
                   {langEn ? termData.titleEn : termData.titleBn}
                 </div>
               </div>
@@ -86,7 +89,10 @@ const TermTooltip: React.FC<TermTooltipProps> = ({
             
             {/* Body */}
             <div className="p-5">
-              <p className="leading-relaxed text-slate-600 text-[15px]">
+              <p 
+                className="leading-relaxed text-slate-600 text-[15px]" 
+                style={!langEn ? { fontFamily: 'var(--font-anek-bangla)' } : {}}
+              >
                 {langEn ? termData.descEn : termData.descBn}
               </p>
             </div>
