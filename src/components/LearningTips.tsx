@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { Lightbulb, Clock, BookOpen, Target, Zap } from 'lucide-react';
 import Link from 'next/link';
@@ -5,48 +6,19 @@ import { SectionBadge } from '@/components/ui/section-badge';
 
 const LearningTips = () => {
  
-  const tipsData = [
-    {
-      category: "Study Techniques",
-      icon: <BookOpen className="text-white w-6 h-6" />,
-      accentColor: "bg-primary",
-      bulletColor: "bg-primary",
-      tips: [
-        { 
-          title: "Active Recall", 
-          description: "Enhance memory retention by testing yourself instead of passively rereading notes." 
-        },
-        { 
-          title: "Spaced Repetition", 
-          description: "Review information at increasing intervals to move data into long-term memory." 
-        },
-        { 
-          title: "Feynman Technique", 
-          description: "Solidify your understanding by explaining complex concepts in simple terms, as if teaching a child." 
-        }
-      ]
-    },
-    {
-      category: "Time Management",
-      icon: <Clock className="text-white w-6 h-6" />,
-      accentColor: "bg-accent",
-      bulletColor: "bg-accent",
-      tips: [
-        { 
-          title: "Pomodoro Technique", 
-          description: "Maintain peak productivity by working in 25-minute focused bursts followed by a 5-minute break." 
-        },
-        { 
-          title: "Eat the Frog", 
-          description: "Tackle your most challenging and important task first thing in the morning to build momentum." 
-        },
-        { 
-          title: "Time Blocking", 
-          description: "Dedicate specific slots in your calendar for different tasks to avoid multitasking fatigue." 
-        }
-      ]
-    }
-  ];
+  const [tipsData, setTipsData] = React.useState<any[]>([]);
+
+  React.useEffect(() => {
+    fetch('/data/learningTips.json')
+      .then(res => res.json())
+      .then(data => setTipsData(data))
+      .catch(console.error);
+  }, []);
+
+  const IconMap: Record<string, React.ReactNode> = {
+    BookOpen: <BookOpen className="text-white w-6 h-6" />,
+    Clock: <Clock className="text-white w-6 h-6" />
+  };
 
   return (
     <section id='technics' className="bg-secondary py-14 px-6 lg:px-20 relative overflow-hidden">
@@ -71,7 +43,7 @@ const LearningTips = () => {
             >
               <div className="flex items-center gap-4 mb-10">
                 <div className={`${section.accentColor} p-4 rounded-2xl shadow-lg group-hover:scale-110 transition-transform`}>
-                  {section.icon}
+                  {IconMap[section.iconType]}
                 </div>
                 <h3 className="text-2xl font-black text-slate-900">{section.category}</h3>
               </div>
