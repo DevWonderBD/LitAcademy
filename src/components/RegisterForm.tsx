@@ -4,7 +4,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { HiOutlineMail, HiOutlineLockClosed, HiOutlineUser, HiOutlinePhotograph } from 'react-icons/hi';
 import { FaPlayCircle, FaCheckCircle, FaUserGraduate } from 'react-icons/fa';
 import { authClient } from '@/lib/auth-client';
-import { Flip, toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
 import { redirect } from 'next/navigation';
 import { User } from 'lucide-react';
 
@@ -24,18 +24,12 @@ const RegisterPage = () => {
             callbackURL: "/"
         }, {
             onSuccess: (ctx) => {
-                toast.success('Sign Up successful', {
-                    theme: 'colored',
-                    transition: Flip
-                });
+                toast.success('Sign Up successful');
                 authClient.signOut();
                 redirect('/login')
             },
             onError: (ctx) => {
-                toast.warning(ctx.error.message, {
-                    theme: 'colored',
-                    transition: Flip
-                });
+                toast.error(ctx.error.message);
             },
         });
 

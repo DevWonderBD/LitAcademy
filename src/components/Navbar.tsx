@@ -2,7 +2,8 @@
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { toast } from "react-hot-toast";
 import { Loader2, Menu, BookOpen, GraduationCap, ArrowRight, User } from "lucide-react";
 import {
   Sheet,
@@ -39,6 +40,7 @@ const Logo = () => (
 );
 
 const AuthSection = ({ isPending, user }: { isPending: boolean; user: any }) => {
+  const router = useRouter();
   const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
@@ -96,7 +98,9 @@ const AuthSection = ({ isPending, user }: { isPending: boolean; user: any }) => 
           <DropdownMenuItem
             onClick={async () => {
               await authClient.signOut();
-              window.location.href = '/';
+              toast.success('Signed out successfully');
+              router.push('/');
+              router.refresh();
             }}
             className="cursor-pointer text-destructive focus:text-destructive font-bold"
           >
