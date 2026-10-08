@@ -2,127 +2,27 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import { BookOpen } from 'lucide-react';
 import PaperBookCard from '@/components/PaperBookCard';
+import { promises as fs } from 'fs';
+import path from 'path';
 
 export const metadata = {
   title: 'Honours Papers - LitAcademy',
 };
 
-// Dummy data for papers (we can fetch this from DB later)
-const honoursPapers = {
-  '1st-year': [
-    {
-      id: 'paper-1',
-      title: 'English Reading Skills',
-      code: '211101',
-      href: '/honours/1st-year/english-reading-skills',
-      color: 'bg-[#1e293b]',
-      spineColor: 'bg-[#0f172a]',
-      textColor: 'text-slate-100',
-    },
-    {
-      id: 'paper-2',
-      title: 'English Writing Skills',
-      code: '211103',
-      href: '/honours/1st-year/english-writing-skills',
-      color: 'bg-[#7c2d12]',
-      spineColor: 'bg-[#431407]',
-      textColor: 'text-orange-50',
-    },
-    {
-      id: 'paper-3',
-      title: 'Introduction to Poetry',
-      code: '211105',
-      href: '/honours/1st-year/introduction-to-poetry',
-      color: 'bg-[#064e3b]',
-      spineColor: 'bg-[#022c22]',
-      textColor: 'text-emerald-50',
-    },
-    {
-      id: 'paper-4',
-      title: 'Introduction to Prose',
-      code: '211107',
-      href: '/honours/1st-year/introduction-to-prose',
-      color: 'bg-[#312e81]',
-      spineColor: 'bg-[#1e1b4b]',
-      textColor: 'text-indigo-50',
-    }
-  ],
-  '2nd-year': [
-    {
-      id: 'paper-5',
-      title: 'Introduction to Drama',
-      code: '221101',
-      href: '/honours/2nd-year/introduction-to-drama',
-      color: 'bg-[#4a044e]',
-      spineColor: 'bg-[#2e0231]',
-      textColor: 'text-fuchsia-50',
-    },
-    {
-      id: 'paper-6',
-      title: 'Romantic Poetry',
-      code: '221103',
-      href: '/honours/2nd-year/romantic-poetry',
-      color: 'bg-[#831843]',
-      spineColor: 'bg-[#500f29]',
-      textColor: 'text-pink-50',
-    },
-    {
-      id: 'paper-7',
-      title: 'Advanced Reading',
-      code: '221105',
-      href: '/honours/2nd-year/advanced-reading',
-      color: 'bg-[#14532d]',
-      spineColor: 'bg-[#052e16]',
-      textColor: 'text-green-50',
-    },
-    {
-      id: 'paper-8',
-      title: 'Advanced Writing',
-      code: '221107',
-      href: '/honours/2nd-year/advanced-writing',
-      color: 'bg-[#1e3a8a]',
-      spineColor: 'bg-[#172554]',
-      textColor: 'text-blue-50',
-    }
-  ],
+async function getPapers(year: string) {
+  try {
+    const dataPath = path.join(process.cwd(), 'public/data/honours-papers.json');
+    const fileContents = await fs.readFile(dataPath, 'utf8');
+    const allPapers = JSON.parse(fileContents);
+    return allPapers[year];
+  } catch (error) {
+    return null;
+  }
+}
 
-  '3rd-year': [
-    {
-      id: 'paper-9',
-      title: 'Elizabethan Drama',
-      code: '231101',
-      href: '/honours/3rd-year/elizabethan-drama',
-      color: 'bg-[#431407]',
-      spineColor: 'bg-[#290a02]',
-      textColor: 'text-orange-50',
-    },
-    {
-      id: 'paper-10',
-      title: 'Victorian Poetry',
-      code: '231103',
-      href: '/honours/3rd-year/victorian-poetry',
-      color: 'bg-[#1e1b4b]',
-      spineColor: 'bg-[#110e2d]',
-      textColor: 'text-indigo-50',
-    }
-  ],
-  '4th-year': [
-    {
-      id: 'paper-11',
-      title: 'Modern Poetry',
-      code: '241101',
-      href: '/honours/4th-year/modern-poetry',
-      color: 'bg-[#022c22]',
-      spineColor: 'bg-[#011a14]',
-      textColor: 'text-emerald-50',
-    }
-  ]
-};
-
-
-export default async function HonoursYearPage({ params }: { params: Promise<any> }) {
+export default async function HonoursYearPage({ params }: { params: Promise<{ year: string }> }) {
   const resolvedParams = await params;
-  const papers = honoursPapers[resolvedParams.year as keyof typeof honoursPapers];
+  const papers = await getPapers(resolvedParams.year);
   
   if (!papers) {
     notFound();
@@ -153,7 +53,7 @@ export default async function HonoursYearPage({ params }: { params: Promise<any>
       {/* Books Grid */}
       <div className="container mx-auto max-w-6xl px-6 lg:px-20 -mt-20 relative z-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12">
-          {papers.map((paper) => (
+          {papers.map((paper: any) => (
             <PaperBookCard key={paper.id} paper={paper} />
           ))}
         </div>

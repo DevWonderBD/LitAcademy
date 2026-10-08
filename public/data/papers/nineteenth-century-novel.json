@@ -1,0 +1,71 @@
+{
+  "title": "Nineteenth Century Novel",
+  "code": "241101",
+  "year": "4th Year Honours",
+  "description": "Comprehensive syllabus and reading materials for Nineteenth Century Novel (241101).",
+  "units": [
+    {
+      "id": "unit-1",
+      "title": "Part A: Foundations",
+      "description": "Core texts and foundational concepts.",
+      "topics": [
+        {
+          "id": "topic-1",
+          "title": "Introduction and Context",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "topic-2",
+          "title": "Key Themes and Motifs",
+          "isLocked": true,
+          "isCompleted": false
+        },
+        {
+          "id": "topic-3",
+          "title": "Critical Analysis",
+          "isLocked": true,
+          "isCompleted": false
+        }
+      ]
+    },
+    {
+      "id": "unit-2",
+      "title": "Part B: Major Works",
+      "description": "In-depth study of selected pieces.",
+      "topics": [
+        {
+          "id": "topic-4",
+          "title": "Detailed Textual Analysis I",
+          "isLocked": true,
+          "isCompleted": false
+        },
+        {
+          "id": "topic-5",
+          "title": "Detailed Textual Analysis II",
+          "isLocked": true,
+          "isCompleted": false
+        }
+      ]
+    },
+    {
+      "id": "unit-3",
+      "title": "Part C: Review and Practice",
+      "description": "Exam preparation and previous questions.",
+      "topics": [
+        {
+          "id": "topic-6",
+          "title": "Previous Years' Questions",
+          "isLocked": true,
+          "isCompleted": false
+        },
+        {
+          "id": "topic-7",
+          "title": "Model Answers",
+          "isLocked": true,
+          "isCompleted": false
+        }
+      ]
+    }
+  ]
+}
