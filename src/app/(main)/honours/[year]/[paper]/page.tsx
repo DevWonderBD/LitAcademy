@@ -3,55 +3,31 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { BookOpen, FileText, ArrowRight, Lock, CheckCircle2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { promises as fs } from 'fs';
+import path from 'path';
 
 export const metadata = {
   title: 'Paper Syllabus - LitAcademy',
 };
 
-// Dummy Data
-const paperData = {
-  title: "English Reading Skills",
-  code: "211101",
-  year: "1st Year Honours",
-  description: "Develop critical reading strategies, comprehend complex literary texts, and master the art of contextual analysis.",
-  units: [
-    {
-      id: "unit-1",
-      title: "Part A: Reading Comprehension",
-      description: "Fundamental techniques for extracting meaning from unseen texts.",
-      topics: [
-        { id: "topic-1", title: "Understanding Main Ideas", isLocked: false, isCompleted: true },
-        { id: "topic-2", title: "Inferring Tone and Style", isLocked: false, isCompleted: false },
-        { id: "topic-3", title: "Vocabulary in Context", isLocked: true, isCompleted: false },
-      ]
-    },
-    {
-      id: "unit-2",
-      title: "Part B: Literary Texts (Prose)",
-      description: "In-depth analysis of selected short stories and essays.",
-      topics: [
-        { id: "topic-4", title: "The Luncheon by W. Somerset Maugham", isLocked: true, isCompleted: false },
-        { id: "topic-5", title: "The Gift of the Magi by O. Henry", isLocked: true, isCompleted: false },
-        { id: "topic-6", title: "Shooting an Elephant by George Orwell", isLocked: true, isCompleted: false },
-      ]
-    },
-    {
-      id: "unit-3",
-      title: "Part C: Literary Texts (Poetry)",
-      description: "Exploring structure, rhythm, and themes in classic poetry.",
-      topics: [
-        { id: "topic-7", title: "I Wandered Lonely as a Cloud", isLocked: true, isCompleted: false },
-        { id: "topic-8", title: "Stopping by Woods on a Snowy Evening", isLocked: true, isCompleted: false },
-      ]
-    }
-  ]
-};
+async function getPaperData(paperSlug: string) {
+  try {
+    const dataPath = path.join(process.cwd(), `public/data/papers/${paperSlug}.json`);
+    const fileContents = await fs.readFile(dataPath, 'utf8');
+    return JSON.parse(fileContents);
+  } catch (error) {
+    return null;
+  }
+}
 
 export default async function HonoursPaperPage({ params }: { params: Promise<{ year: string, paper: string }> }) {
   const { year, paper } = await params;
   
-  // Here we would normally fetch the paper data from the DB using `paper` slug.
-  const data = paperData;
+  const data = await getPaperData(paper);
+
+  if (!data) {
+    notFound();
+  }
 
   const formatYearName = (str: string) => {
     return str.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
@@ -86,7 +62,7 @@ export default async function HonoursPaperPage({ params }: { params: Promise<{ y
         </div>
 
         <div className="space-y-12">
-          {data.units.map((unit, unitIndex) => (
+          {data.units.map((unit: any, unitIndex: number) => (
             <div key={unit.id} className="relative">
               
               {/* Unit Header */}
@@ -102,7 +78,7 @@ export default async function HonoursPaperPage({ params }: { params: Promise<{ y
 
               {/* Topics List */}
               <div className="ml-4 pl-7 border-l-2 border-slate-200 space-y-4">
-                {unit.topics.map((topic) => {
+                {unit.topics.map((topic: any) => {
                   
                   const isLocked = topic.isLocked;
                   const isCompleted = topic.isCompleted;

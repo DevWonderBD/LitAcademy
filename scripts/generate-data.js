@@ -1,0 +1,87 @@
+const fs = require('fs');
+const path = require('path');
+
+const papersList = {
+  '1st-year': [
+    { id: 'english-reading-skills', title: 'English Reading Skills', code: '211101', href: '/honours/1st-year/english-reading-skills', color: 'bg-[#1e293b]', spineColor: 'bg-[#0f172a]', textColor: 'text-slate-100' },
+    { id: 'english-writing-skills', title: 'English Writing Skills', code: '211103', href: '/honours/1st-year/english-writing-skills', color: 'bg-[#7c2d12]', spineColor: 'bg-[#431407]', textColor: 'text-orange-50' },
+    { id: 'introduction-to-poetry', title: 'Introduction to Poetry', code: '211105', href: '/honours/1st-year/introduction-to-poetry', color: 'bg-[#064e3b]', spineColor: 'bg-[#022c22]', textColor: 'text-emerald-50' },
+    { id: 'introduction-to-prose', title: 'Introduction to Prose', code: '211107', href: '/honours/1st-year/introduction-to-prose', color: 'bg-[#312e81]', spineColor: 'bg-[#1e1b4b]', textColor: 'text-indigo-50' }
+  ],
+  '2nd-year': [
+    { id: 'introduction-to-drama', title: 'Introduction to Drama', code: '221101', href: '/honours/2nd-year/introduction-to-drama', color: 'bg-[#4a044e]', spineColor: 'bg-[#2e0231]', textColor: 'text-fuchsia-50' },
+    { id: 'romantic-poetry', title: 'Romantic Poetry', code: '221103', href: '/honours/2nd-year/romantic-poetry', color: 'bg-[#831843]', spineColor: 'bg-[#500f29]', textColor: 'text-pink-50' },
+    { id: 'advanced-reading-and-writing', title: 'Advanced Reading and Writing', code: '221105', href: '/honours/2nd-year/advanced-reading-and-writing', color: 'bg-[#14532d]', spineColor: 'bg-[#052e16]', textColor: 'text-green-50' },
+    { id: 'history-of-english-literature', title: 'History of English Literature', code: '221107', href: '/honours/2nd-year/history-of-english-literature', color: 'bg-[#1e3a8a]', spineColor: 'bg-[#172554]', textColor: 'text-blue-50' }
+  ],
+  '3rd-year': [
+    { id: 'elizabethan-and-jacobean-drama', title: 'Elizabethan and Jacobean Drama', code: '231101', href: '/honours/3rd-year/elizabethan-and-jacobean-drama', color: 'bg-[#431407]', spineColor: 'bg-[#290a02]', textColor: 'text-orange-50' },
+    { id: '16th-and-17th-century-poetry', title: '16th and 17th Century Poetry', code: '231103', href: '/honours/3rd-year/16th-and-17th-century-poetry', color: 'bg-[#1e293b]', spineColor: 'bg-[#0f172a]', textColor: 'text-slate-100' },
+    { id: '17th-and-18th-century-non-fictional-prose', title: '17th and 18th Century Non-Fictional Prose', code: '231105', href: '/honours/3rd-year/17th-and-18th-century-non-fictional-prose', color: 'bg-[#064e3b]', spineColor: 'bg-[#022c22]', textColor: 'text-emerald-50' },
+    { id: 'restoration-and-eighteenth-century-fiction', title: 'Restoration & 18th Century Fiction', code: '231107', href: '/honours/3rd-year/restoration-and-eighteenth-century-fiction', color: 'bg-[#312e81]', spineColor: 'bg-[#1e1b4b]', textColor: 'text-indigo-50' },
+    { id: 'restoration-and-eighteenth-century-poetry-and-drama', title: 'Restoration & 18th Century Poetry & Drama', code: '231109', href: '/honours/3rd-year/restoration-and-eighteenth-century-poetry-and-drama', color: 'bg-[#4a044e]', spineColor: 'bg-[#2e0231]', textColor: 'text-fuchsia-50' },
+    { id: 'victorian-poetry', title: 'Victorian Poetry', code: '231111', href: '/honours/3rd-year/victorian-poetry', color: 'bg-[#831843]', spineColor: 'bg-[#500f29]', textColor: 'text-pink-50' },
+    { id: 'introduction-to-literary-criticism', title: 'Introduction to Literary Criticism (Up to Romantic)', code: '231113', href: '/honours/3rd-year/introduction-to-literary-criticism', color: 'bg-[#14532d]', spineColor: 'bg-[#052e16]', textColor: 'text-green-50' },
+    { id: 'introduction-to-linguistics', title: 'Introduction to Linguistics', code: '231115', href: '/honours/3rd-year/introduction-to-linguistics', color: 'bg-[#1e3a8a]', spineColor: 'bg-[#172554]', textColor: 'text-blue-50' }
+  ],
+  '4th-year': [
+    { id: 'nineteenth-century-novel', title: 'Nineteenth Century Novel', code: '241101', href: '/honours/4th-year/nineteenth-century-novel', color: 'bg-[#022c22]', spineColor: 'bg-[#011a14]', textColor: 'text-emerald-50' },
+    { id: 'twentieth-century-poetry', title: 'Twentieth Century Poetry', code: '241103', href: '/honours/4th-year/twentieth-century-poetry', color: 'bg-[#431407]', spineColor: 'bg-[#290a02]', textColor: 'text-orange-50' },
+    { id: 'modern-drama', title: 'Modern Drama', code: '241105', href: '/honours/4th-year/modern-drama', color: 'bg-[#1e1b4b]', spineColor: 'bg-[#110e2d]', textColor: 'text-indigo-50' },
+    { id: 'twentieth-century-novel', title: 'Twentieth Century Novel', code: '241107', href: '/honours/4th-year/twentieth-century-novel', color: 'bg-[#7c2d12]', spineColor: 'bg-[#431407]', textColor: 'text-orange-50' },
+    { id: 'american-poetry', title: 'American Poetry', code: '241109', href: '/honours/4th-year/american-poetry', color: 'bg-[#064e3b]', spineColor: 'bg-[#022c22]', textColor: 'text-emerald-50' },
+    { id: 'american-literature-fiction-and-drama', title: 'American Literature: Fiction and Drama', code: '241111', href: '/honours/4th-year/american-literature-fiction-and-drama', color: 'bg-[#312e81]', spineColor: 'bg-[#1e1b4b]', textColor: 'text-indigo-50' },
+    { id: 'classics-in-translation', title: 'Classics in Translation', code: '241113', href: '/honours/4th-year/classics-in-translation', color: 'bg-[#4a044e]', spineColor: 'bg-[#2e0231]', textColor: 'text-fuchsia-50' },
+    { id: 'literary-criticism-romantic-to-modern', title: 'Literary Criticism (Romantic to Modern)', code: '241115', href: '/honours/4th-year/literary-criticism-romantic-to-modern', color: 'bg-[#831843]', spineColor: 'bg-[#500f29]', textColor: 'text-pink-50' },
+    { id: 'continental-literature', title: 'Continental Literature', code: '241117', href: '/honours/4th-year/continental-literature', color: 'bg-[#14532d]', spineColor: 'bg-[#052e16]', textColor: 'text-green-50' },
+    { id: 'approaches-to-the-study-of-literature', title: 'Approaches to the Study of Literature', code: '241119', href: '/honours/4th-year/approaches-to-the-study-of-literature', color: 'bg-[#1e3a8a]', spineColor: 'bg-[#172554]', textColor: 'text-blue-50' }
+  ]
+};
+
+// Write honours-papers.json
+fs.writeFileSync(path.join(__dirname, '../public/data/honours-papers.json'), JSON.stringify(papersList, null, 2));
+
+// Generate dummy syllabus for each paper
+Object.keys(papersList).forEach(year => {
+  papersList[year].forEach(paper => {
+    const paperData = {
+      title: paper.title,
+      code: paper.code,
+      year: year.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()) + " Honours",
+      description: `Comprehensive syllabus and reading materials for ${paper.title} (${paper.code}).`,
+      units: [
+        {
+          id: "unit-1",
+          title: "Part A: Foundations",
+          description: "Core texts and foundational concepts.",
+          topics: [
+            { id: "topic-1", title: "Introduction and Context", isLocked: false, isCompleted: false },
+            { id: "topic-2", title: "Key Themes and Motifs", isLocked: true, isCompleted: false },
+            { id: "topic-3", title: "Critical Analysis", isLocked: true, isCompleted: false },
+          ]
+        },
+        {
+          id: "unit-2",
+          title: "Part B: Major Works",
+          description: "In-depth study of selected pieces.",
+          topics: [
+            { id: "topic-4", title: "Detailed Textual Analysis I", isLocked: true, isCompleted: false },
+            { id: "topic-5", title: "Detailed Textual Analysis II", isLocked: true, isCompleted: false },
+          ]
+        },
+        {
+          id: "unit-3",
+          title: "Part C: Review and Practice",
+          description: "Exam preparation and previous questions.",
+          topics: [
+            { id: "topic-6", title: "Previous Years' Questions", isLocked: true, isCompleted: false },
+            { id: "topic-7", title: "Model Answers", isLocked: true, isCompleted: false },
+          ]
+        }
+      ]
+    };
+    fs.writeFileSync(path.join(__dirname, `../public/data/papers/${paper.id}.json`), JSON.stringify(paperData, null, 2));
+  });
+});
+
+console.log("Data generated successfully!");
