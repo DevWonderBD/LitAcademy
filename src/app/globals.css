@@ -178,13 +178,13 @@
   }
 
   @keyframes slide {
-    0% { left: -50%; }
-    100% { left: 100%; }
+    0% { transform: translateX(-150%); }
+    100% { transform: translateX(250%); }
   }
 
   @keyframes slide-vertical {
-    0% { top: -50%; }
-    100% { top: 100%; }
+    0% { transform: translateY(-150%); }
+    100% { transform: translateY(250%); }
   }
 }
 

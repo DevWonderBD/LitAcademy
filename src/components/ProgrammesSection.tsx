@@ -25,9 +25,9 @@ const ProgrammesSection = () => {
 
         {/* Section Header */}
         <div className="text-center mb-12 flex flex-col items-center">
-          <SectionBadge className="mx-auto">Most Read Papers</SectionBadge>
+          <SectionBadge className="mx-auto">Popular Readings</SectionBadge>
           <h2 className="text-[28px] md:text-4xl lg:text-5xl font-[900] text-slate-900 mt-4 font-heading leading-tight">
-            Explore Our Most Read <span className="text-primary">Papers</span>
+            Most Read <span className="text-primary">Papers</span>
           </h2>
           <p className="text-slate-500 font-medium mt-4 max-w-xl text-center">
             Discover the papers that our students are reading the most. Start your journey with the most popular literature notes.
