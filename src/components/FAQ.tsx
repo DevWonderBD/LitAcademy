@@ -29,7 +29,7 @@ const FAQ = () => {
           
           <div className="lg:w-1/3 flex flex-col justify-start">
             <SectionBadge>Testimonial & FAQ</SectionBadge>
-            <h2 className="text-4xl md:text-4xl font-[900] text-slate-900 leading-tight mt-4 mb-6">
+            <h2 className="text-4xl md:text-4xl font-[900] font-heading text-slate-900 leading-tight mt-4 mb-6">
               Frequently asked <br />
               <span className="text-primary">Questions</span>
             </h2>

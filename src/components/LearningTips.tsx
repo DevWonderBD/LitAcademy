@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
-import { Lightbulb, Clock, BookOpen, Target, Zap } from 'lucide-react';
+import { Zap } from 'lucide-react';
+import { FaBookReader, FaRegClock } from 'react-icons/fa';
 import Link from 'next/link';
 import { SectionBadge } from '@/components/ui/section-badge';
 
@@ -16,8 +17,8 @@ const LearningTips = () => {
   }, []);
 
   const IconMap: Record<string, React.ReactNode> = {
-    BookOpen: <BookOpen className="text-white w-6 h-6" />,
-    Clock: <Clock className="text-white w-6 h-6" />
+    BookOpen: <FaBookReader className="text-white w-7 h-7" />,
+    Clock: <FaRegClock className="text-white w-7 h-7" />
   };
 
   return (
@@ -29,7 +30,7 @@ const LearningTips = () => {
         {/* Section Header */}
         <div className="text-center mb-10 flex flex-col items-center">
           <SectionBadge className="mx-auto">Learning Optimization</SectionBadge>
-          <h2 className="text-[28px] md:text-5xl font-[900] text-slate-900 leading-tight">
+          <h2 className="text-[28px] md:text-5xl font-[900] font-heading text-slate-900 leading-tight mt-4">
             Master Your Skills with <br />
             <span className="text-primary">Expert Techniques</span>
           </h2>

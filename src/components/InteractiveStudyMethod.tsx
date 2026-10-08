@@ -58,7 +58,7 @@ const InteractiveStudyMethod = () => {
           {/* Left Side: Explainer */}
           <div className="w-full lg:w-1/2 space-y-6">
             <SectionBadge>Study Method</SectionBadge>
-            <h2 className="text-4xl md:text-5xl font-[900] text-slate-900 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-[900] font-heading text-slate-900 leading-tight">
               Read Smarter with <br/>
               <span className="text-primary">Hover-to-Learn</span>
             </h2>
