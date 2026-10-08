@@ -84,8 +84,41 @@ const honoursPapers = {
       spineColor: 'bg-[#172554]',
       textColor: 'text-blue-50',
     }
+  ],
+
+  '3rd-year': [
+    {
+      id: 'paper-9',
+      title: 'Elizabethan Drama',
+      code: '231101',
+      href: '/honours/3rd-year/elizabethan-drama',
+      color: 'bg-[#431407]',
+      spineColor: 'bg-[#290a02]',
+      textColor: 'text-orange-50',
+    },
+    {
+      id: 'paper-10',
+      title: 'Victorian Poetry',
+      code: '231103',
+      href: '/honours/3rd-year/victorian-poetry',
+      color: 'bg-[#1e1b4b]',
+      spineColor: 'bg-[#110e2d]',
+      textColor: 'text-indigo-50',
+    }
+  ],
+  '4th-year': [
+    {
+      id: 'paper-11',
+      title: 'Modern Poetry',
+      code: '241101',
+      href: '/honours/4th-year/modern-poetry',
+      color: 'bg-[#022c22]',
+      spineColor: 'bg-[#011a14]',
+      textColor: 'text-emerald-50',
+    }
   ]
 };
+
 
 export default function HonoursYearPage({ params }: { params: { year: string } }) {
   const papers = honoursPapers[params.year as keyof typeof honoursPapers];
