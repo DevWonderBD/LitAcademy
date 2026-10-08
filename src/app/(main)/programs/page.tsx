@@ -1,9 +1,12 @@
-import ProgramsList from '@/components/ProgramsList';
-
 export const metadata = {
   title: 'Programs - LitAcademy',
 };
 
 export default function ProgramsPage() {
-  return <ProgramsList />;
+  return (
+    <div className="container mx-auto px-6 py-20 min-h-[60vh] flex flex-col items-center justify-center text-center">
+      <h1 className="text-4xl font-black text-slate-900 mb-4">Programs</h1>
+      <p className="text-xl text-slate-500 font-medium">Coming Soon...</p>
+    </div>
+  );
 }
