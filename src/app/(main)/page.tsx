@@ -10,8 +10,8 @@ export default function Home() {
     <Hero></Hero>
     <AboutCombined></AboutCombined>
     <ProgrammesSection></ProgrammesSection>
-    <LearningTips></LearningTips>
     <InteractiveStudyMethod></InteractiveStudyMethod>
+    <LearningTips></LearningTips>
     {/* <MentorsSection></MentorsSection> */}
     <FAQ></FAQ>
   </>
