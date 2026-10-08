@@ -4,7 +4,6 @@ import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
 import LearningTips from "@/components/LearningTips";
 import InteractiveStudyMethod from "@/components/InteractiveStudyMethod";
-import MostReadSection from "@/components/MostReadSection";
 
 export default function Home() {
   return (<>
@@ -13,7 +12,6 @@ export default function Home() {
     <ProgrammesSection></ProgrammesSection>
     <LearningTips></LearningTips>
     <InteractiveStudyMethod></InteractiveStudyMethod>
-    <MostReadSection></MostReadSection>
     {/* <MentorsSection></MentorsSection> */}
     <FAQ></FAQ>
   </>
