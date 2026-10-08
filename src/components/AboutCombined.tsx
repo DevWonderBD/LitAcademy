@@ -81,12 +81,12 @@ const AboutCombined = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 relative max-w-5xl mx-auto pl-4 md:pl-0">
                         
                         {/* Interactive Connecting Line - Desktop */}
-                        <div className="hidden md:block absolute top-10 left-[15%] right-[15%] h-[4px] bg-slate-200 z-0 rounded-full overflow-hidden">
+                        <div className="hidden md:block absolute top-10 left-[15%] right-[15%] h-[2px] bg-slate-200 z-0 rounded-full overflow-hidden">
                             <div className="absolute w-[40%] h-full bg-gradient-to-r from-transparent via-primary to-transparent animate-slide rounded-full"></div>
                         </div>
 
                         {/* Interactive Connecting Line - Mobile (Timeline) */}
-                        <div className="md:hidden absolute top-8 bottom-8 left-[calc(1rem+30px)] w-[4px] bg-slate-200 z-0 rounded-full overflow-hidden">
+                        <div className="md:hidden absolute top-[32px] bottom-[64px] left-[calc(1rem+31px)] w-[2px] bg-slate-200 z-0 rounded-full overflow-hidden">
                             <div className="absolute h-[40%] w-full bg-gradient-to-b from-transparent via-primary to-transparent animate-slide-vertical rounded-full"></div>
                         </div>
 
