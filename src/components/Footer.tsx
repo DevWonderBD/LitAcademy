@@ -10,7 +10,7 @@ import {
   FaApplePay, 
   FaGooglePay, 
   FaStripe, 
-  FaGlobe, 
+  FaMapMarkerAlt, 
   FaEnvelope, 
   FaGooglePlay, 
   FaApple,
@@ -133,7 +133,7 @@ const Footer = () => {
             {/* Contact Info */}
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-3">
-                <FaGlobe className="text-accent flex-shrink-0" size={14} />
+                <FaMapMarkerAlt className="text-accent flex-shrink-0" size={14} />
                 <span className="text-slate-600 text-sm font-medium">100% Online Platform (Available anywhere)</span>
               </div>
               <div className="flex items-center gap-3">
@@ -144,23 +144,21 @@ const Footer = () => {
 
             {/* App Store Buttons */}
             <Dialog>
-              <DialogTrigger asChild>
-                <div className="flex flex-wrap items-center gap-3">
-                  <button className="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-accent-hover transition-colors shadow-md cursor-pointer">
-                    <FaGooglePlay size={18} />
-                    <div className="text-left">
-                      <span className="text-[10px] block leading-none">GET IT ON</span>
-                      <span className="text-sm font-bold block leading-tight">Google Play</span>
-                    </div>
-                  </button>
-                  <button className="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors shadow-md cursor-pointer">
-                    <FaApple size={20} />
-                    <div className="text-left">
-                      <span className="text-[10px] block leading-none">Download on the</span>
-                      <span className="text-sm font-bold block leading-tight">App Store</span>
-                    </div>
-                  </button>
-                </div>
+              <DialogTrigger render={<div className="flex flex-wrap items-center gap-3" />}>
+                <button className="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-accent-hover transition-colors shadow-md cursor-pointer">
+                  <FaGooglePlay size={18} />
+                  <div className="text-left">
+                    <span className="text-[10px] block leading-none">GET IT ON</span>
+                    <span className="text-sm font-bold block leading-tight">Google Play</span>
+                  </div>
+                </button>
+                <button className="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors shadow-md cursor-pointer">
+                  <FaApple size={20} />
+                  <div className="text-left">
+                    <span className="text-[10px] block leading-none">Download on the</span>
+                    <span className="text-sm font-bold block leading-tight">App Store</span>
+                  </div>
+                </button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-md text-center p-10 bg-[#fcfbf9] border-slate-200 rounded-2xl shadow-2xl">
                 <div className="flex flex-col items-center justify-center space-y-2">
@@ -194,4 +192,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer;
