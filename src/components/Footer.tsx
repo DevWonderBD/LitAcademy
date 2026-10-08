@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { 
   FaTwitter, 
@@ -17,7 +17,21 @@ import {
 } from 'react-icons/fa';
 import { SiPaytm } from 'react-icons/si';
 
+interface FooterData {
+  companyInfo: string[];
+  topCategories: string[];
+}
+
 const Footer = () => {
+  const [data, setData] = useState<FooterData>({ companyInfo: [], topCategories: [] });
+
+  useEffect(() => {
+    fetch('/data/footer.json')
+      .then(res => res.json())
+      .then(d => setData(d))
+      .catch(err => console.error("Error fetching footer data:", err));
+  }, []);
+
   return (
     <footer className="bg-footer-bg pt-20 pb-8 px-6 lg:px-20 border-t border-slate-200">
       <div className="container mx-auto max-w-7xl">
@@ -69,7 +83,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <h3 className="text-lg font-bold text-slate-900 mb-6">Company Info</h3>
             <ul className="space-y-4">
-              {['Home', 'About Us', 'Programmes', 'Mentors', 'Contact Us', 'Privacy policy','Terms & Conditions'].map((item, index) => (
+              {data.companyInfo.map((item, index) => (
                 <li key={index}>
                   <Link href="#" className="text-slate-500 font-medium hover:text-primary transition-colors text-sm flex items-center gap-2">
                     {index === 0 && <span className="w-4 h-[1px] bg-primary inline-block"></span>}
@@ -82,9 +96,9 @@ const Footer = () => {
 
           {/* Column 3 */}
           <div className="lg:col-span-2">
-            <h3 className="text-lg font-bold text-slate-900 mb-6">Top Categories</h3>
+            <h3 className="text-lg font-bold text-slate-900 mb-6">Top Programmes</h3>
             <ul className="space-y-4">
-              {['Development', 'Design', 'Marketing', 'IT & Software', 'Health & Fitness', 'Math & Logic', 'Personal Development'].map((category, index) => (
+              {data.topCategories.map((category, index) => (
                 <li key={index}>
                   <Link href="#" className="text-slate-500 font-medium hover:text-primary transition-colors text-sm">
                     {category}
@@ -96,7 +110,7 @@ const Footer = () => {
 
           {/* Column 4*/}
           <div className="lg:col-span-4 flex flex-col">
-            <h3 className="text-lg font-bold text-slate-900 mb-6">Download the LMS App</h3>
+            <h3 className="text-lg font-bold text-slate-900 mb-6">Download the App</h3>
             <p className="text-slate-500 font-medium text-sm leading-relaxed mb-6 pr-4">
               Join us on this journey of discovery as we explore the latest trend.
             </p>
@@ -137,7 +151,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-slate-200 pt-8 mt-8 flex flex-col md:flex-row items-center justify-center text-center">
           <p className="text-slate-500 text-sm font-medium">
-            © 2026 SkillSphere. All rights reserved.
+            © 2026 LitAcademy. All rights reserved.
           </p>
         </div>
       </div>
@@ -145,4 +159,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer;
