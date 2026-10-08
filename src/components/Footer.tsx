@@ -93,7 +93,7 @@ const Footer = () => {
 
           {/* Column 3 */}
           <div className="lg:col-span-2">
-            <h3 className="text-lg font-bold text-slate-900 mb-6">Top Programmes</h3>
+            <h3 className="text-lg font-bold text-slate-900 mb-6">Top Programs</h3>
             <ul className="space-y-4">
               {data.topCategories.map((category, index) => (
                 <li key={index}>

@@ -36,7 +36,7 @@ export function HowItWorksModal({ children }: HowItWorksModalProps) {
                 <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-foreground mb-1 text-sm sm:text-base">1. Pick Your Programme</h4>
+                <h4 className="font-bold text-foreground mb-1 text-sm sm:text-base">1. Pick Your Program</h4>
                 <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
                   Start by selecting your exact academic year from the NU Honours or Masters syllabus. No searching needed — everything is perfectly organised by paper.
                 </p>

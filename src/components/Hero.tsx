@@ -70,7 +70,7 @@ const Hero = () => {
 
             <div className="flex flex-col gap-4 my-8">
               <div className="text-md font-semibold text-muted-foreground">
-                Pick your programme → Read and hover → Think and practise
+                Pick your program → Read and hover → Think and practise
               </div>
               <div className="flex flex-wrap gap-2 text-lg lg:text-md text-primary">
                 <span className="bg-white/60 px-3 py-1 rounded-full text-xs font-bold shadow-sm border border-primary/10">Hover-to-learn terms</span>
@@ -82,7 +82,7 @@ const Hero = () => {
 
             <div className="flex items-center gap-2 md:gap-4 mb-6">
               <Link href="/programs" className="cursor-pointer group relative overflow-hidden flex items-center gap-1.5 md:gap-2 bg-primary text-white px-5 md:px-8 py-3 md:py-3.5 rounded-full font-bold text-[15px] md:text-[15px] hover:bg-primary-hover hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap">
-                <span className="relative z-10">Choose Programme</span>
+                <span className="relative z-10">Choose Program</span>
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-700 ease-in-out"></div>
               </Link>

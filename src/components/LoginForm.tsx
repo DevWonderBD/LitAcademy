@@ -63,7 +63,7 @@ const LoginPage = () => {
                                 <FaPlayCircle className="text-white" size={24} />
                             </div>
                             <div>
-                                <h4 className="text-white font-bold">Complete Programmes</h4>
+                                <h4 className="text-white font-bold">Complete Programs</h4>
                                 <p className="text-teal-100/70 text-sm">Honours & Masters curriculum.</p>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 import AboutSection from "@/components/AboutSection";
-import ProgrammesSection from "@/components/ProgrammesSection";
+import ProgramsSection from "@/components/ProgramsSection";
 import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
 import LearningTips from "@/components/LearningTips";
@@ -9,7 +9,7 @@ export default function Home() {
   return (<>
     <Hero></Hero>
     <AboutSection></AboutSection>
-    <ProgrammesSection></ProgrammesSection>
+    <ProgramsSection></ProgramsSection>
     <InteractiveStudyMethod></InteractiveStudyMethod>
     <LearningTips></LearningTips>
     {/* <MentorsSection></MentorsSection> */}

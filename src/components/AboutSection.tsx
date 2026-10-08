@@ -17,7 +17,7 @@ const AboutSection = () => {
                             <span className="text-primary">Understand deeply.</span>
                         </h2>
                         <p className="text-slate-600 text-lg leading-relaxed mb-8 font-medium max-w-xl">
-                            We are redefining how English Literature is taught. Focused exclusively on National University programmes, our platform replaces rote memorisation with genuine critical thinking and interactive guidance.
+                            We are redefining how English Literature is taught. Focused exclusively on National University programs, our platform replaces rote memorisation with genuine critical thinking and interactive guidance.
                         </p>
 
                         <div className="flex flex-col gap-4 text-left w-full max-w-md mx-auto lg:mx-0">

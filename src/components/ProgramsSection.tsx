@@ -5,18 +5,18 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Link from 'next/link';
-import ProgrammeCard from './ProgrammeCard';
+import ProgramCard from './ProgramCard';
 import { SectionBadge } from '@/components/ui/section-badge';
 import { useEffect, useState } from 'react';
 
-const ProgrammesSection = () => {
-  const [programmes, setProgrammes] = useState<any[]>([]);
+const ProgramsSection = () => {
+  const [programs, setPrograms] = useState<any[]>([]);
 
   useEffect(() => {
     fetch('/data/data.json')
       .then(res => res.json())
-      .then(data => setProgrammes(data))
-      .catch(err => console.error("Failed to load programmes", err));
+      .then(data => setPrograms(data))
+      .catch(err => console.error("Failed to load programs", err));
   }, []);
 
   return (
@@ -35,7 +35,7 @@ const ProgrammesSection = () => {
         </div>
 
         <div className="w-full py-4 max-w-6xl mx-auto">
-          {programmes.length > 0 ? (
+          {programs.length > 0 ? (
             <Swiper
               spaceBetween={20}
               slidesPerView={1}
@@ -54,9 +54,9 @@ const ProgrammesSection = () => {
               modules={[Autoplay, Pagination, Navigation]}
               className="mySwiper !pb-12" 
             >
-              {programmes.map((programme) => (
-                <SwiperSlide key={programme.id}>
-                  <ProgrammeCard programme={programme}></ProgrammeCard>
+              {programs.map((program) => (
+                <SwiperSlide key={program.id}>
+                  <ProgramCard program={program}></ProgramCard>
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -76,4 +76,4 @@ const ProgrammesSection = () => {
   );
 };
 
-export default ProgrammesSection;
+export default ProgramsSection;
