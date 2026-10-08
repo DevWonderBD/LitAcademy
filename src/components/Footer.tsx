@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { 
-  FaTwitter, 
   FaInstagram, 
   FaFacebookF, 
   FaLinkedinIn, 
@@ -14,8 +13,10 @@ import {
   FaMapMarkerAlt, 
   FaPhoneAlt, 
   FaGooglePlay, 
-  FaApple 
+  FaApple,
+  FaYoutube
 } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { SiPaytm } from 'react-icons/si';
 
 interface FooterData {
@@ -40,28 +41,33 @@ const Footer = () => {
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           <div className="lg:col-span-4 flex flex-col">
-            <h2 className="text-2xl font-[900] text-slate-900 mb-6 tracking-tight">
-              Lit<span className="text-accent">Academy</span>
-            </h2>
+            <Link href="/" className="text-2xl md:text-2xl font-black flex items-center mb-6 w-fit">
+              <span className="text-foreground">Lit</span>
+              <span className="text-primary">Academy</span>
+              <span className="w-2 h-2 bg-primary rounded-full ml-1 self-end mb-1"></span>
+            </Link>
             <p className="text-slate-500 font-medium leading-relaxed mb-8 pr-4">
-              We&apos;re always in search for talented and motivated people. Don&apos;t be shy introduce yourself! Subscribe to our newsletter.
+              LitAcademy is the premium study platform for National University English Literature students. Access structured notes, bilingual explanations, and an AI guide to master your syllabus.
             </p>
             
             {/* Social Media */}
             <div className="mb-10">
               <h4 className="text-sm font-bold text-slate-900 mb-4">Social Media</h4>
               <div className="flex items-center gap-3">
-                <a href="#" className="bg-accent text-white p-2.5 rounded-full hover:bg-primary transition-colors shadow-sm">
-                  <FaTwitter size={14} />
+                <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
+                  <FaFacebookF size={14} />
                 </a>
                 <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
                   <FaInstagram size={14} />
                 </a>
                 <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
-                  <FaFacebookF size={14} />
+                  <FaXTwitter size={14} />
                 </a>
                 <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
                   <FaLinkedinIn size={14} />
+                </a>
+                <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
+                  <FaYoutube size={14} />
                 </a>
               </div>
             </div>
