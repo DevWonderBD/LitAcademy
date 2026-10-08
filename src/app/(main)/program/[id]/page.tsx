@@ -43,10 +43,6 @@ const ProgrammeDetails = ({ params }: { params: { id: string } }) => {
 
                         <div className="flex flex-wrap items-center gap-6 text-slate-300 font-medium text-sm">
                             <div className="flex items-center gap-2">
-                                <FaUserGraduate className="text-primary" size={16} />
-                                <span>Guide: <span className="text-white font-bold">{programme.instructor}</span></span>
-                            </div>
-                            <div className="flex items-center gap-2">
                                 <FaGlobe className="text-primary" size={16} />
                                 <span>English Literature</span>
                             </div>
@@ -106,10 +102,6 @@ const ProgrammeDetails = ({ params }: { params: { id: string } }) => {
                                 
                                 <h4 className="font-bold text-slate-900 mb-4 mt-6">This programme includes:</h4>
                                 <div className="space-y-4">
-                                    <div className="flex items-center gap-3 text-slate-600">
-                                        <MdOutlineSignalCellularAlt className="text-primary" size={20} />
-                                        <span className="font-medium text-sm">{programme.level} Level</span>
-                                    </div>
                                     <div className="flex items-center gap-3 text-slate-600">
                                         <FaBookOpen className="text-primary" size={20} />
                                         <span className="font-medium text-sm">Comprehensive Notes</span>
