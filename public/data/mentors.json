@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Dr. Sarah Jenkins",
+    "role": "Professor of Modern Literature",
+    "imageId": "Instructor1",
+    "socials": { "linkedin": "#", "twitter": "#", "web": "#" }
+  },
+  {
+    "name": "Saiful Talukdar",
+    "role": "MA English, NU Specialist",
+    "imageId": "Instructor2",
+    "socials": { "linkedin": "#", "twitter": "#", "web": "#" }
+  },
+  {
+    "name": "Mark Thompson",
+    "role": "Victorian Era Researcher",
+    "imageId": "Instructor3",
+    "socials": { "linkedin": "#", "twitter": "#", "web": "#" }
+  },
+  {
+    "name": "Jessica Williams",
+    "role": "Literary Theory Expert",
+    "imageId": "Instructor4",
+    "socials": { "linkedin": "#", "twitter": "#", "web": "#" }
+  }
+]
