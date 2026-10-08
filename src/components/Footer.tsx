@@ -165,8 +165,8 @@ const Footer = () => {
       </div>
       
       {/* Full Width Copyright */}
-      <div className="border-t border-slate-200 w-full mt-10">
-        <div className="container mx-auto max-w-7xl pt-6 px-6 lg:px-20 flex flex-col md:flex-row items-center justify-between text-center gap-4">
+      <div className="w-full border-t border-slate-300/80">
+        <div className="container mx-auto max-w-7xl py-6 px-6 lg:px-20 flex flex-col md:flex-row items-center justify-between text-center gap-4">
           <p className="text-slate-500 text-sm font-medium">
             © {new Date().getFullYear()} LitAcademy. All rights reserved.
           </p>
