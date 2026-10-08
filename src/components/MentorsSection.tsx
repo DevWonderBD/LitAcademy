@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from 'react';
 import Instructor1 from '@/assets/instructor1.jpg';
 import Instructor2 from '@/assets/instructor2.jpg';

@@ -7,28 +7,14 @@ import { SectionBadge } from '@/components/ui/section-badge';
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const faqs = [
-    {
-      question: "How do I get started with your product?",
-      answer: "Sign up on our website, explore features, customize your profile, and start using our product. We're here to help you every step of the way with our comprehensive onboarding guide."
-    },
-    {
-      question: "What payment methods do you accept?",
-      answer: "We accept all major credit cards (Visa, MasterCard, Amex), PayPal, and mobile financial services like bKash, Nagad, and Rocket for your convenience."
-    },
-    {
-      question: "Is there a free trial available?",
-      answer: "Yes! We offer a 7-day completely free trial for all our premium courses. You can cancel anytime within this period without being charged."
-    },
-    {
-      question: "Is technical support available?",
-      answer: "Absolutely. Our dedicated support team is available 24/7 via email and live chat to help you resolve any technical issues you might face."
-    },
-    {
-      question: "Can I cancel my subscription anytime?",
-      answer: "Yes, you can cancel your subscription at any time from your account settings. Once canceled, you will still have access until the end of your current billing cycle."
-    }
-  ];
+  const [faqs, setFaqs] = useState<{question: string, answer: string}[]>([]);
+
+  React.useEffect(() => {
+    fetch('/data/faq.json')
+      .then(res => res.json())
+      .then(data => setFaqs(data))
+      .catch(console.error);
+  }, []);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -57,8 +43,8 @@ const FAQ = () => {
               </div>
               <div>
                 <h4 className="text-slate-900 font-bold mb-1">Email Us Directly</h4>
-                <a href="mailto:support@skillsphere.com" className="text-primary font-medium hover:underline">
-                  support@skillsphere.com
+                <a href="mailto:support@litacademy.com" className="text-primary font-medium hover:underline">
+                  support@litacademy.com
                 </a>
               </div>
             </div>
