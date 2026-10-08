@@ -54,7 +54,7 @@ const Footer = () => {
             <div className="mb-10">
               <h4 className="text-sm font-bold text-slate-900 mb-4">Social Media</h4>
               <div className="flex items-center gap-3">
-                <a href="#" className="bg-accent text-white p-2.5 rounded-full hover:bg-primary transition-colors shadow-sm">
+                <a href="#" className="bg-primary text-white p-2.5 rounded-full hover:bg-accent transition-colors shadow-sm">
                   <FaFacebookF size={14} />
                 </a>
                 <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
