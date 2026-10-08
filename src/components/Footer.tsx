@@ -10,14 +10,22 @@ import {
   FaApplePay, 
   FaGooglePay, 
   FaStripe, 
-  FaMapMarkerAlt, 
-  FaPhoneAlt, 
+  FaGlobe, 
+  FaEnvelope, 
   FaGooglePlay, 
   FaApple,
   FaYoutube
 } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { SiPaytm } from 'react-icons/si';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 interface FooterData {
   companyInfo: string[];
@@ -119,38 +127,58 @@ const Footer = () => {
           <div className="lg:col-span-4 flex flex-col">
             <h3 className="text-lg font-bold text-slate-900 mb-6">Download the App</h3>
             <p className="text-slate-500 font-medium text-sm leading-relaxed mb-6 pr-4">
-              Join us on this journey of discovery as we explore the latest trend.
+              Study anytime, anywhere. Download our mobile app to read notes on the go.
             </p>
 
             {/* Contact Info */}
             <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-3">
-                <FaMapMarkerAlt className="text-accent mt-1 flex-shrink-0" size={14} />
-                <span className="text-slate-600 text-sm font-medium">254 Lillian Blvd, Holbrook<br />New York</span>
+              <div className="flex items-center gap-3">
+                <FaGlobe className="text-accent flex-shrink-0" size={14} />
+                <span className="text-slate-600 text-sm font-medium">100% Online Platform (Available anywhere)</span>
               </div>
               <div className="flex items-center gap-3">
-                <FaPhoneAlt className="text-accent flex-shrink-0" size={14} />
-                <span className="text-slate-600 text-sm font-medium">+880 1175 423 512</span>
+                <FaEnvelope className="text-accent flex-shrink-0" size={14} />
+                <span className="text-slate-600 text-sm font-medium">contact@litacademy.info</span>
               </div>
             </div>
 
             {/* App Store Buttons */}
-            <div className="flex flex-wrap items-center gap-3">
-              <button className="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-accent-hover transition-colors shadow-md">
-                <FaGooglePlay size={18} />
-                <div className="text-left">
-                  <span className="text-[10px] block leading-none">GET IT ON</span>
-                  <span className="text-sm font-bold block leading-tight">Google Play</span>
+            <Dialog>
+              <DialogTrigger asChild>
+                <div className="flex flex-wrap items-center gap-3">
+                  <button className="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-accent-hover transition-colors shadow-md cursor-pointer">
+                    <FaGooglePlay size={18} />
+                    <div className="text-left">
+                      <span className="text-[10px] block leading-none">GET IT ON</span>
+                      <span className="text-sm font-bold block leading-tight">Google Play</span>
+                    </div>
+                  </button>
+                  <button className="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors shadow-md cursor-pointer">
+                    <FaApple size={20} />
+                    <div className="text-left">
+                      <span className="text-[10px] block leading-none">Download on the</span>
+                      <span className="text-sm font-bold block leading-tight">App Store</span>
+                    </div>
+                  </button>
                 </div>
-              </button>
-              <button className="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors shadow-md">
-                <FaApple size={20} />
-                <div className="text-left">
-                  <span className="text-[10px] block leading-none">Download on the</span>
-                  <span className="text-sm font-bold block leading-tight">App Store</span>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md text-center p-10 bg-[#fcfbf9] border-slate-200 rounded-2xl shadow-2xl">
+                <div className="flex flex-col items-center justify-center space-y-2">
+                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                    <span className="text-4xl animate-bounce mt-2">☕</span>
+                  </div>
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl font-black text-center text-slate-900 font-heading">
+                      Hold your horses! 🐎
+                    </DialogTitle>
+                    <DialogDescription className="text-base text-center text-slate-600 mt-4 leading-relaxed font-medium">
+                      Our devs are currently locked in a room, fueled only by caffeine and Shakespeare quotes, building the ultimate mobile app for you. <br/><br/>
+                      <span className="text-primary font-bold">It&apos;s dropping soon!</span> Until then, our website works flawlessly on your mobile browser.
+                    </DialogDescription>
+                  </DialogHeader>
                 </div>
-              </button>
-            </div>
+              </DialogContent>
+            </Dialog>
           </div>
 
         </div>
