@@ -15,8 +15,7 @@ interface DemoData {
 const InteractiveStudyMethod = () => {
   const [demos, setDemos] = useState<DemoData[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [hoveredTermId, setHoveredTermId] = useState<string | null>(null);
-  const [clickedTermId, setClickedTermId] = useState<string | null>(null);
+  const [activeTermId, setActiveTermId] = useState<string | null>(null);
 
   // Fetch data
   useEffect(() => {
@@ -28,23 +27,14 @@ const InteractiveStudyMethod = () => {
 
   // Carousel timer: 10 seconds, fades text
   useEffect(() => {
-    if (demos.length === 0 || hoveredTermId || clickedTermId) return;
+    if (demos.length === 0 || activeTermId) return;
     const timer = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % demos.length);
     }, 10000);
     return () => clearInterval(timer);
-  }, [demos, hoveredTermId, clickedTermId]);
+  }, [demos, activeTermId]);
 
   const currentDemo = demos[currentIndex];
-
-  const handleTermClick = (e: React.MouseEvent, termId: string) => {
-    e.stopPropagation();
-    if (clickedTermId === termId) {
-      setClickedTermId(null);
-    } else {
-      setClickedTermId(termId);
-    }
-  };
 
   if (!currentDemo) return null;
 
@@ -118,20 +108,19 @@ const InteractiveStudyMethod = () => {
                           const termData = currentDemo.terms[termId];
                           if (!termData) return null;
                           
-                          const isActive = clickedTermId === termId || (hoveredTermId === termId && !clickedTermId);
-                          const isClicked = clickedTermId === termId;
+                          const isActive = activeTermId === termId;
 
                           return (
                             <TermTooltip 
                               key={partIdx}
                               termData={termData}
                               isActive={isActive}
-                              isClicked={isClicked}
-                              onMouseEnter={() => !clickedTermId && setHoveredTermId(termId)}
-                              onMouseLeave={() => !clickedTermId && setHoveredTermId(null)}
-                              onClick={(e) => handleTermClick(e, termId)}
-                              onCloseClick={(e) => { e.stopPropagation(); setClickedTermId(null); }}
-                              onBgClick={() => setClickedTermId(null)}
+                              isClicked={isActive}
+                              onMouseEnter={() => setActiveTermId(termId)}
+                              onMouseLeave={() => {}}
+                              onClick={(e) => { e.stopPropagation(); setActiveTermId(termId); }}
+                              onCloseClick={(e) => { e.stopPropagation(); setActiveTermId(null); }}
+                              onBgClick={() => setActiveTermId(null)}
                             />
                           );
                         }
