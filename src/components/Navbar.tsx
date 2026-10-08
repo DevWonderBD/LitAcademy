@@ -205,7 +205,7 @@ const Navbar = () => {
                       <span className="text-primary">{selectedProgram.name}</span>
                     </span>
                   ) : (
-                    "Programmes"
+                    "Programs"
                   )}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="mt-2">
@@ -343,7 +343,7 @@ const Navbar = () => {
 
                 <div className="py-2 border-b border-border/40 pb-4">
                   <h4 className="text-base font-bold text-foreground mb-3 flex items-center justify-between">
-                    Programmes
+                    Programs
                     {selectedProgram && (
                       <span className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full">
                         {selectedProgram.name}

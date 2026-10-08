@@ -1,25 +1,25 @@
 "use client";
-import ProgrammeCard from '@/components/ProgrammeCard';
+import ProgramCard from '@/components/ProgramCard';
 import React, { useState, useEffect } from 'react';
 import { FaSearch, FaFilter } from 'react-icons/fa';
 
-const AllProgrammes = () => {
+const AllPrograms = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const [allProgrammesData, setAllProgrammesData] = useState<any[]>([]);
+  const [allProgramsData, setAllProgramsData] = useState<any[]>([]);
 
   useEffect(() => {
     fetch('/data/data.json')
       .then(res => res.json())
-      .then(data => setAllProgrammesData(data))
+      .then(data => setAllProgramsData(data))
       .catch(err => console.error("Failed to fetch data", err));
   }, []);
 
   const categories = ['All', 'Honours 1st Year', 'Honours 2nd Year', 'Honours 3rd Year', 'Honours 4th Year', 'Masters'];
 
-  const filteredProgrammes = allProgrammesData.filter(programme => {
-    const matchesCategory = activeCategory === 'All' || programme.category === activeCategory;
-    const matchesSearch = programme.title.toLowerCase().includes(searchQuery.toLowerCase());
+  const filteredPrograms = allProgramsData.filter(program => {
+    const matchesCategory = activeCategory === 'All' || program.category === activeCategory;
+    const matchesSearch = program.title.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -32,10 +32,10 @@ const AllProgrammes = () => {
         
         <div className="relative z-10 max-w-2xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-[900] text-white mb-6">
-            Explore Our <span className="text-accent-highlight">Programme Catalog</span>
+            Explore Our <span className="text-accent-highlight">Program Catalog</span>
           </h1>
           <p className="text-teal-50 font-medium text-lg">
-            Discover our premium literature programmes taught by academic experts. Enhance your understanding today.
+            Discover our premium literature programs taught by academic experts. Enhance your understanding today.
           </p>
         </div>
       </div>
@@ -46,7 +46,7 @@ const AllProgrammes = () => {
           <div className="relative w-full md:w-1/3">
             <input 
               type="text" 
-              placeholder="Search for programmes..." 
+              placeholder="Search for programs..." 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 pl-12 pr-4 text-slate-700 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
@@ -72,15 +72,15 @@ const AllProgrammes = () => {
           </div>
         </div>
 
-        {filteredProgrammes.length > 0 ? (
+        {filteredPrograms.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {filteredProgrammes.map((programme, index) => (
-                <ProgrammeCard key={index} programme={programme}></ProgrammeCard>
+            {filteredPrograms.map((program, index) => (
+                <ProgramCard key={index} program={program}></ProgramCard>
             ))}
           </div>
         ) : (
           <div className="text-center py-20">
-            <h3 className="text-2xl font-bold text-slate-700 mb-2">No programmes found</h3>
+            <h3 className="text-2xl font-bold text-slate-700 mb-2">No programs found</h3>
             <p className="text-slate-500">Try adjusting your search or filter criteria.</p>
             <button 
               onClick={() => {setSearchQuery(''); setActiveCategory('All');}}
@@ -96,4 +96,4 @@ const AllProgrammes = () => {
   );
 };
 
-export default AllProgrammes;
+export default AllPrograms;

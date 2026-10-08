@@ -5,14 +5,14 @@ import { MdOutlineSignalCellularAlt } from 'react-icons/md';
 import fs from 'fs/promises';
 import path from 'path';
 
-const ProgrammeDetails = async ({ params }: { params: { id: string } }) => {
-    const programmeId = parseInt(params.id);
+const ProgramDetails = async ({ params }: { params: { id: string } }) => {
+    const programId = parseInt(params.id);
     const filePath = path.join(process.cwd(), 'public', 'data', 'data.json');
     const fileContents = await fs.readFile(filePath, 'utf8');
     const coursesData = JSON.parse(fileContents);
-    const programme = coursesData.find((c: any) => c.id === programmeId);
+    const program = coursesData.find((c: any) => c.id === programId);
 
-    if (!programme) {
+    if (!program) {
         notFound();
     }
 
@@ -21,7 +21,7 @@ const ProgrammeDetails = async ({ params }: { params: { id: string } }) => {
             
             <div className="bg-slate-900 pt-32 pb-32 px-6 lg:px-20 relative overflow-hidden">
                 <div className="absolute inset-0 z-0 opacity-20">
-                    <Image fill src={programme.image} alt={programme.title} className="object-cover blur-sm"/>
+                    <Image fill src={program.image} alt={program.title} className="object-cover blur-sm"/>
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/40"></div>
                 </div>
 
@@ -29,20 +29,20 @@ const ProgrammeDetails = async ({ params }: { params: { id: string } }) => {
                     <div className="flex-1 w-full text-center md:text-left">
                         <div className="flex items-center justify-center md:justify-start gap-3 mb-6">
                             <span className="bg-primary/20 text-primary border border-primary/30 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-md">
-                                {programme.category}
+                                {program.category}
                             </span>
-                            {programme.tag && (
+                            {program.tag && (
                                 <span className="bg-accent text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-md">
-                                    {programme.tag}
+                                    {program.tag}
                                 </span>
                             )}
                         </div>
 
                         <h1 className="text-4xl md:text-5xl font-[900] text-white mb-6 leading-tight">
-                            {programme.title}
+                            {program.title}
                         </h1>
                         <p className="text-slate-400 text-lg mb-8 leading-relaxed">
-                            {programme.description}
+                            {program.description}
                         </p>
 
                         <div className="flex flex-wrap items-center gap-6 text-slate-300 font-medium text-sm">
@@ -96,15 +96,15 @@ const ProgrammeDetails = async ({ params }: { params: { id: string } }) => {
                     <div className="w-full lg:w-1/3">
                         <div className="sticky top-24 bg-white rounded-[32px] overflow-hidden shadow-2xl shadow-slate-200 border border-slate-100">
                             <div className="relative h-60 w-full bg-slate-200">
-                                <Image fill src={programme.image} alt={programme.title} className="w-full h-full object-cover"/>
+                                <Image fill src={program.image} alt={program.title} className="w-full h-full object-cover"/>
                             </div>
 
                             <div className="p-8">
                                 <button className="w-full bg-accent text-white py-4 rounded-xl font-bold text-lg hover:bg-accent/90 hover:-translate-y-1 transition-all shadow-lg shadow-accent/30 mb-4 cursor-pointer">
-                                    Begin Programme
+                                    Begin Program
                                 </button>
                                 
-                                <h4 className="font-bold text-slate-900 mb-4 mt-6">This programme includes:</h4>
+                                <h4 className="font-bold text-slate-900 mb-4 mt-6">This program includes:</h4>
                                 <div className="space-y-4">
                                     <div className="flex items-center gap-3 text-slate-600">
                                         <FaBookOpen className="text-primary" size={20} />
@@ -124,4 +124,4 @@ const ProgrammeDetails = async ({ params }: { params: { id: string } }) => {
     );
 };
 
-export default ProgrammeDetails;
+export default ProgramDetails;

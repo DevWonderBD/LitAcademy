@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { FaArrowRight } from 'react-icons/fa';
-import ProgrammeCard from './ProgrammeCard';
+import ProgramCard from './ProgramCard';
 import Link from "next/link";
 import { SectionBadge } from '@/components/ui/section-badge';
 import { useEffect, useState } from 'react';
@@ -56,9 +56,9 @@ const MostReadSection = () => {
             className="mySwiper !pb-12"
           >
 
-            {trendingData.filter(programme => ['Popular', 'Most Read'].includes(programme.tag)).map((programme) => (
-              <SwiperSlide key={programme.id}>
-                <ProgrammeCard programme={programme} />
+            {trendingData.filter(program => ['Popular', 'Most Read'].includes(program.tag)).map((program) => (
+              <SwiperSlide key={program.id}>
+                <ProgramCard program={program} />
               </SwiperSlide>
             ))}
           </Swiper>

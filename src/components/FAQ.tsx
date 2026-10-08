@@ -43,8 +43,8 @@ const FAQ = () => {
               </div>
               <div>
                 <h4 className="text-slate-900 font-bold mb-1">Email Us Directly</h4>
-                <a href="mailto:support@litacademy.com" className="text-primary font-medium hover:underline">
-                  support@litacademy.com
+                <a href="mailto:support@litacademy.info" className="text-primary font-medium hover:underline">
+                  support@litacademy.info
                 </a>
               </div>
             </div>
