@@ -27,7 +27,12 @@ const InteractiveStudyMethod = () => {
 
   // Close tooltip on clicking outside
   useEffect(() => {
-    const handleGlobalClick = () => setActiveTermId(null);
+    const handleGlobalClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.litacademy-tooltip') && !target.closest('.litacademy-term-trigger')) {
+        setActiveTermId(null);
+      }
+    };
     document.addEventListener('click', handleGlobalClick);
     return () => document.removeEventListener('click', handleGlobalClick);
   }, []);

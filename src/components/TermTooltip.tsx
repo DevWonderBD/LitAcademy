@@ -49,7 +49,7 @@ const TermTooltip: React.FC<TermTooltipProps> = ({
     <span className="relative inline-block mx-1.5" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <span 
         onClick={onClick}
-        className={`cursor-pointer border-b-[2.5px] border-dashed font-bold px-1 rounded-sm transition-colors ${
+        className={`litacademy-term-trigger cursor-pointer border-b-[2.5px] border-dashed font-bold px-1 rounded-sm transition-colors ${
           isActive ? 'bg-primary text-white border-primary' : 'text-primary border-primary hover:bg-teal-50'
         }`}
       >
@@ -61,7 +61,7 @@ const TermTooltip: React.FC<TermTooltipProps> = ({
           {/* Popover Card */}
           <div 
             onClick={(e) => e.stopPropagation()}
-            className="fixed bottom-6 left-6 right-6 w-auto sm:absolute sm:bottom-[calc(100%+14px)] sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:w-[280px] md:w-[340px] bg-white border border-slate-200 text-slate-800 font-sans rounded-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] z-50 animate-in fade-in zoom-in-95 duration-200 flex flex-col"
+            className="litacademy-tooltip fixed top-24 left-6 right-6 w-auto sm:absolute sm:top-auto sm:bottom-[calc(100%+14px)] sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:w-[280px] md:w-[340px] bg-white border border-slate-200 text-slate-800 font-sans rounded-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] z-[100] animate-in fade-in zoom-in-95 duration-200 flex flex-col"
           >
             {/* Header */}
             <div className="flex items-start justify-between p-4 border-b border-slate-100 bg-gradient-to-r from-slate-50 to-white rounded-t-xl">
