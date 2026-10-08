@@ -19,10 +19,17 @@ const InteractiveStudyMethod = () => {
 
   // Fetch data
   useEffect(() => {
-    fetch('/data/studyMethodDemos.json')
+    fetch('/data/studyMethodDemos.json?v=' + new Date().getTime())
       .then(res => res.json())
       .then(data => setDemos(data))
       .catch(err => console.error(err));
+  }, []);
+
+  // Close tooltip on clicking outside
+  useEffect(() => {
+    const handleGlobalClick = () => setActiveTermId(null);
+    document.addEventListener('click', handleGlobalClick);
+    return () => document.removeEventListener('click', handleGlobalClick);
   }, []);
 
   // Carousel timer: 10 seconds, fades text
