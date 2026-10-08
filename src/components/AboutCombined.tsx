@@ -78,46 +78,52 @@ const AboutCombined = () => {
                             Our Proven <span className="text-primary">Methodology</span>
                         </h3>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 relative max-w-5xl mx-auto pl-4 md:pl-0">
                         
                         {/* Interactive Connecting Line - Desktop */}
                         <div className="hidden md:block absolute top-10 left-[15%] right-[15%] h-[4px] bg-slate-200 z-0 rounded-full overflow-hidden">
                             <div className="absolute w-[40%] h-full bg-gradient-to-r from-transparent via-primary to-transparent animate-slide rounded-full"></div>
                         </div>
 
-                        {/* Interactive Connecting Line - Mobile */}
-                        <div className="md:hidden absolute top-10 bottom-10 left-1/2 -translate-x-1/2 w-[4px] bg-slate-200 z-0 rounded-full overflow-hidden">
+                        {/* Interactive Connecting Line - Mobile (Timeline) */}
+                        <div className="md:hidden absolute top-8 bottom-8 left-[calc(1rem+30px)] w-[4px] bg-slate-200 z-0 rounded-full overflow-hidden">
                             <div className="absolute h-[40%] w-full bg-gradient-to-b from-transparent via-primary to-transparent animate-slide-vertical rounded-full"></div>
                         </div>
 
-                        <div className="relative z-10 flex flex-col items-center text-center group">
-                            <div className="w-20 h-20 bg-white border-4 border-slate-50 rounded-full flex items-center justify-center shadow-lg shadow-slate-200/40 mb-3 md:mb-5 group-hover:border-primary/30 transition-all duration-300 group-hover:scale-110">
-                                <BookOpen className="w-8 h-8 text-primary" />
+                        <div className="relative z-10 flex flex-row md:flex-col items-start md:items-center text-left md:text-center group">
+                            <div className="w-16 h-16 md:w-20 md:h-20 shrink-0 bg-white border-4 border-slate-50 rounded-full flex items-center justify-center shadow-lg shadow-slate-200/40 group-hover:border-primary/30 transition-all duration-300 group-hover:scale-110 z-10">
+                                <BookOpen className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                             </div>
-                            <h4 className="text-xl font-black text-slate-900 mb-2 font-heading">1. Read</h4>
-                            <p className="text-slate-500 text-sm font-medium leading-relaxed px-4">
-                                Engage with highly readable notes and authentic texts designed for clarity.
-                            </p>
+                            <div className="ml-6 md:ml-0 md:mt-5 pt-1 md:pt-0">
+                                <h4 className="text-xl font-black text-slate-900 mb-1 md:mb-2 font-heading">1. Read</h4>
+                                <p className="text-slate-500 text-sm font-medium leading-relaxed px-0 md:px-4">
+                                    Engage with highly readable notes and authentic texts designed for clarity.
+                                </p>
+                            </div>
                         </div>
 
-                        <div className="relative z-10 flex flex-col items-center text-center group">
-                            <div className="w-20 h-20 bg-white border-4 border-slate-50 rounded-full flex items-center justify-center shadow-lg shadow-slate-200/40 mb-3 md:mb-5 group-hover:border-accent/30 transition-all duration-300 group-hover:scale-110">
-                                <Lightbulb className="w-8 h-8 text-accent" />
+                        <div className="relative z-10 flex flex-row md:flex-col items-start md:items-center text-left md:text-center group">
+                            <div className="w-16 h-16 md:w-20 md:h-20 shrink-0 bg-white border-4 border-slate-50 rounded-full flex items-center justify-center shadow-lg shadow-slate-200/40 group-hover:border-accent/30 transition-all duration-300 group-hover:scale-110 z-10">
+                                <Lightbulb className="w-6 h-6 md:w-8 md:h-8 text-accent" />
                             </div>
-                            <h4 className="text-xl font-black text-slate-900 mb-2 font-heading">2. Understand</h4>
-                            <p className="text-slate-500 text-sm font-medium leading-relaxed px-4">
-                                Grasp difficult vocabulary instantly with our innovative hover-to-learn feature.
-                            </p>
+                            <div className="ml-6 md:ml-0 md:mt-5 pt-1 md:pt-0">
+                                <h4 className="text-xl font-black text-slate-900 mb-1 md:mb-2 font-heading">2. Understand</h4>
+                                <p className="text-slate-500 text-sm font-medium leading-relaxed px-0 md:px-4">
+                                    Grasp difficult vocabulary instantly with our innovative hover-to-learn feature.
+                                </p>
+                            </div>
                         </div>
 
-                        <div className="relative z-10 flex flex-col items-center text-center group">
-                            <div className="w-20 h-20 bg-white border-4 border-slate-50 rounded-full flex items-center justify-center shadow-lg shadow-slate-200/40 mb-3 md:mb-5 group-hover:border-primary/30 transition-all duration-300 group-hover:scale-110">
-                                <MessageSquare className="w-8 h-8 text-primary" />
+                        <div className="relative z-10 flex flex-row md:flex-col items-start md:items-center text-left md:text-center group">
+                            <div className="w-16 h-16 md:w-20 md:h-20 shrink-0 bg-white border-4 border-slate-50 rounded-full flex items-center justify-center shadow-lg shadow-slate-200/40 group-hover:border-primary/30 transition-all duration-300 group-hover:scale-110 z-10">
+                                <MessageSquare className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                             </div>
-                            <h4 className="text-xl font-black text-slate-900 mb-2 font-heading">3. Analyze</h4>
-                            <p className="text-slate-500 text-sm font-medium leading-relaxed px-4">
-                                Deepen your critical thinking by discussing theories with Pythia, your AI guide.
-                            </p>
+                            <div className="ml-6 md:ml-0 md:mt-5 pt-1 md:pt-0">
+                                <h4 className="text-xl font-black text-slate-900 mb-1 md:mb-2 font-heading">3. Analyze</h4>
+                                <p className="text-slate-500 text-sm font-medium leading-relaxed px-0 md:px-4">
+                                    Deepen your critical thinking by discussing theories with Pythia, your AI guide.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
