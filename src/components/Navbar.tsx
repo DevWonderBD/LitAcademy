@@ -141,6 +141,7 @@ const Navbar = () => {
   const { isPending, data } = authClient.useSession();
   const user = data?.user;
   const pathname = usePathname();
+  const router = useRouter();
 
   const [selectedProgram, setSelectedProgram] = useState<{name: string, href: string} | null>(null);
 
@@ -148,11 +149,36 @@ const Navbar = () => {
     const saved = localStorage.getItem('lit_selected_program');
     if (saved) {
       try {
+        const parsed = JSON.parse(saved);
+        
+        let targetHref = parsed.href;
+        // Fix legacy paths in user's localStorage
+        if (targetHref && targetHref.startsWith('/programs/honours/')) {
+          targetHref = targetHref.replace('/programs/honours/', '/honours/');
+        } else if (targetHref === '/programs/masters/final' || targetHref === '/masters') {
+          targetHref = '/honours/masters-final';
+        }
+        
+        if (targetHref !== parsed.href) {
+          parsed.href = targetHref;
+          localStorage.setItem('lit_selected_program', JSON.stringify(parsed));
+        }
+
         // eslint-disable-next-line react-hooks/set-state-in-effect
-        setSelectedProgram(JSON.parse(saved));
+        setSelectedProgram(parsed);
+
+        // First-time redirect logic (once per session)
+        const hasRedirected = sessionStorage.getItem('lit_has_redirected');
+        if (!hasRedirected && targetHref) {
+          sessionStorage.setItem('lit_has_redirected', 'true');
+          // Only redirect if they are not already on the target page
+          if (window.location.pathname !== targetHref) {
+            router.push(targetHref);
+          }
+        }
       } catch (e) {}
     }
-  }, []);
+  }, [router]);
 
   const handleProgramSelect = (name: string, href: string) => {
     const prog = { name, href };
