@@ -66,7 +66,7 @@ const TermTooltip: React.FC<TermTooltipProps> = ({
           {/* Popover Card */}
           <div 
             onClick={(e) => e.stopPropagation()}
-            className="absolute bottom-[calc(100%+14px)] left-1/2 -translate-x-1/2 w-[280px] md:w-[340px] bg-white border border-slate-200 text-slate-800 font-sans rounded-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] z-50 animate-in fade-in zoom-in-95 duration-200 flex flex-col"
+            className="fixed bottom-6 left-6 right-6 w-auto sm:absolute sm:bottom-[calc(100%+14px)] sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:w-[280px] md:w-[340px] bg-white border border-slate-200 text-slate-800 font-sans rounded-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] z-50 animate-in fade-in zoom-in-95 duration-200 flex flex-col"
           >
             {/* Header */}
             <div className="flex items-start justify-between p-4 border-b border-slate-100 bg-gradient-to-r from-slate-50 to-white rounded-t-xl">
@@ -119,8 +119,8 @@ const TermTooltip: React.FC<TermTooltipProps> = ({
             </div>
 
             {/* Triangle pointer */}
-            <div className="absolute top-full left-1/2 -translate-x-1/2 border-[12px] border-transparent border-t-slate-200 -mb-[1px]"></div>
-            <div className="absolute top-full left-1/2 -translate-x-1/2 border-[11px] border-transparent border-t-white"></div>
+            <div className="hidden sm:block absolute top-full left-1/2 -translate-x-1/2 border-[12px] border-transparent border-t-slate-200 -mb-[1px]"></div>
+            <div className="hidden sm:block absolute top-full left-1/2 -translate-x-1/2 border-[11px] border-transparent border-t-white"></div>
           </div>
         </>
       )}
