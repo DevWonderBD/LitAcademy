@@ -5,11 +5,6 @@ import {
   FaInstagram, 
   FaFacebookF, 
   FaLinkedinIn, 
-  FaPaypal, 
-  FaCcVisa, 
-  FaApplePay, 
-  FaGooglePay, 
-  FaStripe, 
   FaMapMarkerAlt, 
   FaEnvelope, 
   FaGooglePlay, 
@@ -17,7 +12,6 @@ import {
   FaYoutube
 } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { SiPaytm } from 'react-icons/si';
 import {
   Dialog,
   DialogContent,
@@ -80,18 +74,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Payment Gateways */}
-            <div>
-              <h4 className="text-sm font-bold text-slate-900 mb-4">We Accept Payment Gateway</h4>
-              <div className="flex flex-wrap items-center gap-3 text-slate-400">
-                <FaPaypal size={24} className="hover:text-[var(--color-payment-hover)] transition-colors cursor-pointer" />
-                <FaCcVisa size={24} className="hover:text-[var(--color-payment-hover)] transition-colors cursor-pointer" />
-                <FaGooglePay size={32} className="hover:text-[var(--color-payment-hover)] transition-colors cursor-pointer" />
-                <FaApplePay size={32} className="hover:text-[var(--color-payment-hover)] transition-colors cursor-pointer" />
-                <FaStripe size={28} className="hover:text-[var(--color-payment-hover)] transition-colors cursor-pointer" />
-                <SiPaytm size={32} className="hover:text-[var(--color-payment-hover)] transition-colors cursor-pointer" />
-              </div>
-            </div>
           </div>
 
           {/* Column 2*/}
@@ -180,14 +162,16 @@ const Footer = () => {
           </div>
 
         </div>
-
-        {/* Copyright */}
-        <div className="border-t border-slate-200 pt-8 mt-8 flex flex-col md:flex-row items-center justify-between text-center gap-4">
+      </div>
+      
+      {/* Full Width Copyright */}
+      <div className="border-t border-slate-200 mt-12 w-full">
+        <div className="container mx-auto max-w-7xl pt-8 px-6 lg:px-20 flex flex-col md:flex-row items-center justify-between text-center gap-4">
           <p className="text-slate-500 text-sm font-medium">
             © {new Date().getFullYear()} LitAcademy. All rights reserved.
           </p>
-          <p className="text-slate-500 text-sm font-medium">
-            A <span className="text-slate-900 font-bold hover:text-primary transition-colors cursor-pointer">Dev Wonder</span> Initiative
+          <p className="text-slate-500 text-[15px] font-heading italic">
+            A <span className="text-slate-900 font-black not-italic hover:text-primary transition-colors cursor-pointer">Dev Wonder</span> Initiative
           </p>
         </div>
       </div>
