@@ -1,0 +1,85 @@
+[
+  {
+    "id": 1,
+    "title": "Ode to a Nightingale",
+    "author": "John Keats",
+    "textLines": [
+      "Thou wast not born for death, immortal Bird!",
+      "No hungry generations tread thee down;",
+      "The voice I hear this passing night was heard",
+      "In ancient days by {term1}:",
+      "Perhaps the self-same song that found a path",
+      "Through the sad heart of {term2}, when, sick for home,",
+      "She stood in tears amid the alien corn;"
+    ],
+    "terms": {
+      "term1": {
+        "text": "emperor and clown",
+        "titleEn": "Social Universality",
+        "descEn": "The nightingale's song is universal and eternal, heard equally by the highest (emperor) and the lowest (clown/peasant) classes throughout history.",
+        "titleBn": "সামাজিক সার্বজনীনতা",
+        "descBn": "নাইটিংগেল পাখির গান চিরন্তন, যা যুগে যুগে সমাজের উচ্চবিত্ত (emperor) থেকে শুরু করে একেবারে নিম্নবিত্ত (clown) সবাই সমানভাবে শুনেছে।"
+      },
+      "term2": {
+        "text": "Ruth",
+        "titleEn": "Biblical Allusion",
+        "descEn": "A reference to the Biblical figure Ruth, who wept in the alien cornfields out of homesickness. Keats connects his personal sorrow with this myth.",
+        "titleBn": "বাইবেলের রূপক",
+        "descBn": "এখানে বাইবেলের চরিত্র রুথের কথা বলা হয়েছে, যে ভিনদেশে ফসল কাটার সময় বাড়ির জন্য কাঁদছিল। কিটস নিজের কষ্টের সাথে রুথের কষ্টকে মিলিয়েছেন।"
+      }
+    }
+  },
+  {
+    "id": 2,
+    "title": "Ode to the West Wind",
+    "author": "Percy Bysshe Shelley",
+    "textLines": [
+      "O wild West Wind, thou breath of {term1},",
+      "Thou, from whose unseen presence the leaves dead",
+      "Are driven, like ghosts from an {term2},"
+    ],
+    "terms": {
+      "term1": {
+        "text": "Autumn's being",
+        "titleEn": "Cycle of Life and Death",
+        "descEn": "Autumn represents the approach of winter (death), but the wind also scatters seeds for spring (rebirth).",
+        "titleBn": "জীবন ও মৃত্যুর চক্র",
+        "descBn": "শরতকাল শীতের (মৃত্যু) আগমনী বার্তা দেয়, কিন্তু একই সাথে বাতাস বসন্তের (নতুন জীবন) জন্য বীজ ছড়িয়ে দেয়।"
+      },
+      "term2": {
+        "text": "enchanter fleeing",
+        "titleEn": "Gothic Imagery",
+        "descEn": "Shelley uses supernatural imagery comparing dead leaves to ghosts running away from a wizard.",
+        "titleBn": "গথিক বা অলৌকিক চিত্রকল্প",
+        "descBn": "শেলি এখানে অতিপ্রাকৃত চিত্রকল্প ব্যবহার করেছেন, যেখানে মৃত পাতাগুলোকে জাদুকরের ভয়ে পালানো ভূতের সাথে তুলনা করা হয়েছে।"
+      }
+    }
+  },
+  {
+    "id": 3,
+    "title": "I Wandered Lonely as a Cloud",
+    "author": "William Wordsworth",
+    "textLines": [
+      "I wandered {term1}",
+      "That floats on high o'er vales and hills,",
+      "When all at once I saw a crowd,",
+      "A {term2},"
+    ],
+    "terms": {
+      "term1": {
+        "text": "lonely as a cloud",
+        "titleEn": "Romantic Subjectivity",
+        "descEn": "The poet isolates himself from human society to connect deeply with nature, a key theme in Romanticism.",
+        "titleBn": "রোমান্টিক ব্যক্তিস্বাতন্ত্র্য",
+        "descBn": "কবি নিজেকে মানবসমাজ থেকে আলাদা করে প্রকৃতির সাথে গভীরভাবে যুক্ত করেছেন, যা রোমান্টিক যুগের একটি প্রধান বৈশিষ্ট্য।"
+      },
+      "term2": {
+        "text": "host, of golden daffodils",
+        "titleEn": "Personification of Nature",
+        "descEn": "Treating the flowers as a 'host' or 'crowd' gives them human-like qualities and companionship.",
+        "titleBn": "প্রকৃতির মানবারোপ",
+        "descBn": "ফুলগুলোকে 'host' বা মানুষের ভিড় হিসেবে কল্পনা করে প্রকৃতিকে মানুষের মতো প্রাণবন্ত ও বন্ধুসুলভ হিসেবে দেখানো হয়েছে।"
+      }
+    }
+  }
+]
