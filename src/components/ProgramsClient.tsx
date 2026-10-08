@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { BookOpen, GraduationCap, ArrowRight, ChevronRight, Layers } from 'lucide-react';
+import { BookOpen, GraduationCap, ArrowRight, Layers } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const programsData = [
@@ -72,32 +72,35 @@ export default function ProgramsClient() {
   });
 
   return (
-    <div className="w-full">
-      {/* Filters */}
-      <div className="flex items-center justify-center sm:justify-start gap-2 mb-10 overflow-x-auto pb-2 scrollbar-hide">
+    <div className="w-full flex flex-col items-center">
+      {/* Sleek Underline Tabs */}
+      <div className="inline-flex items-center gap-8 mb-12 border-b border-slate-200 w-full max-w-lg justify-center overflow-x-auto scrollbar-hide">
         {(['All', 'Honours', 'Masters'] as const).map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
             className={cn(
-              "px-5 py-2.5 rounded-full text-sm font-bold transition-all whitespace-nowrap border cursor-pointer",
+              "relative pb-4 text-sm font-bold transition-colors cursor-pointer whitespace-nowrap",
               activeTab === tab
-                ? "bg-slate-900 text-white border-slate-900 shadow-md"
-                : "bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
+                ? "text-primary"
+                : "text-slate-400 hover:text-slate-700"
             )}
           >
-            {tab} Programs
+            {tab}
+            {activeTab === tab && (
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-t-full"></span>
+            )}
           </button>
         ))}
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
         {filteredPrograms.map((prog) => (
           <Link href={prog.href} key={prog.id} className="group outline-none">
             <div className={cn(
-              "relative bg-white rounded-3xl p-6 border transition-all duration-300 h-full flex flex-col",
-              "hover:shadow-xl hover:-translate-y-1 shadow-sm",
+              "relative bg-white rounded-[24px] p-6 border transition-all duration-300 h-full flex flex-col",
+              "hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-1 shadow-sm",
               prog.hoverBorder,
               "border-slate-100"
             )}>
@@ -122,27 +125,19 @@ export default function ProgramsClient() {
               </div>
 
               {/* Footer */}
-              <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+              <div className="flex items-center justify-between pt-4 border-t border-slate-50">
                 <div className="flex items-center gap-2 text-slate-600 font-semibold text-sm">
-                  <BookOpen className="w-4 h-4 text-slate-400" />
+                  <BookOpen className="w-4 h-4 text-slate-300" />
                   {prog.papersCount} Papers
                 </div>
-                <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
-                  <ChevronRight className="w-5 h-5" />
+                <div className="flex items-center gap-1 text-sm font-bold text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
+                  Explore <ArrowRight className="w-4 h-4" />
                 </div>
               </div>
             </div>
           </Link>
         ))}
       </div>
-      
-      {filteredPrograms.length === 0 && (
-        <div className="text-center py-20 bg-white rounded-3xl border border-slate-100">
-          <GraduationCap className="w-12 h-12 text-slate-300 mx-auto mb-4" />
-          <h3 className="text-xl font-bold text-slate-700">No programs found</h3>
-          <p className="text-slate-500 mt-2">Check back later for updates.</p>
-        </div>
-      )}
     </div>
   );
 }
