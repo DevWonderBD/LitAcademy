@@ -54,7 +54,7 @@ const Footer = () => {
               <span className="text-primary">Academy</span>
               <span className="w-2 h-2 bg-primary rounded-full ml-1 self-end mb-1"></span>
             </Link>
-            <p className="text-slate-500 font-medium leading-relaxed mb-8 pr-4">
+            <p className="text-slate-500 font-medium leading-relaxed mb-5 pr-4">
               LitAcademy is the premium study platform for National University English Literature students. Access structured notes, bilingual explanations, and an AI guide to master your studies.
             </p>
             
@@ -134,7 +134,7 @@ const Footer = () => {
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-3">
                 <FaMapMarkerAlt className="text-accent flex-shrink-0" size={14} />
-                <span className="text-slate-600 text-sm font-medium">100% Online Platform (Available anywhere)</span>
+                <span className="text-slate-600 text-sm font-medium">Online Platform (Accessable anywhere)</span>
               </div>
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-accent flex-shrink-0" size={14} />
@@ -182,9 +182,12 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-slate-200 pt-8 mt-8 flex flex-col md:flex-row items-center justify-center text-center">
+        <div className="border-t border-slate-200 pt-8 mt-8 flex flex-col md:flex-row items-center justify-between text-center gap-4">
           <p className="text-slate-500 text-sm font-medium">
-            © 2026 LitAcademy. All rights reserved.
+            © {new Date().getFullYear()} LitAcademy. All rights reserved.
+          </p>
+          <p className="text-slate-500 text-sm font-medium">
+            Expertly crafted & managed by <span className="text-slate-900 font-bold hover:text-primary transition-colors cursor-pointer">Dev Wonder</span>
           </p>
         </div>
       </div>
