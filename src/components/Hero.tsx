@@ -85,7 +85,7 @@ const Hero = () => {
           <div className="lg:w-[55%] lg:py-10 z-10 flex flex-col justify-center">
             <SectionBadge>Literature Learning Made Easy</SectionBadge>
 
-            <div className="my-6 min-h-[140px]" suppressHydrationWarning>
+            <div className="mb-6 min-h-[140px]" suppressHydrationWarning>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-[700] text-foreground leading-[1.15] tracking-tight font-heading" suppressHydrationWarning>
                 {display.title}{" "}
                 <span className="text-primary" suppressHydrationWarning>{display.highlight}</span>
