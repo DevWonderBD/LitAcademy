@@ -4,13 +4,21 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import trendingData from '@/lib/data.json'
 import { FaArrowRight } from 'react-icons/fa';
 import ProgrammeCard from './ProgrammeCard';
 import Link from "next/link";
 import { SectionBadge } from '@/components/ui/section-badge';
+import { useEffect, useState } from 'react';
 
 const MostReadSection = () => {
+  const [trendingData, setTrendingData] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetch('/data/data.json')
+      .then(res => res.json())
+      .then(data => setTrendingData(data))
+      .catch(err => console.error("Failed to fetch data", err));
+  }, []);
 
   return (
     <section className="py-14 bg-background px-6 lg:px-20">
@@ -48,7 +56,7 @@ const MostReadSection = () => {
             className="mySwiper !pb-12"
           >
 
-            {trendingData.filter(programme => programme.tag === 'Trending').map((programme) => (
+            {trendingData.filter(programme => ['Popular', 'Most Read'].includes(programme.tag)).map((programme) => (
               <SwiperSlide key={programme.id}>
                 <ProgrammeCard programme={programme} />
               </SwiperSlide>

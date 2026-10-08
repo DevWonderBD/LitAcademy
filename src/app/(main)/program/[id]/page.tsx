@@ -1,12 +1,16 @@
-import coursesData from '@/lib/data.json'
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { FaPlayCircle, FaCheckCircle, FaUserGraduate, FaGlobe, FaBookOpen } from 'react-icons/fa';
 import { MdOutlineSignalCellularAlt } from 'react-icons/md';
+import fs from 'fs/promises';
+import path from 'path';
 
-const ProgrammeDetails = ({ params }: { params: { id: string } }) => {
+const ProgrammeDetails = async ({ params }: { params: { id: string } }) => {
     const programmeId = parseInt(params.id);
-    const programme = coursesData.find((c) => c.id === programmeId);
+    const filePath = path.join(process.cwd(), 'public', 'data', 'data.json');
+    const fileContents = await fs.readFile(filePath, 'utf8');
+    const coursesData = JSON.parse(fileContents);
+    const programme = coursesData.find((c: any) => c.id === programmeId);
 
     if (!programme) {
         notFound();

@@ -1,14 +1,21 @@
 "use client";
 import ProgrammeCard from '@/components/ProgrammeCard';
-import allProgrammesData from '@/lib/data.json'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaSearch, FaFilter } from 'react-icons/fa';
 
 const AllProgrammes = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+  const [allProgrammesData, setAllProgrammesData] = useState<any[]>([]);
 
-  const categories = ['All', 'Development', 'Design', 'Marketing', 'Business', 'Data Science', 'IT & Software'];
+  useEffect(() => {
+    fetch('/data/data.json')
+      .then(res => res.json())
+      .then(data => setAllProgrammesData(data))
+      .catch(err => console.error("Failed to fetch data", err));
+  }, []);
+
+  const categories = ['All', 'Honours 1st Year', 'Honours 2nd Year', 'Honours 3rd Year', 'Honours 4th Year', 'Masters'];
 
   const filteredProgrammes = allProgrammesData.filter(programme => {
     const matchesCategory = activeCategory === 'All' || programme.category === activeCategory;
