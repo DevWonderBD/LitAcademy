@@ -1,0 +1,42 @@
+[
+  {
+    "category": "Literature Study Techniques",
+    "iconType": "BookOpen",
+    "accentColor": "bg-primary",
+    "bulletColor": "bg-primary",
+    "tips": [
+      { 
+        "title": "Close Reading", 
+        "description": "Don't just read the summary. Read line-by-line to analyze form, tone, and the writer's hidden implications." 
+      },
+      { 
+        "title": "Contextual Analysis", 
+        "description": "Always study the historical and biographical background of the author before jumping into the main text." 
+      },
+      { 
+        "title": "Thematic Linking", 
+        "description": "Compare themes across different texts (e.g. Macbeth and Doctor Faustus) to enrich your final exam answers." 
+      }
+    ]
+  },
+  {
+    "category": "Time & Focus Management",
+    "iconType": "Clock",
+    "accentColor": "bg-accent",
+    "bulletColor": "bg-accent",
+    "tips": [
+      { 
+        "title": "Chapter Blocking", 
+        "description": "Instead of trying to read an entire novel in one day, block out time for 2-3 chapters daily to maintain focus." 
+      },
+      { 
+        "title": "Active Note-Taking", 
+        "description": "Write down key quotes and your own critical opinions immediately after finishing a poem or chapter." 
+      },
+      { 
+        "title": "Pomodoro Reading", 
+        "description": "Read intense theoretical texts (like Modern Drama) for 25 minutes, then take a 5-minute break to digest the ideas." 
+      }
+    ]
+  }
+]

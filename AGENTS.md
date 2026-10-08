@@ -36,6 +36,7 @@ drizzle/        committed SQL migrations
 ```
 - **`src/server/*` must not import from `next/*`** (no `NextRequest`, `headers()`, `cookies()`). Pass what you need in as arguments. This keeps the later move to separate Express services on a VPS trivial.
 - Route handlers and Server Components stay thin: parse input (Zod) → call `src/server/*` → return.
+- **Every `page.tsx` must be a Server Component.** Do not use `"use client"` in any `page.tsx`. If a page needs interactivity, extract the interactive parts into separate Client Components inside `src/components/`.
 - External services go through the interfaces in `src/lib/` (`cache`, `ratelimit`, `storage`, `mail`). Do not call Upstash, Cloudinary or Resend directly from feature code.
 - **No Vercel-only services** (KV, Blob, Edge Config, Cron). Keep `next.config` compatible with `output: 'standalone'`.
 

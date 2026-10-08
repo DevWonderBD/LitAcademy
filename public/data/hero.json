@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "title": "The perfect place to learn",
+    "highlight": "English literature.",
+    "description": "Structured readings crafted specifically for NU Honours and Masters students. Hover over any complex literary term to easily understand it on the spot — no prior background needed.",
+    "sceneId": "HoverToLearnScene"
+  },
+  {
+    "id": 2,
+    "title": "Think deeper, grasp",
+    "highlight": "literature that matters.",
+    "description": "From Milton to Modernism, every essential text in your programme is clearly broken down so you can fully follow the argument, grasp the core ideas, and think for yourself.",
+    "sceneId": "ProgressTrackerScene"
+  },
+  {
+    "id": 3,
+    "title": "Your journey through",
+    "highlight": "English literature.",
+    "description": "Go beyond memorisation. Every passage, every author, and every complex idea — carefully explained so you can build critical understanding, rather than just basic exam-ready answers.",
+    "sceneId": "LiteraryTermsScene"
+  },
+  {
+    "id": 4,
+    "title": "Begin to understand",
+    "highlight": "English literature.",
+    "description": "Encounter a totally unfamiliar word? Simply hover over it. Confused by a difficult concept? It is beautifully explained right there — keeping your reading experience finally clear, focused, and uninterrupted.",
+    "sceneId": "HoverToLearnScene"
+  },
+  {
+    "id": 5,
+    "title": "Where great ideas meet",
+    "highlight": "English literature.",
+    "description": "From detailed close reading to complex critical theory, absolutely everything in your NU programme is made genuinely approachable — exploring one text, one big idea, and one moment at a time.",
+    "sceneId": "PythiaChatScene"
+  }
+]

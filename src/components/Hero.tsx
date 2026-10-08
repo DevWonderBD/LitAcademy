@@ -12,71 +12,41 @@ import LiteraryTermsScene from '@/components/hero-scenes/LiteraryTermsScene';
 import Link from 'next/link';
 
 type HeroVariant = {
+  id: number;
   title: string;
   highlight: string;
   description: string;
-  Scene: React.ElementType;
+  sceneId: string;
 };
 
-// Rules:
-// - "literature" always at the END, inside highlight (primary color)
-// - title (plain): ~20-26 chars | highlight (colored): ~18-23 chars → total stays stable
-// - descriptions: ~140-148 chars each so layout never jumps
-const variants: HeroVariant[] = [
-  {
-    title: "The perfect place to learn",
-    highlight: "English literature.",
-    description:
-      "Structured readings crafted specifically for NU Honours and Masters students. Hover over any complex literary term to easily understand it on the spot — no prior background needed.",
-    Scene: HoverToLearnScene
-  },
-  {
-    title: "Think deeper, grasp",
-    highlight: "literature that matters.",
-    description:
-      "From Milton to Modernism, every essential text in your programme is clearly broken down so you can fully follow the argument, grasp the core ideas, and think for yourself.",
-    Scene: ProgressTrackerScene
-  },
-  {
-    title: "Your journey through",
-    highlight: "English literature.",
-    description:
-      "Go beyond memorisation. Every passage, every author, and every complex idea — carefully explained so you can build critical understanding, rather than just basic exam-ready answers.",
-    Scene: LiteraryTermsScene
-  },
-  {
-    title: "Begin to understand",
-    highlight: "English literature.",
-    description:
-      "Encounter a totally unfamiliar word? Simply hover over it. Confused by a difficult concept? It is beautifully explained right there — keeping your reading experience finally clear, focused, and uninterrupted.",
-    Scene: HoverToLearnScene
-  },
-  {
-    title: "Where great ideas meet",
-    highlight: "English literature.",
-    description:
-      "From detailed close reading to complex critical theory, absolutely everything in your NU programme is made genuinely approachable — exploring one text, one big idea, and one moment at a time.",
-    Scene: PythiaChatScene
-  },
-];
+const SceneMap: Record<string, React.ElementType> = {
+  HoverToLearnScene,
+  PythiaChatScene,
+  ProgressTrackerScene,
+  LiteraryTermsScene,
+};
 
 function pickRandom<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
 const Hero = () => {
-  // Initialize with a random variant immediately
+  const [variants, setVariants] = useState<HeroVariant[]>([]);
   const [current, setCurrent] = useState<HeroVariant | null>(null);
 
-  // We set it on mount to avoid hydration mismatch between server and client if we use random
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setCurrent(pickRandom(variants));
+    fetch('/data/hero.json')
+      .then(res => res.json())
+      .then(data => {
+        setVariants(data);
+        setCurrent(pickRandom(data));
+      })
+      .catch(console.error);
   }, []);
 
-  // Safe fallback while hydrating
-  const display = current || variants[0];
-  const SceneComponent = display.Scene;
+  // Safe fallback while hydrating or fetching
+  const display = current || (variants.length > 0 ? variants[0] : null);
+  const SceneComponent = display ? SceneMap[display.sceneId] : null;
 
   return (
     <section>
@@ -89,12 +59,12 @@ const Hero = () => {
 
             <div className="my-5 min-h-[140px]" suppressHydrationWarning>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-[700] text-foreground leading-[1.15] tracking-tight font-heading" suppressHydrationWarning>
-                {display.title}{" "}
-                <span className="text-primary" suppressHydrationWarning>{display.highlight}</span>
+                {display?.title}{" "}
+                <span className="text-primary" suppressHydrationWarning>{display?.highlight}</span>
               </h1>
 
               <p className="text-muted-foreground text-base md:text-lg max-w-lg lg:max-w-[85%] mt-5 leading-relaxed font-medium" suppressHydrationWarning>
-                {display.description}
+                {display?.description}
               </p>
             </div>
 
@@ -131,7 +101,7 @@ const Hero = () => {
 
           {/* Right Content - Dynamic Scenes */}
           <div className="lg:w-[45%] w-full py-10 lg:py-0 flex justify-center relative min-h-[400px]">
-             {current && <SceneComponent />}
+             {SceneComponent && <SceneComponent />}
           </div>
         </div>
       </div>
