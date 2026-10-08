@@ -55,7 +55,7 @@ const programsData = [
     type: 'Masters',
     title: 'Masters Final',
     description: 'Specialised Advanced Studies, Shakespeare, and Modern Theories.',
-    papersCount: 7,
+    papersCount: 8,
     href: '/honours/masters-final',
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'bg-amber-50 text-amber-600 border-amber-100',

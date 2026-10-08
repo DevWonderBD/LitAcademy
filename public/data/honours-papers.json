@@ -304,6 +304,15 @@
       "color": "bg-[#14532d]",
       "spineColor": "bg-[#052e16]",
       "textColor": "text-green-50"
+    },
+    {
+      "id": "twentieth-century-american-literature",
+      "title": "Twentieth Century American Literature",
+      "code": "311115",
+      "href": "/honours/masters-final/twentieth-century-american-literature",
+      "color": "bg-[#1e3a8a]",
+      "spineColor": "bg-[#172554]",
+      "textColor": "text-blue-50"
     }
   ]
 }
