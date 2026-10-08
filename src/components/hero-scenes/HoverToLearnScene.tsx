@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MousePointer2, BookOpen, PenTool } from 'lucide-react';
+import TermTooltip from '@/components/TermTooltip';
 
 export default function HoverToLearnScene() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div className="relative w-full max-w-lg mx-auto flex flex-col items-center justify-center animate-in fade-in zoom-in duration-700 min-h-[450px]">
       
@@ -23,7 +26,11 @@ export default function HoverToLearnScene() {
       </div>
 
       {/* Mac OS Window */}
-      <div className="w-full bg-card/90 backdrop-blur-xl border border-border/50 rounded-2xl shadow-2xl flex flex-col overflow-visible transform transition-transform hover:scale-[1.02] duration-500 group/card relative">
+      <div 
+        className="w-full bg-card/90 backdrop-blur-xl border border-border/50 rounded-2xl shadow-2xl flex flex-col overflow-visible transform transition-transform hover:scale-[1.02] duration-500 group/card relative"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         
         {/* Top Bar */}
         <div className="bg-muted/50 border-b border-border/50 px-4 py-3 flex items-center gap-2 relative rounded-t-2xl">
@@ -53,20 +60,26 @@ export default function HoverToLearnScene() {
               It were done quickly...&quot; 
             </p>
             <p className="font-serif text-lg leading-loose text-foreground/80 mt-4">
-              This famous <span className="relative inline-block cursor-help group/word">
-                <span className="text-primary font-bold border-b-2 border-primary border-dashed pb-0.5">soliloquy</span>
-                
-                {/* Tooltip */}
-                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 bg-foreground text-background text-sm p-4 rounded-2xl shadow-xl opacity-0 group-hover/card:opacity-100 transition-all duration-500 translate-y-4 group-hover/card:translate-y-0 z-50 pointer-events-none">
-                  <span className="block font-bold text-primary-foreground mb-1 text-base">Soliloquy (Noun)</span>
-                  A speech in a play that is meant to be heard by the audience but not by other characters on the stage.
-                  <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-foreground rotate-45"></span>
-                </span>
-              </span> reveals Macbeth&apos;s inner conflict.
+              This famous <TermTooltip
+                  termData={{
+                    text: "soliloquy",
+                    titleEn: "Soliloquy",
+                    descEn: "A speech in a play that is meant to be heard by the audience but not by other characters on the stage.",
+                    titleBn: "স্বগতোক্তি",
+                    descBn: "নাটকের এমন একটি ভাষণ যা দর্শকদের শোনার জন্য তৈরি, কিন্তু মঞ্চের অন্য কোনো চরিত্রের জন্য নয়।"
+                  }}
+                  isActive={isHovered}
+                  isClicked={false}
+                  onMouseEnter={() => {}}
+                  onMouseLeave={() => {}}
+                  onClick={() => {}}
+                  onCloseClick={() => {}}
+                  onBgClick={() => {}}
+                /> reveals Macbeth&apos;s inner conflict.
             </p>
 
             {/* Animated Mouse Pointer */}
-            <div className="absolute bottom-4 right-16 group-hover/card:-translate-y-4 group-hover/card:-translate-x-4 transition-all duration-700 ease-out z-50">
+            <div className="absolute bottom-4 right-16 group-hover/card:-translate-y-4 group-hover/card:-translate-x-4 transition-all duration-700 ease-out z-50 pointer-events-none">
               <div className="relative">
                 <MousePointer2 className="w-8 h-8 text-accent fill-accent drop-shadow-md -rotate-12" />
               </div>
@@ -77,4 +90,3 @@ export default function HoverToLearnScene() {
     </div>
   );
 }
-
