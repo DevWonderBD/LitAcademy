@@ -1,30 +1,32 @@
 [
   {
     "id": 1,
-    "title": "Ode to a Nightingale",
-    "author": "John Keats",
+    "title": "Stopping by Woods",
+    "author": "Robert Frost",
     "textLines": [
-      "Thou wast not born for death, immortal Bird!",
-      "No hungry generations tread thee down;",
-      "The voice I hear this passing night was heard",
-      "In ancient days by {term1}:",
-      "Perhaps the self-same song that found a path",
-      "Through the sad heart of {term2}..."
+      "Whose woods these are I think I know.",
+      "His house is in the village though;",
+      "He will not see me stopping here",
+      "To watch his woods {term1}.",
+      "My little horse must think it queer",
+      "To stop without a farmhouse near",
+      "Between the woods and {term2}",
+      "The darkest evening of the year."
     ],
     "terms": {
       "term1": {
-        "text": "emperor and clown",
-        "titleEn": "Social Universality",
-        "descEn": "The nightingale's song is universal and eternal, heard equally by the highest (emperor) and the lowest (clown/peasant) classes throughout history.",
-        "titleBn": "সামাজিক সার্বজনীনতা",
-        "descBn": "নাইটিংগেল পাখির গান চিরন্তন, যা যুগে যুগে সমাজের উচ্চবিত্ত (emperor) থেকে শুরু করে একেবারে নিম্নবিত্ত (clown) সবাই সমানভাবে শুনেছে।"
+        "text": "fill up with snow",
+        "titleEn": "Isolation and Peace",
+        "descEn": "The falling snow represents the quiet isolation from society and the beauty of escaping daily obligations.",
+        "titleBn": "একাকীত্ব ও প্রশান্তি",
+        "descBn": "বরফ পড়া সমাজের কোলাহল থেকে বিচ্ছিন্ন হওয়া এবং দৈনন্দিন দায়িত্ব থেকে দূরে থাকার সুন্দর একাকীত্বকে নির্দেশ করে।"
       },
       "term2": {
-        "text": "Ruth",
-        "titleEn": "Biblical Allusion",
-        "descEn": "A reference to the Biblical figure Ruth, who wept in the alien cornfields out of homesickness. Keats connects his personal sorrow with this myth.",
-        "titleBn": "বাইবেলের রূপক",
-        "descBn": "এখানে বাইবেলের চরিত্র রুথের কথা বলা হয়েছে, যে ভিনদেশে ফসল কাটার সময় বাড়ির জন্য কাঁদছিল। কিটস নিজের কষ্টের সাথে রুথের কষ্টকে মিলিয়েছেন।"
+        "text": "frozen lake",
+        "titleEn": "Stark Nature",
+        "descEn": "The frozen lake adds a sense of coldness and stillness, reflecting the speaker's internal contemplation of death or deep sleep.",
+        "titleBn": "রুক্ষ ও শীতল প্রকৃতি",
+        "descBn": "জমে যাওয়া হ্রদ চারপাশের হিমশীতল ও নিস্তব্ধ পরিবেশকে বোঝায়, যা কবির ভেতরের গভীর চিন্তা বা মৃত্যুকে প্রতিফলিত করে।"
       }
     }
   },
@@ -38,7 +40,9 @@
       "When all at once I saw a crowd,",
       "A {term2};",
       "Beside the lake, beneath the trees,",
-      "Fluttering and dancing in the breeze."
+      "Fluttering and dancing in the breeze.",
+      "Continuous as the stars that shine",
+      "And twinkle on the milky way,"
     ],
     "terms": {
       "term1": {
@@ -67,7 +71,9 @@
       "What {term1},",
       "Could frame thy fearful symmetry?",
       "In what distant deeps or skies.",
-      "Burnt the {term2}?"
+      "Burnt the {term2}?",
+      "On what wings dare he aspire?",
+      "What the hand, dare seize the fire?"
     ],
     "terms": {
       "term1": {

@@ -85,7 +85,7 @@ const InteractiveStudyMethod = () => {
             {/* Background decorative blob */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-teal-50/50 to-slate-100/50 rounded-full blur-3xl -z-10"></div>
 
-            <div className="bg-[#fcfbf9] border border-slate-200 rounded-2xl p-6 md:p-12 shadow-2xl shadow-slate-200/60 relative z-10 transition-all duration-500 min-h-[460px] flex flex-col justify-center animate-in fade-in duration-1000" key={currentDemo.id}>
+            <div className="bg-[#fcfbf9] border border-slate-200 rounded-2xl p-6 md:p-12 shadow-2xl shadow-slate-200/60 relative z-10 transition-all duration-500 min-h-[500px] flex flex-col justify-center animate-in fade-in duration-1000" key={currentDemo.id}>
               
               {/* Decorative top bar */}
               <div className="flex flex-wrap items-center justify-between mb-8 border-b border-slate-200 pb-4">
@@ -135,7 +135,8 @@ const InteractiveStudyMethod = () => {
               {/* Instruction Badge */}
               <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-white border border-slate-200 text-slate-700 font-bold text-sm px-6 py-2.5 rounded-full shadow-lg shadow-slate-200/50 flex items-center gap-3 whitespace-nowrap z-0">
                 <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
-                Hover or click the highlighted words
+                <span className="hidden sm:inline">Hover or click the highlighted words</span>
+                <span className="sm:hidden">Tap the highlighted words</span>
               </div>
               
             </div>
