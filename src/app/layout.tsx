@@ -6,7 +6,7 @@ import {
   Plus_Jakarta_Sans
 } from "next/font/google";
 import "./globals.css";
-import { ToastContainer } from "react-toastify";
+import { Toaster } from "react-hot-toast";
 import { cn } from "@/lib/utils";
 
 // PRD 8.2 Fonts configured via CSS variables
@@ -68,7 +68,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-ui bg-background text-foreground">
         <main className="flex-1 flex flex-col">{children}</main>
-        <ToastContainer />
+        <Toaster position="top-center" />
       </body>
     </html>
   );

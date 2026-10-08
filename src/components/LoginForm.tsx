@@ -6,7 +6,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { HiOutlineMail, HiOutlineLockClosed } from 'react-icons/hi';
 import { FaCheckCircle, FaPlayCircle, FaUserGraduate } from 'react-icons/fa';
 import { authClient } from '@/lib/auth-client';
-import { Flip, toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
 
 const LoginPage = () => {
     const onSubmit = async (e) => {
@@ -21,18 +21,12 @@ const LoginPage = () => {
             callbackURL: "/"
         }, {
             onSuccess: (ctx) => {
-                toast.success('Sign In successful', {
-                    theme: 'colored',
-                    transition: Flip
-                });
+                toast.success('Sign In successful');
                 window.location.href = '/';
             },
             onError: (ctx) => {
                 // display the error message
-                toast.warning(ctx.error.message, {
-                    theme: 'colored',
-                    transition: Flip
-                });
+                toast.error(ctx.error.message);
             },
         });
 
