@@ -35,6 +35,15 @@ const papersList = {
     { id: 'literary-criticism-romantic-to-modern', title: 'Literary Criticism (Romantic to Modern)', code: '241115', href: '/honours/4th-year/literary-criticism-romantic-to-modern', color: 'bg-[#831843]', spineColor: 'bg-[#500f29]', textColor: 'text-pink-50' },
     { id: 'continental-literature', title: 'Continental Literature', code: '241117', href: '/honours/4th-year/continental-literature', color: 'bg-[#14532d]', spineColor: 'bg-[#052e16]', textColor: 'text-green-50' },
     { id: 'approaches-to-the-study-of-literature', title: 'Approaches to the Study of Literature', code: '241119', href: '/honours/4th-year/approaches-to-the-study-of-literature', color: 'bg-[#1e3a8a]', spineColor: 'bg-[#172554]', textColor: 'text-blue-50' }
+  ],
+  'masters-final': [
+    { id: 'chaucer-and-shakespeare', title: 'Chaucer and Shakespeare', code: '311101', href: '/honours/masters-final/chaucer-and-shakespeare', color: 'bg-[#1e293b]', spineColor: 'bg-[#0f172a]', textColor: 'text-slate-100' },
+    { id: 'modern-poetry-masters', title: 'Modern Poetry', code: '311103', href: '/honours/masters-final/modern-poetry-masters', color: 'bg-[#7c2d12]', spineColor: 'bg-[#431407]', textColor: 'text-orange-50' },
+    { id: 'modern-drama-masters', title: 'Modern Drama', code: '311105', href: '/honours/masters-final/modern-drama-masters', color: 'bg-[#064e3b]', spineColor: 'bg-[#022c22]', textColor: 'text-emerald-50' },
+    { id: 'modern-novel-masters', title: 'Modern Novel', code: '311107', href: '/honours/masters-final/modern-novel-masters', color: 'bg-[#312e81]', spineColor: 'bg-[#1e1b4b]', textColor: 'text-indigo-50' },
+    { id: 'prose-masters', title: 'Prose', code: '311109', href: '/honours/masters-final/prose-masters', color: 'bg-[#4a044e]', spineColor: 'bg-[#2e0231]', textColor: 'text-fuchsia-50' },
+    { id: 'south-asian-and-african-literature', title: 'South Asian and African Literature', code: '311111', href: '/honours/masters-final/south-asian-and-african-literature', color: 'bg-[#831843]', spineColor: 'bg-[#500f29]', textColor: 'text-pink-50' },
+    { id: 'twentieth-century-american-literature', title: 'Twentieth Century American Literature', code: '311115', href: '/honours/masters-final/twentieth-century-american-literature', color: 'bg-[#14532d]', spineColor: 'bg-[#052e16]', textColor: 'text-green-50' }
   ]
 };
 
@@ -44,10 +53,15 @@ fs.writeFileSync(path.join(__dirname, '../public/data/honours-papers.json'), JSO
 // Generate dummy syllabus for each paper
 Object.keys(papersList).forEach(year => {
   papersList[year].forEach(paper => {
+    let yearName = year.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+    if (year !== 'masters-final') {
+      yearName += " Honours";
+    }
+
     const paperData = {
       title: paper.title,
       code: paper.code,
-      year: year.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()) + " Honours",
+      year: yearName,
       description: `Comprehensive syllabus and reading materials for ${paper.title} (${paper.code}).`,
       units: [
         {
@@ -85,3 +99,4 @@ Object.keys(papersList).forEach(year => {
 });
 
 console.log("Data generated successfully!");
+

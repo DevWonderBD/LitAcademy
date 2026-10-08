@@ -50,7 +50,8 @@ export default function PaperBookCard({ paper }: PaperBookCardProps) {
             <div className="w-16 h-[1px] bg-current opacity-30 mb-8"></div>
             
             <h3 className={cn(
-              "text-2xl md:text-3xl font-black font-heading leading-snug tracking-tight drop-shadow-md",
+              "text-xl md:text-2xl font-black font-heading leading-tight tracking-tight drop-shadow-md",
+              "text-balance",
               paper.textColor
             )}>
               {paper.title}
