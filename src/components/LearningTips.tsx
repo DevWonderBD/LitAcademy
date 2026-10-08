@@ -27,59 +27,73 @@ const LearningTips = () => {
 
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-10 flex flex-col items-center">
-          <SectionBadge className="mx-auto">Learning Optimization</SectionBadge>
-          <h2 className="text-[28px] md:text-5xl font-[900] text-slate-900 leading-tight">
-            Master Your Skills with <br />
-            <span className="text-primary">Expert Techniques</span>
+        <div className="text-center mb-16 flex flex-col items-center">
+          <SectionBadge className="mx-auto">Study Methodology</SectionBadge>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-[900] text-slate-900 leading-tight mt-4 font-heading">
+            Master Literature with <br />
+            <span className="text-primary italic">Expert Techniques</span>
           </h2>
+          <p className="text-slate-500 font-medium mt-6 max-w-2xl text-lg leading-relaxed">
+            Elevate your reading comprehension and exam preparation with proven strategies specifically designed for National University students.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {tipsData.map((section, index) => (
             <div 
               key={index} 
-              className="bg-white p-8 md:p-12 rounded-[40px] shadow-sm border border-orange-50 hover:shadow-xl transition-all duration-500 group"
+              className="bg-white p-8 md:p-12 rounded-3xl shadow-xl shadow-slate-200/40 border border-slate-100 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden"
             >
-              <div className="flex items-center gap-4 mb-10">
-                <div className={`${section.accentColor} p-4 rounded-2xl shadow-lg group-hover:scale-110 transition-transform`}>
-                  {IconMap[section.iconType]}
-                </div>
-                <h3 className="text-2xl font-black text-slate-900">{section.category}</h3>
+              {/* Decorative faint background icon */}
+              <div className="absolute -right-8 -top-8 text-slate-50 opacity-50 group-hover:scale-110 transition-transform duration-700 pointer-events-none">
+                {section.iconType === 'BookOpen' ? <BookOpen size={180} /> : <Clock size={180} />}
               </div>
 
-              <div className="space-y-8">
-                {section.tips.map((tip, i) => (
-                  <div key={i} className="flex gap-5">
-                    <div className="mt-2">
-                      <div className={`w-2 h-2 rounded-full ${section.bulletColor}`}></div>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-extrabold text-slate-800 mb-1">{tip.title}</h4>
-                      <p className="text-slate-500 leading-relaxed font-medium">
-                        {tip.description}
-                      </p>
-                    </div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-5 mb-10">
+                  <div className={`${section.accentColor} p-4 rounded-2xl shadow-lg shadow-${section.accentColor}/20 group-hover:scale-110 transition-transform duration-500`}>
+                    {IconMap[section.iconType]}
                   </div>
-                ))}
+                  <h3 className="text-2xl font-black text-slate-900 font-heading tracking-tight">{section.category}</h3>
+                </div>
+
+                <div className="space-y-8">
+                  {section.tips.map((tip: any, i: number) => (
+                    <div key={i} className="flex gap-5 group/tip">
+                      <div className="mt-1.5 flex-shrink-0">
+                        <div className={`w-2.5 h-2.5 rounded-full ${section.bulletColor} group-hover/tip:scale-150 transition-transform duration-300 ring-4 ring-${section.bulletColor}/20`}></div>
+                      </div>
+                      <div>
+                        <h4 className="text-[17px] font-bold text-slate-900 mb-2 group-hover/tip:text-primary transition-colors">{tip.title}</h4>
+                        <p className="text-slate-500 leading-relaxed font-medium text-[15px]">
+                          {tip.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
         </div>
 
         {/* Bottom CTA Banner */}
-        <div className="mt-16 bg-primary rounded-[30px] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 text-white shadow-2xl shadow-teal-100">
-           <div className="flex items-center gap-4 text-center md:text-left">
-              <div className="bg-white/20 p-3 rounded-full hidden sm:block">
-                <Zap className="w-8 h-8 fill-white" />
+        <div className="mt-16 bg-slate-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 text-white shadow-2xl relative overflow-hidden">
+           {/* Abstract shapes for CTA */}
+           <div className="absolute right-0 top-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
+           <div className="absolute left-0 bottom-0 w-48 h-48 bg-accent/20 rounded-full blur-3xl -ml-10 -mb-10 pointer-events-none"></div>
+           
+           <div className="flex items-center gap-6 text-center md:text-left relative z-10">
+              <div className="bg-white/10 p-4 rounded-full hidden md:flex border border-white/10">
+                <Target className="w-8 h-8 text-accent" />
               </div>
               <div>
-                <h3 className="text-xl font-black">Ready to Accelerate?</h3>
-                <p className="opacity-80 font-medium">Apply these strategies to achieve unparalleled progress in your journey.</p>
+                <h3 className="text-2xl font-black font-heading mb-2">Ready to apply these techniques?</h3>
+                <p className="text-slate-300 font-medium text-[15px] max-w-md leading-relaxed">Join LitAcademy and access complete notes designed with these methodologies in mind.</p>
               </div>
            </div>
-           <Link href={'/programs'} className="bg-white text-primary px-8 py-4 rounded-2xl font-black text-sm hover:bg-slate-100 transition-all whitespace-nowrap active:scale-95">
-              Explore More Resources
+           <Link href={'/programs'} className="relative z-10 bg-primary text-white px-8 py-4 rounded-xl font-bold text-[15px] hover:bg-primary-hover shadow-lg shadow-primary/30 transition-all whitespace-nowrap active:scale-95 flex items-center gap-2">
+              Start Reading Now
            </Link>
         </div>
       </div>
