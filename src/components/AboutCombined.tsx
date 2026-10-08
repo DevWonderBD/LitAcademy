@@ -13,8 +13,8 @@ const AboutCombined = () => {
                     <div className="lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left relative z-10">
                         <SectionBadge>Why LitAcademy?</SectionBadge>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-[900] text-slate-900 mt-4 mb-6 leading-tight font-heading">
-                            Move beyond memorisation. <br className="hidden lg:block"/>
-                            <span className="text-primary">Understand the text.</span>
+                            Don&apos;t just memorise. <br className="hidden md:block"/>
+                            <span className="text-primary">Understand deeply.</span>
                         </h2>
                         <p className="text-slate-600 text-lg leading-relaxed mb-8 font-medium max-w-xl">
                             We are redefining how English Literature is taught. Focused exclusively on National University programmes, our platform replaces rote memorisation with genuine critical thinking and interactive guidance.
@@ -83,7 +83,7 @@ const AboutCombined = () => {
                         {/* Interactive Connecting Line */}
                         <div className="hidden md:block absolute top-10 left-[15%] right-[15%] h-[4px] bg-slate-200 z-0 rounded-full overflow-hidden">
                             {/* Animated line sliding across */}
-                            <div className="w-[40%] h-full bg-gradient-to-r from-transparent via-primary to-transparent animate-slide rounded-full"></div>
+                            <div className="absolute w-[40%] h-full bg-gradient-to-r from-transparent via-primary to-transparent animate-slide rounded-full"></div>
                         </div>
 
                         <div className="relative z-10 flex flex-col items-center text-center group">
@@ -121,7 +121,7 @@ const AboutCombined = () => {
                 {/* Part 3: Bento Box (Core Features) */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                     {/* Large Box */}
-                    <div className="md:col-span-2 bg-white border border-slate-200 rounded-[32px] p-8 md:p-12 flex flex-col justify-between overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-500">
+                    <div className="md:col-span-2 bg-white border border-slate-200 rounded-[32px] p-6 md:p-10 flex flex-col justify-center overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-500">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-20 -mt-20 transition-all duration-500 group-hover:bg-primary/10"></div>
                         <div className="relative z-10">
                             <div className="bg-slate-50 p-3 rounded-2xl w-max shadow-sm border border-slate-100 mb-6 group-hover:scale-110 transition-transform">
@@ -136,7 +136,7 @@ const AboutCombined = () => {
 
                     <div className="flex flex-col gap-6">
                         {/* Top Right Box */}
-                        <div className="bg-primary border border-primary/20 rounded-[32px] p-8 flex flex-col justify-center relative overflow-hidden group shadow-lg shadow-primary/20 hover:-translate-y-1 transition-transform">
+                        <div className="bg-primary border border-primary/20 rounded-[32px] p-6 flex flex-col justify-center relative overflow-hidden group shadow-lg shadow-primary/20 hover:-translate-y-1 transition-transform h-full">
                             <div className="absolute -right-6 -bottom-6 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
                             <div className="relative z-10 text-white">
                                 <Sparkles className="w-8 h-8 mb-4 opacity-80" />
@@ -148,7 +148,7 @@ const AboutCombined = () => {
                         </div>
 
                         {/* Bottom Right Box */}
-                        <div className="bg-white border border-slate-200 rounded-[32px] p-8 flex flex-col justify-center shadow-sm hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1 transition-all duration-300">
+                        <div className="bg-white border border-slate-200 rounded-[32px] p-6 flex flex-col justify-center shadow-sm hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1 transition-all duration-300 h-full">
                             <MousePointer2 className="w-8 h-8 mb-4 text-accent" />
                             <h3 className="text-xl font-black text-slate-900 mb-2 font-heading">Interactive Reading</h3>
                             <p className="text-slate-500 font-medium text-sm leading-relaxed">
