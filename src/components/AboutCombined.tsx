@@ -129,39 +129,39 @@ const AboutCombined = () => {
                 </div>
 
                 {/* Part 3: Bento Box (Core Features) */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 max-w-6xl mx-auto">
                     {/* Large Box */}
-                    <div className="md:col-span-2 bg-white border border-slate-200 rounded-[32px] p-6 md:p-10 flex flex-col justify-center overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-500">
+                    <div className="md:col-span-2 bg-white border border-slate-200 rounded-[24px] p-6 md:p-8 flex flex-col justify-center overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-500 min-h-[220px]">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-20 -mt-20 transition-all duration-500 group-hover:bg-primary/10"></div>
                         <div className="relative z-10">
-                            <div className="bg-slate-50 p-3 rounded-2xl w-max shadow-sm border border-slate-100 mb-6 group-hover:scale-110 transition-transform">
-                                <BookOpen className="w-6 h-6 text-primary" />
+                            <div className="bg-slate-50 p-2.5 rounded-2xl w-max shadow-sm border border-slate-100 mb-5 group-hover:scale-110 transition-transform">
+                                <BookOpen className="w-5 h-5 text-primary" />
                             </div>
-                            <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-3 font-heading">Dedicated to NU Students</h3>
-                            <p className="text-slate-600 text-base md:text-lg leading-relaxed max-w-lg font-medium">
-                                A premium space built exclusively for National University English Literature students. Access authentic texts, structured guides, and everything you need to master your syllabus—without the clutter.
+                            <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-2 font-heading">Dedicated to NU Students</h3>
+                            <p className="text-slate-600 text-sm md:text-base leading-relaxed max-w-lg font-medium">
+                                A premium space built exclusively for National University English Literature students. Access authentic texts, structured guides, and everything you need to master your reading without the clutter.
                             </p>
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-4 md:gap-5">
                         {/* Top Right Box */}
-                        <div className="bg-primary border border-primary/20 rounded-[32px] p-6 flex flex-col justify-center relative overflow-hidden group shadow-lg shadow-primary/20 hover:-translate-y-1 transition-transform h-full">
+                        <div className="bg-primary border border-primary/20 rounded-[24px] p-5 md:p-6 flex flex-col justify-center relative overflow-hidden group shadow-lg shadow-primary/20 hover:-translate-y-1 transition-transform h-full">
                             <div className="absolute -right-6 -bottom-6 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
                             <div className="relative z-10 text-white">
-                                <Sparkles className="w-8 h-8 mb-4 opacity-80" />
-                                <h3 className="text-xl font-black mb-2 font-heading">Pythia AI</h3>
-                                <p className="text-primary-foreground/80 font-medium text-sm leading-relaxed">
+                                <Sparkles className="w-6 h-6 mb-3 opacity-80" />
+                                <h3 className="text-lg font-black mb-1.5 font-heading">Pythia AI</h3>
+                                <p className="text-primary-foreground/80 font-medium text-xs md:text-sm leading-relaxed">
                                     Your 24/7 intelligent study guide to discuss complex theories.
                                 </p>
                             </div>
                         </div>
 
                         {/* Bottom Right Box */}
-                        <div className="bg-white border border-slate-200 rounded-[32px] p-6 flex flex-col justify-center shadow-sm hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1 transition-all duration-300 h-full">
-                            <MousePointer2 className="w-8 h-8 mb-4 text-accent" />
-                            <h3 className="text-xl font-black text-slate-900 mb-2 font-heading">Interactive Reading</h3>
-                            <p className="text-slate-500 font-medium text-sm leading-relaxed">
+                        <div className="bg-white border border-slate-200 rounded-[24px] p-5 md:p-6 flex flex-col justify-center shadow-sm hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1 transition-all duration-300 h-full">
+                            <MousePointer2 className="w-6 h-6 mb-3 text-accent" />
+                            <h3 className="text-lg font-black text-slate-900 mb-1.5 font-heading">Interactive Reading</h3>
+                            <p className="text-slate-500 font-medium text-xs md:text-sm leading-relaxed">
                                 Hover over any difficult literary term to see instant, clear explanations.
                             </p>
                         </div>
