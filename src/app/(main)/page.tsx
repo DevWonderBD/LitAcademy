@@ -1,4 +1,4 @@
-import AboutCombined from "@/components/AboutCombined";
+import AboutSection from "@/components/AboutSection";
 import ProgrammesSection from "@/components/ProgrammesSection";
 import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
@@ -8,7 +8,7 @@ import InteractiveStudyMethod from "@/components/InteractiveStudyMethod";
 export default function Home() {
   return (<>
     <Hero></Hero>
-    <AboutCombined></AboutCombined>
+    <AboutSection></AboutSection>
     <ProgrammesSection></ProgrammesSection>
     <InteractiveStudyMethod></InteractiveStudyMethod>
     <LearningTips></LearningTips>

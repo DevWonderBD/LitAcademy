@@ -2,7 +2,7 @@ import React from 'react';
 import { SectionBadge } from '@/components/ui/section-badge';
 import { CheckCircle2, BookOpen, Lightbulb, MessageSquare, Sparkles, MousePointer2 } from 'lucide-react';
 
-const AboutCombined = () => {
+const AboutSection = () => {
     return (
         <section className="bg-slate-50 py-16 overflow-hidden border-b border-slate-100">
             <div className="container mx-auto max-w-7xl px-6 lg:px-20">
@@ -173,4 +173,4 @@ const AboutCombined = () => {
     );
 };
 
-export default AboutCombined;
+export default AboutSection;
