@@ -13,7 +13,7 @@ export default function Home() {
     <ProgrammesSection></ProgrammesSection>
     <LearningTips></LearningTips>
     <MostReadSection></MostReadSection>
-    <MentorsSection></MentorsSection>
+    {/* <MentorsSection></MentorsSection> */}
     <FAQ></FAQ>
   </>
   );

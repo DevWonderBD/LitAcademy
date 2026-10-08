@@ -26,13 +26,13 @@ const MostReadSection = () => {
 
         <div className="flex items-center justify-between mb-8">
           <div>
-            <SectionBadge>Most Read Topics</SectionBadge>
+            <SectionBadge>Most Read Papers</SectionBadge>
             <h2 className="text-4xl font-[900] text-slate-900 mt-4">
               Recently <span className="text-primary">Read</span>
             </h2>
           </div>
           <Link href={'/programs'} className="hidden md:flex items-center gap-2 text-slate-500 font-bold hover:text-primary transition-all">
-            View All Most Read <FaArrowRight size={14} />
+            View All Papers <FaArrowRight size={14} />
           </Link>
         </div>
 
