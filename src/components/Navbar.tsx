@@ -28,7 +28,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 const Logo = () => (
@@ -144,6 +144,7 @@ const Navbar = () => {
   const router = useRouter();
 
   const [selectedProgram, setSelectedProgram] = useState<{name: string, href: string} | null>(null);
+  const hasRedirected = useRef(false);
 
   useEffect(() => {
     const saved = localStorage.getItem('lit_selected_program');
@@ -152,33 +153,40 @@ const Navbar = () => {
         const parsed = JSON.parse(saved);
         
         let targetHref = parsed.href;
-        // Fix legacy paths in user's localStorage
-        if (targetHref && targetHref.startsWith('/programs/honours/')) {
-          targetHref = targetHref.replace('/programs/honours/', '/honours/');
-        } else if (targetHref === '/programs/masters/final' || targetHref === '/masters') {
-          targetHref = '/honours/masters-final';
-        }
-        
-        if (targetHref !== parsed.href) {
-          parsed.href = targetHref;
-          localStorage.setItem('lit_selected_program', JSON.stringify(parsed));
+        if (targetHref) {
+          if (!targetHref.startsWith('/')) {
+            targetHref = '/' + targetHref;
+          }
+          // Fix legacy paths in user's localStorage exactly to avoid false positive matching
+          if (targetHref === '/programs/honours/1st-year') {
+            targetHref = '/honours/1st-year';
+          } else if (targetHref === '/programs/honours/2nd-year') {
+            targetHref = '/honours/2nd-year';
+          } else if (targetHref === '/programs/honours/3rd-year') {
+            targetHref = '/honours/3rd-year';
+          } else if (targetHref === '/programs/honours/4th-year') {
+            targetHref = '/honours/4th-year';
+          } else if (targetHref === '/programs/masters/final' || targetHref === '/masters' || targetHref === '/programs/honours/masters-final') {
+            targetHref = '/honours/masters-final';
+          }
+          
+          if (targetHref !== parsed.href) {
+            parsed.href = targetHref;
+            localStorage.setItem('lit_selected_program', JSON.stringify(parsed));
+          }
         }
 
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setSelectedProgram(parsed);
 
-        // First-time redirect logic (once per session)
-        const hasRedirected = sessionStorage.getItem('lit_has_redirected');
-        if (!hasRedirected && targetHref) {
-          sessionStorage.setItem('lit_has_redirected', 'true');
-          // Only redirect if they are not already on the target page
-          if (window.location.pathname !== targetHref) {
-            router.push(targetHref);
-          }
+        // Redirect logic: if they hit the homepage directly, take them to their saved program only once
+        if (targetHref && pathname === '/' && !hasRedirected.current) {
+          hasRedirected.current = true;
+          router.push(targetHref);
         }
       } catch (e) {}
     }
-  }, [router]);
+  }, [router, pathname]);
 
   const handleProgramSelect = (name: string, href: string) => {
     const prog = { name, href };
