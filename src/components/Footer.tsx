@@ -171,7 +171,7 @@ const Footer = () => {
             © {new Date().getFullYear()} LitAcademy. All rights reserved.
           </p>
           <p className="text-slate-500 text-[15px] font-heading italic">
-            A <span className="text-slate-900 font-black not-italic hover:text-primary transition-colors cursor-pointer">Dev Wonder</span> Initiative
+            A <a href="https://devwonderbd.com" target="_blank" rel="noopener noreferrer" className="text-slate-900 font-black not-italic hover:text-primary transition-colors cursor-pointer">Dev Wonder</a> Initiative
           </p>
         </div>
       </div>
