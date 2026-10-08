@@ -21,48 +21,42 @@ const LearningTips = () => {
   };
 
   return (
-    <section id='technics' className="bg-slate-50/50 py-20 px-6 lg:px-20 relative border-t border-slate-100">
-      <div className="container mx-auto max-w-6xl relative z-10">
-        
-        {/* Minimal Academic Header */}
-        <div className="mb-16 md:mb-20 max-w-2xl">
-          <SectionBadge>Study Methodology</SectionBadge>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-5 leading-snug">
-            Expert Techniques for <br />
-            Literature Students
+    <section id='technics' className="bg-secondary py-14 px-6 lg:px-20 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-white/40 rounded-full blur-3xl -mr-32 -mt-32"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-50 rounded-full blur-3xl -ml-48 -mb-48"></div>
+
+      <div className="container mx-auto relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-10 flex flex-col items-center">
+          <SectionBadge className="mx-auto">Learning Optimization</SectionBadge>
+          <h2 className="text-[28px] md:text-5xl font-[900] text-slate-900 leading-tight">
+            Master Your Skills with <br />
+            <span className="text-primary">Expert Techniques</span>
           </h2>
-          <p className="text-slate-600 font-serif text-lg mt-5 leading-relaxed">
-            Elevate your reading comprehension and exam preparation with proven strategies specifically designed for the National University syllabus.
-          </p>
         </div>
 
-        {/* Clean, Thin-bordered Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {tipsData.map((section, index) => (
             <div 
               key={index} 
-              className="bg-white p-8 md:p-10 rounded-xl border border-slate-200 shadow-sm transition-all hover:shadow-md"
+              className="bg-white p-8 md:p-12 rounded-[40px] shadow-sm border border-orange-50 hover:shadow-xl transition-all duration-500 group"
             >
-              <div className="flex items-center gap-4 mb-8 pb-6 border-b border-slate-100">
-                <div className="text-primary">
+              <div className="flex items-center gap-4 mb-10">
+                <div className={`${section.accentColor} p-4 rounded-2xl shadow-lg group-hover:scale-110 transition-transform`}>
                   {IconMap[section.iconType]}
                 </div>
-                <h3 className="text-xl font-bold font-heading text-slate-900 tracking-tight">
-                  {section.category}
-                </h3>
+                <h3 className="text-2xl font-black text-slate-900">{section.category}</h3>
               </div>
 
-              <div className="space-y-8 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent hidden-before-line">
-                {section.tips.map((tip: any, i: number) => (
-                  <div key={i} className="relative flex items-start gap-4">
-                    {/* Minimal indicator */}
-                    <div className="mt-1.5 flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border border-slate-200 bg-slate-50">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/60"></div>
+              <div className="space-y-8">
+                {section.tips.map((tip, i) => (
+                  <div key={i} className="flex gap-5">
+                    <div className="mt-2">
+                      <div className={`w-2 h-2 rounded-full ${section.bulletColor}`}></div>
                     </div>
-                    
                     <div>
-                      <h4 className="text-[15px] font-bold text-slate-900 mb-1.5">{tip.title}</h4>
-                      <p className="text-slate-600 leading-relaxed font-serif text-[14px]">
+                      <h4 className="text-lg font-extrabold text-slate-800 mb-1">{tip.title}</h4>
+                      <p className="text-slate-500 leading-relaxed font-medium">
                         {tip.description}
                       </p>
                     </div>
@@ -73,11 +67,19 @@ const LearningTips = () => {
           ))}
         </div>
 
-        {/* Subtle Text Link CTA instead of heavy banner */}
-        <div className="mt-16 flex justify-center">
-           <Link href={'/programs'} className="inline-flex items-center gap-2 text-primary font-bold hover:text-primary-hover transition-colors">
-              <span className="border-b border-primary/30 pb-0.5">Explore Study Resources</span>
-              <span className="text-lg">→</span>
+        {/* Bottom CTA Banner */}
+        <div className="mt-16 bg-primary rounded-[30px] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 text-white shadow-2xl shadow-teal-100">
+           <div className="flex items-center gap-4 text-center md:text-left">
+              <div className="bg-white/20 p-3 rounded-full hidden sm:block">
+                <Zap className="w-8 h-8 fill-white" />
+              </div>
+              <div>
+                <h3 className="text-xl font-black">Ready to Accelerate?</h3>
+                <p className="opacity-80 font-medium">Apply these strategies to achieve unparalleled progress in your journey.</p>
+              </div>
+           </div>
+           <Link href={'/programs'} className="bg-white text-primary px-8 py-4 rounded-2xl font-black text-sm hover:bg-slate-100 transition-all whitespace-nowrap active:scale-95">
+              Explore More Resources
            </Link>
         </div>
       </div>
