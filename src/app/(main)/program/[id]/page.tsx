@@ -5,8 +5,9 @@ import { MdOutlineSignalCellularAlt } from 'react-icons/md';
 import fs from 'fs/promises';
 import path from 'path';
 
-const ProgramDetails = async ({ params }: { params: { id: string } }) => {
-    const programId = parseInt(params.id);
+const ProgramDetails = async ({ params }: { params: Promise<{ id: string }> }) => {
+    const resolvedParams = await params;
+    const programId = parseInt(resolvedParams.id);
     const filePath = path.join(process.cwd(), 'public', 'data', 'data.json');
     const fileContents = await fs.readFile(filePath, 'utf8');
     const coursesData = JSON.parse(fileContents);
