@@ -3,7 +3,7 @@ import ProgrammesSection from "@/components/ProgrammesSection";
 import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
 import LearningTips from "@/components/LearningTips";
-import MentorsSection from "@/components/MentorsSection";
+import InteractiveStudyMethod from "@/components/InteractiveStudyMethod";
 import MostReadSection from "@/components/MostReadSection";
 
 export default function Home() {
@@ -12,6 +12,7 @@ export default function Home() {
     <AboutCombined></AboutCombined>
     <ProgrammesSection></ProgrammesSection>
     <LearningTips></LearningTips>
+    <InteractiveStudyMethod></InteractiveStudyMethod>
     <MostReadSection></MostReadSection>
     {/* <MentorsSection></MentorsSection> */}
     <FAQ></FAQ>
