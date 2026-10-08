@@ -244,10 +244,10 @@ const Navbar = () => {
                           Honours
                         </h4>
                         <div className="flex flex-col gap-1">
-                          <ProgramLink name="1st Year" desc="Foundations of English Literature" href="/programs/honours/1st-year" onSelect={handleProgramSelect} />
-                          <ProgramLink name="2nd Year" desc="Romantic to Victorian Period" href="/programs/honours/2nd-year" onSelect={handleProgramSelect} />
-                          <ProgramLink name="3rd Year" desc="Modern Drama & Poetry" href="/programs/honours/3rd-year" onSelect={handleProgramSelect} />
-                          <ProgramLink name="4th Year" desc="Advanced Critical Theory" href="/programs/honours/4th-year" onSelect={handleProgramSelect} />
+                          <ProgramLink name="1st Year" desc="Foundations of English Literature" href="/honours/1st-year" onSelect={handleProgramSelect} />
+                          <ProgramLink name="2nd Year" desc="Romantic to Victorian Period" href="/honours/2nd-year" onSelect={handleProgramSelect} />
+                          <ProgramLink name="3rd Year" desc="Modern Drama & Poetry" href="/honours/3rd-year" onSelect={handleProgramSelect} />
+                          <ProgramLink name="4th Year" desc="Advanced Critical Theory" href="/honours/4th-year" onSelect={handleProgramSelect} />
                         </div>
                       </div>
 
@@ -258,7 +258,7 @@ const Navbar = () => {
                           Masters
                         </h4>
                         <div className="flex flex-col gap-1">
-                          <ProgramLink name="Masters Final" desc="Specialised Advanced Studies" href="/programs/masters/final" onSelect={handleProgramSelect} />
+                          <ProgramLink name="Masters Final" desc="Specialised Advanced Studies" href="/honours/masters-final" onSelect={handleProgramSelect} />
                         </div>
 
                         {/* Quick Links / Resources */}
@@ -352,13 +352,13 @@ const Navbar = () => {
                   </h4>
                   <div className="pl-4 flex flex-col gap-3">
                     <h5 className="text-sm font-semibold text-muted-foreground flex items-center gap-2"><BookOpen className="w-4 h-4" /> Honours</h5>
-                    <SheetClose render={<Link onClick={() => handleProgramSelect("1st Year", "/programs/honours/1st-year")} href="/programs/honours/1st-year" className="text-sm text-foreground hover:text-primary font-bold" />}>1st Year</SheetClose>
-                    <SheetClose render={<Link onClick={() => handleProgramSelect("2nd Year", "/programs/honours/2nd-year")} href="/programs/honours/2nd-year" className="text-sm text-foreground hover:text-primary font-bold" />}>2nd Year</SheetClose>
-                    <SheetClose render={<Link onClick={() => handleProgramSelect("3rd Year", "/programs/honours/3rd-year")} href="/programs/honours/3rd-year" className="text-sm text-foreground hover:text-primary font-bold" />}>3rd Year</SheetClose>
-                    <SheetClose render={<Link onClick={() => handleProgramSelect("4th Year", "/programs/honours/4th-year")} href="/programs/honours/4th-year" className="text-sm text-foreground hover:text-primary font-bold" />}>4th Year</SheetClose>
+                    <SheetClose render={<Link onClick={() => handleProgramSelect("1st Year", "/honours/1st-year")} href="/honours/1st-year" className="text-sm text-foreground hover:text-primary font-bold" />}>1st Year</SheetClose>
+                    <SheetClose render={<Link onClick={() => handleProgramSelect("2nd Year", "/honours/2nd-year")} href="/honours/2nd-year" className="text-sm text-foreground hover:text-primary font-bold" />}>2nd Year</SheetClose>
+                    <SheetClose render={<Link onClick={() => handleProgramSelect("3rd Year", "/honours/3rd-year")} href="/honours/3rd-year" className="text-sm text-foreground hover:text-primary font-bold" />}>3rd Year</SheetClose>
+                    <SheetClose render={<Link onClick={() => handleProgramSelect("4th Year", "/honours/4th-year")} href="/honours/4th-year" className="text-sm text-foreground hover:text-primary font-bold" />}>4th Year</SheetClose>
                     
                     <h5 className="text-sm font-semibold text-muted-foreground mt-3 flex items-center gap-2"><GraduationCap className="w-4 h-4" /> Masters</h5>
-                    <SheetClose render={<Link onClick={() => handleProgramSelect("Masters Final", "/programs/masters/final")} href="/programs/masters/final" className="text-sm text-foreground hover:text-primary font-bold" />}>Masters Final</SheetClose>
+                    <SheetClose render={<Link onClick={() => handleProgramSelect("Masters Final", "/honours/masters-final")} href="/honours/masters-final" className="text-sm text-foreground hover:text-primary font-bold" />}>Masters Final</SheetClose>
                   </div>
                 </div>
 
