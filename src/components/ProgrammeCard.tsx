@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaRegClock, FaBook } from 'react-icons/fa';
+import { FaRegClock, FaBook, FaStar } from 'react-icons/fa';
 
 const ProgrammeCard = ({ programme }: { programme: any }) => {
 
@@ -27,6 +27,11 @@ const ProgrammeCard = ({ programme }: { programme: any }) => {
                         <div className="flex items-center gap-1 text-accent">
                             <FaBook size={12} />
                             <span className="text-[12px] font-bold">{programme.category}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                            <FaStar className="text-accent" size={12} />
+                            <span className="text-[12px] font-bold text-slate-700">{programme.rating || "4.8"}</span>
+                            <span className="text-[11px] text-slate-500 font-medium">({programme.reviews || "1.2k"} reviews)</span>
                         </div>
                     </div>
 
