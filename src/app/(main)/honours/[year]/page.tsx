@@ -120,8 +120,9 @@ const honoursPapers = {
 };
 
 
-export default function HonoursYearPage({ params }: { params: { year: string } }) {
-  const papers = honoursPapers[params.year as keyof typeof honoursPapers];
+export default async function HonoursYearPage({ params }: { params: Promise<any> }) {
+  const resolvedParams = await params;
+  const papers = honoursPapers[resolvedParams.year as keyof typeof honoursPapers];
   
   if (!papers) {
     notFound();
@@ -141,7 +142,7 @@ export default function HonoursYearPage({ params }: { params: { year: string } }
             Honours Program
           </div>
           <h1 className="text-4xl md:text-5xl font-black text-white mb-4 font-heading">
-            {formatYearName(params.year)}
+            {formatYearName(resolvedParams.year)}
           </h1>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto font-medium">
             Select a paper to explore the syllabus, detailed reading materials, and essential study guides.
