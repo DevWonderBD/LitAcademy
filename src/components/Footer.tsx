@@ -47,14 +47,14 @@ const Footer = () => {
               <span className="w-2 h-2 bg-primary rounded-full ml-1 self-end mb-1"></span>
             </Link>
             <p className="text-slate-500 font-medium leading-relaxed mb-8 pr-4">
-              LitAcademy is the premium study platform for National University English Literature students. Access structured notes, bilingual explanations, and an AI guide to master your syllabus.
+              LitAcademy is the premium study platform for National University English Literature students. Access structured notes, bilingual explanations, and an AI guide to master your studies.
             </p>
             
             {/* Social Media */}
             <div className="mb-10">
               <h4 className="text-sm font-bold text-slate-900 mb-4">Social Media</h4>
               <div className="flex items-center gap-3">
-                <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
+                <a href="#" className="bg-accent text-white p-2.5 rounded-full hover:bg-primary transition-colors shadow-sm">
                   <FaFacebookF size={14} />
                 </a>
                 <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
