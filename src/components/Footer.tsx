@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { 
   FaInstagram, 
   FaFacebookF, 
-  FaLinkedinIn, 
   FaMapMarkerAlt, 
   FaEnvelope, 
   FaGooglePlay, 
@@ -21,13 +20,18 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+interface FooterLink {
+  label: string;
+  href: string;
+}
+
 interface FooterData {
-  companyInfo: string[];
-  topCategories: string[];
+  companyInfo: FooterLink[];
+  topPrograms: FooterLink[];
 }
 
 const Footer = () => {
-  const [data, setData] = useState<FooterData>({ companyInfo: [], topCategories: [] });
+  const [data, setData] = useState<FooterData>({ companyInfo: [], topPrograms: [] });
 
   useEffect(() => {
     fetch('/data/footer.json')
@@ -56,19 +60,16 @@ const Footer = () => {
             <div className="mb-10">
               <h4 className="text-sm font-bold text-slate-900 mb-4">Social Media</h4>
               <div className="flex items-center gap-3">
-                <a href="#" className="bg-primary text-white p-2.5 rounded-full hover:bg-accent transition-colors shadow-sm">
+                <a href="https://facebook.com/litacademy" target="_blank" rel="noopener noreferrer" className="bg-primary text-white p-2.5 rounded-full hover:bg-accent transition-colors shadow-sm">
                   <FaFacebookF size={14} />
                 </a>
-                <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
+                <a href="https://instagram.com/litacademy" target="_blank" rel="noopener noreferrer" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
                   <FaInstagram size={14} />
                 </a>
-                <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
+                <a href="https://twitter.com/litacademy" target="_blank" rel="noopener noreferrer" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
                   <FaXTwitter size={14} />
                 </a>
-                <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
-                  <FaLinkedinIn size={14} />
-                </a>
-                <a href="#" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
+                <a href="https://youtube.com/litacademy" target="_blank" rel="noopener noreferrer" className="bg-white border border-slate-200 text-slate-400 p-2.5 rounded-full hover:text-primary hover:border-primary transition-colors shadow-sm">
                   <FaYoutube size={14} />
                 </a>
               </div>
@@ -82,9 +83,9 @@ const Footer = () => {
             <ul className="space-y-4">
               {data.companyInfo.map((item, index) => (
                 <li key={index}>
-                  <Link href="#" className="text-slate-500 font-medium hover:text-primary transition-colors text-sm flex items-center gap-2">
+                  <Link href={item.href} className="text-slate-500 font-medium hover:text-primary transition-colors text-sm flex items-center gap-2">
                     {index === 0 && <span className="w-4 h-[1px] bg-primary inline-block"></span>}
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -95,10 +96,10 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <h3 className="text-lg font-bold text-slate-900 mb-6">Top Programs</h3>
             <ul className="space-y-4">
-              {data.topCategories.map((category, index) => (
+              {data.topPrograms.map((program, index) => (
                 <li key={index}>
-                  <Link href="#" className="text-slate-500 font-medium hover:text-primary transition-colors text-sm">
-                    {category}
+                  <Link href={program.href} className="text-slate-500 font-medium hover:text-primary transition-colors text-sm">
+                    {program.label}
                   </Link>
                 </li>
               ))}

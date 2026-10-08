@@ -1,18 +1,18 @@
 {
   "companyInfo": [
-    "About Us",
-    "Programs",
-    "Be a Volunteer",
-    "Contact Us",
-    "Privacy policy",
-    "Terms & Conditions"
+    { "label": "About Us", "href": "/about" },
+    { "label": "Programs", "href": "/programs" },
+    { "label": "Be a Volunteer", "href": "/volunteer" },
+    { "label": "Contact Us", "href": "/contact" },
+    { "label": "Privacy Policy", "href": "/privacy-policy" },
+    { "label": "Terms & Conditions", "href": "/terms-and-conditions" }
   ],
-  "topCategories": [
-    "Honours 1st Year",
-    "Honours 2nd Year",
-    "Honours 3rd Year",
-    "Honours 4th Year",
-    "Masters",
-    "Literary Terms"
+  "topPrograms": [
+    { "label": "Honours 1st Year", "href": "/honours/1st-year" },
+    { "label": "Honours 2nd Year", "href": "/honours/2nd-year" },
+    { "label": "Honours 3rd Year", "href": "/honours/3rd-year" },
+    { "label": "Honours 4th Year", "href": "/honours/4th-year" },
+    { "label": "Masters Final", "href": "/honours/masters-final" },
+    { "label": "Literary Terms", "href": "/literary-terms" }
   ]
 }

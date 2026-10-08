@@ -43,7 +43,8 @@ const papersList = {
     { id: 'modern-drama-masters', title: 'Modern Drama', code: '311107', href: '/honours/masters-final/modern-drama-masters', color: 'bg-[#312e81]', spineColor: 'bg-[#1e1b4b]', textColor: 'text-indigo-50' },
     { id: 'modern-novel-masters', title: 'Modern Novel', code: '311109', href: '/honours/masters-final/modern-novel-masters', color: 'bg-[#4a044e]', spineColor: 'bg-[#2e0231]', textColor: 'text-fuchsia-50' },
     { id: 'prose-masters', title: 'Prose', code: '311111', href: '/honours/masters-final/prose-masters', color: 'bg-[#831843]', spineColor: 'bg-[#500f29]', textColor: 'text-pink-50' },
-    { id: 'south-asian-and-african-literature', title: 'South Asian and African Literature', code: '311113', href: '/honours/masters-final/south-asian-and-african-literature', color: 'bg-[#14532d]', spineColor: 'bg-[#052e16]', textColor: 'text-green-50' }
+    { id: 'south-asian-and-african-literature', title: 'South Asian and African Literature', code: '311113', href: '/honours/masters-final/south-asian-and-african-literature', color: 'bg-[#14532d]', spineColor: 'bg-[#052e16]', textColor: 'text-green-50' },
+    { id: 'twentieth-century-american-literature', title: 'Twentieth Century American Literature', code: '311115', href: '/honours/masters-final/twentieth-century-american-literature', color: 'bg-[#1e3a8a]', spineColor: 'bg-[#172554]', textColor: 'text-blue-50' }
   ]
 };
 
