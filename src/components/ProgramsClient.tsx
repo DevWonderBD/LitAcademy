@@ -97,7 +97,7 @@ export default function ProgramsClient() {
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
         {filteredPrograms.map((prog) => (
-          <Link href={prog.href} key={prog.id} className="group outline-none">
+          <Link href={prog.href} key={prog.id} className="group outline-none" onClick={() => { localStorage.setItem("lit_selected_program", JSON.stringify({ name: prog.title, href: prog.href })) }}>
             <div className={cn(
               "relative bg-white rounded-[24px] p-6 border transition-all duration-300 h-full flex flex-col",
               "hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-1 shadow-sm",
