@@ -41,7 +41,7 @@ const Footer = () => {
       <div className="container mx-auto max-w-7xl">
         
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-4">
           <div className="lg:col-span-4 flex flex-col">
             <Link href="/" className="text-2xl md:text-2xl font-black flex items-center mb-6 w-fit">
               <span className="text-foreground">Lit</span>
@@ -120,7 +120,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-accent flex-shrink-0" size={14} />
-                <span className="text-slate-600 text-sm font-medium">contact@litacademy.info</span>
+                <span className="text-slate-600 text-sm font-medium">support@litacademy.info</span>
               </div>
             </div>
 
@@ -166,7 +166,7 @@ const Footer = () => {
       
       {/* Full Width Copyright */}
       <div className="w-full border-t border-slate-300/80">
-        <div className="container mx-auto max-w-7xl py-6 px-6 lg:px-20 flex flex-col md:flex-row items-center justify-between text-center gap-4">
+        <div className="container mx-auto max-w-7xl py-4 px-3 flex flex-col md:flex-row items-center justify-between text-center gap-4">
           <p className="text-slate-500 text-sm font-medium">
             © {new Date().getFullYear()} LitAcademy. All rights reserved.
           </p>
