@@ -187,7 +187,7 @@ const Footer = () => {
             © {new Date().getFullYear()} LitAcademy. All rights reserved.
           </p>
           <p className="text-slate-500 text-sm font-medium">
-            Expertly crafted & managed by <span className="text-slate-900 font-bold hover:text-primary transition-colors cursor-pointer">Dev Wonder</span>
+            A <span className="text-slate-900 font-bold hover:text-primary transition-colors cursor-pointer">Dev Wonder</span> Initiative
           </p>
         </div>
       </div>
