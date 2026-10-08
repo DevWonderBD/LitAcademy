@@ -18,16 +18,16 @@ const ProgrammesSection = () => {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-2 mb-12">
           <div>
-            <SectionBadge>Our Programmes</SectionBadge>
+            <SectionBadge>Most Read Papers</SectionBadge>
             <h2 className="text-4xl lg:text-5xl font-[900] text-foreground mt-4">
-              Explore Our Literature <span className="text-primary">Programmes</span>
+              Explore Our Most Read <span className="text-primary">Papers</span>
             </h2>
           </div>
 
           {/* All Programmes Button*/}
           <div className="mt-6 text-center">
             <Link href={"/programs"} className="bg-accent hover:bg-accent/90 text-white px-10 py-3.5 rounded-full font-bold text-sm transition-all shadow-lg shadow-teal-50 cursor-pointer inline-block">
-              See All Programmes
+              See All Papers
             </Link>
           </div>
         </div>

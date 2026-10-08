@@ -31,14 +31,9 @@ const ProgrammeCard = ({ programme }: { programme: any }) => {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-primary transition-colors line-clamp-1">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors line-clamp-1">
                         {programme.title}
                     </h3>
-
-                    {/* Mentor */}
-                    <p className="text-[14px] font-semibold text-slate-500 mb-1.5">
-                        Guide: <span className="font-semibold text-slate-700">{programme.instructor}</span>
-                    </p>
 
                     {/* Description */}
                     <p className="text-slate-700 text-[13px] line-clamp-2 mb-3 leading-relaxed">
