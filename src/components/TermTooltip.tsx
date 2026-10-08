@@ -58,11 +58,6 @@ const TermTooltip: React.FC<TermTooltipProps> = ({
       
       {isActive && (
         <>
-          {/* Invisible overlay for click-away only when clicked (locked) */}
-          {isClicked && (
-            <div className="fixed inset-0 z-40" onClick={(e) => { e.stopPropagation(); onBgClick(); }}></div>
-          )}
-          
           {/* Popover Card */}
           <div 
             onClick={(e) => e.stopPropagation()}
