@@ -4,6 +4,8 @@
     "title": "Ode to a Nightingale",
     "author": "John Keats",
     "textLines": [
+      "Thou wast not born for death, immortal Bird!",
+      "No hungry generations tread thee down;",
       "The voice I hear this passing night was heard",
       "In ancient days by {term1}:",
       "Perhaps the self-same song that found a path",
@@ -28,40 +30,15 @@
   },
   {
     "id": 2,
-    "title": "Ode to the West Wind",
-    "author": "Percy Bysshe Shelley",
-    "textLines": [
-      "O wild West Wind, thou breath of {term1},",
-      "Thou, from whose unseen presence the leaves dead",
-      "Are driven, like ghosts from an {term2},",
-      "Yellow, and black, and pale, and hectic red..."
-    ],
-    "terms": {
-      "term1": {
-        "text": "Autumn's being",
-        "titleEn": "Cycle of Life and Death",
-        "descEn": "Autumn represents the approach of winter (death), but the wind also scatters seeds for spring (rebirth).",
-        "titleBn": "জীবন ও মৃত্যুর চক্র",
-        "descBn": "শরতকাল শীতের (মৃত্যু) আগমনী বার্তা দেয়, কিন্তু একই সাথে বাতাস বসন্তের (নতুন জীবন) জন্য বীজ ছড়িয়ে দেয়।"
-      },
-      "term2": {
-        "text": "enchanter fleeing",
-        "titleEn": "Gothic Imagery",
-        "descEn": "Shelley uses supernatural imagery comparing dead leaves to ghosts running away from a wizard.",
-        "titleBn": "গথিক বা অলৌকিক চিত্রকল্প",
-        "descBn": "শেলি এখানে অতিপ্রাকৃত চিত্রকল্প ব্যবহার করেছেন, যেখানে মৃত পাতাগুলোকে জাদুকরের ভয়ে পালানো ভূতের সাথে তুলনা করা হয়েছে।"
-      }
-    }
-  },
-  {
-    "id": 3,
     "title": "I Wandered Lonely as a Cloud",
     "author": "William Wordsworth",
     "textLines": [
       "I wandered {term1}",
       "That floats on high o'er vales and hills,",
       "When all at once I saw a crowd,",
-      "A {term2}..."
+      "A {term2};",
+      "Beside the lake, beneath the trees,",
+      "Fluttering and dancing in the breeze."
     ],
     "terms": {
       "term1": {
@@ -77,6 +54,35 @@
         "descEn": "Treating the flowers as a 'host' or 'crowd' gives them human-like qualities and companionship.",
         "titleBn": "প্রকৃতির মানবারোপ",
         "descBn": "ফুলগুলোকে 'host' বা মানুষের ভিড় হিসেবে কল্পনা করে প্রকৃতিকে মানুষের মতো প্রাণবন্ত ও বন্ধুসুলভ হিসেবে দেখানো হয়েছে।"
+      }
+    }
+  },
+  {
+    "id": 3,
+    "title": "The Tyger",
+    "author": "William Blake",
+    "textLines": [
+      "Tyger Tyger, burning bright,",
+      "In the forests of the night;",
+      "What {term1},",
+      "Could frame thy fearful symmetry?",
+      "In what distant deeps or skies.",
+      "Burnt the {term2}?"
+    ],
+    "terms": {
+      "term1": {
+        "text": "immortal hand or eye",
+        "titleEn": "The Divine Creator",
+        "descEn": "The speaker questions what kind of God (immortal hand) could create such a terrifying and powerful creature.",
+        "titleBn": "ঐশ্বরিক স্রষ্টা",
+        "descBn": "কবি এখানে প্রশ্ন তুলেছেন যে, কোন ঐশ্বরিক সত্তা (ঈশ্বরের হাত) এত ভয়ঙ্কর অথচ নিখুঁত একটি প্রাণী তৈরি করতে পারে।"
+      },
+      "term2": {
+        "text": "fire of thine eyes",
+        "titleEn": "Divine Energy",
+        "descEn": "The fire represents the primal, terrifying energy of creation, contrasting with the gentleness of the Lamb.",
+        "titleBn": "সৃষ্টির আদিম শক্তি",
+        "descBn": "এই আগুন সৃষ্টির আদিম এবং ভীতিকর শক্তিকে নির্দেশ করে, যা ব্লেকের অন্য কবিতা 'The Lamb'-এর শান্ত স্বভাবের ঠিক বিপরীত।"
       }
     }
   }
