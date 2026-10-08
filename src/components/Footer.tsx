@@ -41,7 +41,7 @@ const Footer = () => {
       <div className="container mx-auto max-w-7xl">
         
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-10">
           <div className="lg:col-span-4 flex flex-col">
             <Link href="/" className="text-2xl md:text-2xl font-black flex items-center mb-6 w-fit">
               <span className="text-foreground">Lit</span>
@@ -165,13 +165,13 @@ const Footer = () => {
       </div>
       
       {/* Full Width Copyright */}
-      <div className="border-t border-slate-200 mt-12 w-full">
-        <div className="container mx-auto max-w-7xl pt-8 px-6 lg:px-20 flex flex-col md:flex-row items-center justify-between text-center gap-4">
+      <div className="border-t border-slate-200 w-full mt-10">
+        <div className="container mx-auto max-w-7xl pt-6 px-6 lg:px-20 flex flex-col md:flex-row items-center justify-between text-center gap-4">
           <p className="text-slate-500 text-sm font-medium">
             © {new Date().getFullYear()} LitAcademy. All rights reserved.
           </p>
-          <p className="text-slate-500 text-[15px] font-heading italic">
-            A <a href="https://devwonderbd.com" target="_blank" rel="noopener noreferrer" className="text-slate-900 font-black not-italic hover:text-primary transition-colors cursor-pointer">Dev Wonder</a> Initiative
+          <p className="text-slate-500 text-[15px] font-heading">
+            A <a href="https://devwonderbd.com" target="_blank" rel="noopener noreferrer" className="text-slate-900 font-black italic hover:text-primary transition-colors cursor-pointer">Dev Wonder</a> Initiative
           </p>
         </div>
       </div>
