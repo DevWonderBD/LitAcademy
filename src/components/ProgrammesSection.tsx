@@ -71,13 +71,6 @@ const ProgrammesSection = () => {
           )}
         </div>
 
-        <div className="mt-6 text-center">
-            <Link href={"/programs"} className="bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white px-10 py-3 rounded-full font-bold text-[15px] transition-all shadow-sm cursor-pointer inline-block active:scale-95">
-              View Complete Syllabus
-            </Link>
-        </div>
-
-
       </div>
     </section>
   );
