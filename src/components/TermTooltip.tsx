@@ -66,7 +66,7 @@ const TermTooltip: React.FC<TermTooltipProps> = ({
             {/* Header */}
             <div className="flex items-start justify-between p-4 border-b border-slate-100 bg-gradient-to-r from-slate-50 to-white rounded-t-xl">
               <div className="pr-4">
-                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5">Glossary Term</div>
+                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5">Literary Term</div>
                 <div 
                   className="font-bold text-primary text-lg leading-tight"
                   style={!langEn ? { fontFamily: 'var(--font-anek-bangla)' } : {}}

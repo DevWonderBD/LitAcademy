@@ -1,0 +1,33 @@
+{
+  "title": "Viva-Voce",
+  "code": "311116",
+  "year": "Masters Final",
+  "description": "Preparation guidelines for the Viva-Voce examination.",
+  "units": [
+    {
+      "id": "unit-1",
+      "title": "Viva-Voce Preparation",
+      "description": "Study materials for Viva-Voce Preparation",
+      "topics": [
+        {
+          "id": "viva-voce-preparation-syllabus-overview",
+          "title": "Syllabus Overview",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "viva-voce-preparation-mock-interview-strategies",
+          "title": "Mock Interview Strategies",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "viva-voce-preparation-common-questions",
+          "title": "Common Questions",
+          "isLocked": false,
+          "isCompleted": false
+        }
+      ]
+    }
+  ]
+}

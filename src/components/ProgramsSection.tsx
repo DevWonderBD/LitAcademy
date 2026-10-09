@@ -20,7 +20,7 @@ const ProgramsSection = () => {
   }, []);
 
   return (
-    <section className="bg-muted py-16 px-6 lg:px-20 border-b border-slate-100">
+    <section className="bg-muted py-10 md:py-16 px-6 lg:px-20 border-b border-slate-100">
       <div className="container mx-auto">
 
         {/* Section Header */}

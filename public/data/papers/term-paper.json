@@ -1,0 +1,33 @@
+{
+  "title": "Term Paper",
+  "code": "311114",
+  "year": "Masters Final",
+  "description": "Guidelines and requirements for the Term Paper.",
+  "units": [
+    {
+      "id": "unit-1",
+      "title": "Term Paper Guidelines",
+      "description": "Study materials for Term Paper Guidelines",
+      "topics": [
+        {
+          "id": "term-paper-guidelines-research-methodology",
+          "title": "Research Methodology",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "term-paper-guidelines-formatting-and-citation",
+          "title": "Formatting and Citation",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "term-paper-guidelines-submission-process",
+          "title": "Submission Process",
+          "isLocked": false,
+          "isCompleted": false
+        }
+      ]
+    }
+  ]
+}

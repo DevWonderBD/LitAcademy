@@ -2,67 +2,376 @@
   "title": "Modern Poetry",
   "code": "311105",
   "year": "Masters Final",
-  "description": "Comprehensive syllabus and reading materials for Modern Poetry (311105).",
+  "description": "Comprehensive syllabus and reading materials for Modern Poetry.",
   "units": [
     {
       "id": "unit-1",
-      "title": "Part A: Foundations",
-      "description": "Core texts and foundational concepts.",
+      "title": "Walt Whitman",
+      "description": "Study materials for Walt Whitman",
       "topics": [
         {
-          "id": "topic-1",
-          "title": "Introduction and Context",
+          "id": "walt-whitman-song-of-myself",
+          "title": "Song of Myself",
           "isLocked": false,
-          "isCompleted": false
-        },
-        {
-          "id": "topic-2",
-          "title": "Key Themes and Motifs",
-          "isLocked": true,
-          "isCompleted": false
-        },
-        {
-          "id": "topic-3",
-          "title": "Critical Analysis",
-          "isLocked": true,
           "isCompleted": false
         }
       ]
     },
     {
       "id": "unit-2",
-      "title": "Part B: Major Works",
-      "description": "In-depth study of selected pieces.",
+      "title": "W. B. Yeats",
+      "description": "Study materials for W. B. Yeats",
       "topics": [
         {
-          "id": "topic-4",
-          "title": "Detailed Textual Analysis I",
-          "isLocked": true,
+          "id": "w-b-yeats-rosses",
+          "title": "Rosses",
+          "isLocked": false,
           "isCompleted": false
         },
         {
-          "id": "topic-5",
-          "title": "Detailed Textual Analysis II",
-          "isLocked": true,
+          "id": "w-b-yeats-the-man-who-dreamed-of-fairyland",
+          "title": "The Man Who Dreamed of Fairyland",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-b-yeats-no-second-troy",
+          "title": "No Second Troy",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-b-yeats-september-1913",
+          "title": "September 1913",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-b-yeats-the-tower",
+          "title": "The Tower",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-b-yeats-leda-and-the-swan",
+          "title": "Leda and the Swan",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-b-yeats-byzantium",
+          "title": "Byzantium",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-b-yeats-the-stolen-child",
+          "title": "The Stolen Child",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-b-yeats-when-you-are-old",
+          "title": "When You Are Old",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-b-yeats-an-irish-airman-foresees-his-death",
+          "title": "An Irish Airman Foresees his Death",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-b-yeats-the-circus-animals-desertion",
+          "title": "The Circus Animals Desertion",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-b-yeats-the-municipal-gallery-revisited",
+          "title": "The Municipal Gallery Revisited",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-b-yeats-the-gyres",
+          "title": "The Gyres",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-b-yeats-a-coat",
+          "title": "A Coat",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-b-yeats-the-magi",
+          "title": "The Magi",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-b-yeats-adam-s-curse",
+          "title": "Adam's Curse",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-b-yeats-the-second-coming",
+          "title": "The Second Coming",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-b-yeats-among-school-children",
+          "title": "Among School Children",
+          "isLocked": false,
           "isCompleted": false
         }
       ]
     },
     {
       "id": "unit-3",
-      "title": "Part C: Review and Practice",
-      "description": "Exam preparation and previous questions.",
+      "title": "Robert Frost",
+      "description": "Study materials for Robert Frost",
       "topics": [
         {
-          "id": "topic-6",
-          "title": "Previous Years' Questions",
-          "isLocked": true,
+          "id": "robert-frost-mowing",
+          "title": "Mowing",
+          "isLocked": false,
           "isCompleted": false
         },
         {
-          "id": "topic-7",
-          "title": "Model Answers",
-          "isLocked": true,
+          "id": "robert-frost-the-death-of-the-hired-man",
+          "title": "The Death of the Hired Man",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "robert-frost-the-road-not-taken",
+          "title": "The Road Not Taken",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "robert-frost-the-oven-bird",
+          "title": "The Oven Bird",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "robert-frost-out-out",
+          "title": "Out, Out-",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "robert-frost-fire-and-ice",
+          "title": "Fire and Ice",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "robert-frost-west-running-brook",
+          "title": "West-Running Brook",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "robert-frost-desert-places",
+          "title": "Desert Places",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "robert-frost-come-in",
+          "title": "Come In",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "robert-frost-the-gift-outright",
+          "title": "The Gift Outright",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "robert-frost-stopping-by-woods-on-a-snowy-evening",
+          "title": "Stopping By Woods on a Snowy Evening",
+          "isLocked": false,
+          "isCompleted": false
+        }
+      ]
+    },
+    {
+      "id": "unit-4",
+      "title": "W. H. Auden",
+      "description": "Study materials for W. H. Auden",
+      "topics": [
+        {
+          "id": "w-h-auden-lullaby",
+          "title": "Lullaby",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-h-auden-in-memory-of-w-b-yeats",
+          "title": "In Memory of W.B. Yeats",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-h-auden-petition",
+          "title": "Petition",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-h-auden-the-shield-of-achilles",
+          "title": "The Shield of Achilles",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-h-auden-mus-e-des-beaux-arts",
+          "title": "Musée des Beaux Arts",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "w-h-auden-in-praise-of-limestone",
+          "title": "In Praise of Limestone",
+          "isLocked": false,
+          "isCompleted": false
+        }
+      ]
+    },
+    {
+      "id": "unit-5",
+      "title": "Dylan Thomas",
+      "description": "Study materials for Dylan Thomas",
+      "topics": [
+        {
+          "id": "dylan-thomas-the-force-that-through-the-green-fuse-drives-the-flower",
+          "title": "The Force That Through the Green Fuse Drives the Flower",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "dylan-thomas-after-the-funeral",
+          "title": "After the Funeral",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "dylan-thomas-in-my-craft-or-sullen-art",
+          "title": "In My Craft or Sullen Art",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "dylan-thomas-a-refusal-to-mourn-the-death-by-fire-of-a-child-in-london",
+          "title": "A Refusal to Mourn the Death, by Fire, of a Child in London",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "dylan-thomas-the-hunchback-in-the-park",
+          "title": "The Hunchback in the Park",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "dylan-thomas-there-was-a-saviour",
+          "title": "There Was a Saviour",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "dylan-thomas-do-not-go-gentle-into-that-good-night",
+          "title": "Do Not Go Gentle into That Good Night",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "dylan-thomas-poem-in-october",
+          "title": "Poem in October",
+          "isLocked": false,
+          "isCompleted": false
+        }
+      ]
+    },
+    {
+      "id": "unit-6",
+      "title": "Seamus Heaney",
+      "description": "Study materials for Seamus Heaney",
+      "topics": [
+        {
+          "id": "seamus-heaney-digging",
+          "title": "Digging",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "seamus-heaney-death-of-a-naturalist",
+          "title": "Death of a Naturalist",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "seamus-heaney-blackberry-picking",
+          "title": "Blackberry Picking",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "seamus-heaney-follower",
+          "title": "Follower",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "seamus-heaney-requiem-for-the-croppies",
+          "title": "Requiem for the Croppies",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "seamus-heaney-the-tolland-man",
+          "title": "The Tolland Man",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "seamus-heaney-punishment",
+          "title": "Punishment",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "seamus-heaney-casualty",
+          "title": "Casualty",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "seamus-heaney-funeral-rites",
+          "title": "Funeral Rites",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "seamus-heaney-the-skunk",
+          "title": "The Skunk",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "seamus-heaney-the-forge",
+          "title": "The Forge",
+          "isLocked": false,
           "isCompleted": false
         }
       ]

@@ -8,49 +8,49 @@
   /* ==========================================================================
      Brand Primary & Accent Tokens
      ========================================================================== */
-  --primary: #149988;                 /* Primary brand color (Teal) */
-  --primary-foreground: #FFFFFF;
-  --primary-hover: #0f7d6f;          /* Primary hover state */
-  --primary-light: #1bb59f;          /* Primary lighter accent/badge */
+  --primary: #149988; /* Primary brand color (Teal) */
+  --primary-foreground: #ffffff;
+  --primary-hover: #0f7d6f; /* Primary hover state */
+  --primary-light: #1bb59f; /* Primary lighter accent/badge */
 
-  --accent: #fe6e38;                 /* Brand accent (Warm reddish orange from logo) */
-  --accent-foreground: #FFFFFF;
-  --accent-hover: #e06510;           /* Accent hover state */
-  --accent-highlight: #f8b188;       /* Accent soft text highlight */
-  --accent-badge-bg: #fad4c4;        /* Accent light badge / pill background */
+  --accent: #fe6e38; /* Brand accent (Warm reddish orange from logo) */
+  --accent-foreground: #ffffff;
+  --accent-hover: #e06510; /* Accent hover state */
+  --accent-highlight: #f8b188; /* Accent soft text highlight */
+  --accent-badge-bg: #fad4c4; /* Accent light badge / pill background */
 
   /* ==========================================================================
      Surfaces & Background Tokens
      ========================================================================== */
-  --background: #FFFAF8;             /* Main clean warm background (Shade 1) */
-  --foreground: #111827;             /* Main heading and body text */
+  --background: #fffaf8; /* Main clean warm background (Shade 1) */
+  --foreground: #111827; /* Main heading and body text */
 
-  --card: #FFFFFF;                   /* Card / surface background */
+  --card: #ffffff; /* Card / surface background */
   --card-foreground: #111827;
 
-  --popover: #FFFFFF;                /* Popover / dropdown background */
+  --popover: #ffffff; /* Popover / dropdown background */
   --popover-foreground: #111827;
 
-  --secondary: #FDF1EE;              /* Warm header / section background */
+  --secondary: #fdf1ee; /* Warm header / section background */
   --secondary-foreground: #111827;
 
-  --muted: #F9F1EF;                  /* Soft muted section background (Shade 2) */
-  --muted-foreground: #64748B;
+  --muted: #f9f1ef; /* Soft muted section background (Shade 2) */
+  --muted-foreground: #64748b;
 
-  --footer-bg: #fde8e3;              /* Dedicated footer background */
-  --navbar-bg: #FDF1EE;              /* Navbar background */
+  --footer-bg: #fde8e3; /* Dedicated footer background */
+  --navbar-bg: #fdf1ee; /* Navbar background */
 
   /* ==========================================================================
      Utility & System Tokens
      ========================================================================== */
-  --payment-hover: #1A1F71;          /* Payment gateway icons hover color */
+  --payment-hover: #1a1f71; /* Payment gateway icons hover color */
   --overlay: rgba(20, 153, 136, 0.03);
 
-  --destructive: #EF4444;
-  --destructive-foreground: #FFFFFF;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
 
-  --border: #E2E8F0;
-  --input: #E2E8F0;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
   --ring: #149988;
 
   --radius: 0.75rem;
@@ -58,39 +58,39 @@
 
 .dark {
   --primary: #149988;
-  --primary-foreground: #FFFFFF;
+  --primary-foreground: #ffffff;
   --primary-hover: #1bb59f;
   --primary-light: #0f7d6f;
 
   --accent: #fe6e38;
-  --accent-foreground: #FFFFFF;
+  --accent-foreground: #ffffff;
   --accent-hover: #f8b188;
   --accent-highlight: #e06510;
   --accent-badge-bg: #431407;
 
-  --background: #0F172A;
-  --foreground: #F8FAFC;
+  --background: #0f172a;
+  --foreground: #f8fafc;
 
-  --card: #1E293B;
-  --card-foreground: #F8FAFC;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
 
-  --popover: #1E293B;
-  --popover-foreground: #F8FAFC;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
 
-  --secondary: #1E293B;
-  --secondary-foreground: #F8FAFC;
+  --secondary: #1e293b;
+  --secondary-foreground: #f8fafc;
 
   --muted: #334155;
-  --muted-foreground: #94A3B8;
+  --muted-foreground: #94a3b8;
 
-  --footer-bg: #0F172A;
-  --navbar-bg: #0F172A;
+  --footer-bg: #0f172a;
+  --navbar-bg: #0f172a;
 
-  --payment-hover: #93C5FD;
+  --payment-hover: #93c5fd;
   --overlay: rgba(20, 153, 136, 0.1);
 
-  --destructive: #7F1D1D;
-  --destructive-foreground: #F8FAFC;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #f8fafc;
 
   --border: #334155;
   --input: #334155;
@@ -158,10 +158,10 @@
 
   /* Typography Font Families (PRD 8.2) */
   --font-heading: var(--font-playfair), serif;
-  
+
   /* UI FONT */
   --font-ui: var(--font-plus-jakarta), sans-serif;
-  
+
   --font-reading: var(--font-lora), serif;
   --font-bangla-ui: var(--font-anek-bangla), sans-serif;
   --font-bangla-reading: var(--font-noto-serif-bengali), serif;
@@ -173,27 +173,56 @@
   --animate-slide-vertical: slide-vertical 3s linear infinite;
 
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
   }
 
   @keyframes slide {
-    0% { transform: translateX(-150%); }
-    100% { transform: translateX(250%); }
+    0% {
+      transform: translateX(-150%);
+    }
+    100% {
+      transform: translateX(250%);
+    }
   }
 
   @keyframes slide-vertical {
-    0% { transform: translateY(-150%); }
-    100% { transform: translateY(250%); }
+    0% {
+      transform: translateY(-150%);
+    }
+    100% {
+      transform: translateY(250%);
+    }
   }
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 10px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #94a3b8;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-ui;
   }
 }
 @utility repeating-linear-gradient-pages {

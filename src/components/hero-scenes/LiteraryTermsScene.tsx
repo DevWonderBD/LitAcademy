@@ -43,7 +43,7 @@ export default function LiteraryTermsScene() {
           </div>
           <div className="absolute left-1/2 -translate-x-1/2 text-[10px] font-bold text-muted-foreground tracking-widest uppercase flex items-center gap-2">
             <BookMarked className="w-3 h-3" />
-            Literary Glossary
+            Literary Terms
           </div>
         </div>
 

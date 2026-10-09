@@ -2,67 +2,47 @@
   "title": "Shakespeare",
   "code": "311103",
   "year": "Masters Final",
-  "description": "Comprehensive syllabus and reading materials for Shakespeare (311103).",
+  "description": "Comprehensive syllabus and reading materials for Shakespeare.",
   "units": [
     {
       "id": "unit-1",
-      "title": "Part A: Foundations",
-      "description": "Core texts and foundational concepts.",
+      "title": "William Shakespeare",
+      "description": "Study materials for William Shakespeare",
       "topics": [
         {
-          "id": "topic-1",
-          "title": "Introduction and Context",
+          "id": "william-shakespeare-hamlet",
+          "title": "Hamlet",
           "isLocked": false,
           "isCompleted": false
         },
         {
-          "id": "topic-2",
-          "title": "Key Themes and Motifs",
-          "isLocked": true,
+          "id": "william-shakespeare-othello",
+          "title": "Othello",
+          "isLocked": false,
           "isCompleted": false
         },
         {
-          "id": "topic-3",
-          "title": "Critical Analysis",
-          "isLocked": true,
-          "isCompleted": false
-        }
-      ]
-    },
-    {
-      "id": "unit-2",
-      "title": "Part B: Major Works",
-      "description": "In-depth study of selected pieces.",
-      "topics": [
-        {
-          "id": "topic-4",
-          "title": "Detailed Textual Analysis I",
-          "isLocked": true,
+          "id": "william-shakespeare-king-lear",
+          "title": "King Lear",
+          "isLocked": false,
           "isCompleted": false
         },
         {
-          "id": "topic-5",
-          "title": "Detailed Textual Analysis II",
-          "isLocked": true,
-          "isCompleted": false
-        }
-      ]
-    },
-    {
-      "id": "unit-3",
-      "title": "Part C: Review and Practice",
-      "description": "Exam preparation and previous questions.",
-      "topics": [
-        {
-          "id": "topic-6",
-          "title": "Previous Years' Questions",
-          "isLocked": true,
+          "id": "william-shakespeare-tempest",
+          "title": "Tempest",
+          "isLocked": false,
           "isCompleted": false
         },
         {
-          "id": "topic-7",
-          "title": "Model Answers",
-          "isLocked": true,
+          "id": "william-shakespeare-measure-for-measure",
+          "title": "Measure for Measure",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "william-shakespeare-julius-caesar",
+          "title": "Julius Caesar",
+          "isLocked": false,
           "isCompleted": false
         }
       ]

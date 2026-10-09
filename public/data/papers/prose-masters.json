@@ -2,67 +2,69 @@
   "title": "Prose",
   "code": "311111",
   "year": "Masters Final",
-  "description": "Comprehensive syllabus and reading materials for Prose (311111).",
+  "description": "Comprehensive syllabus and reading materials for Prose.",
   "units": [
     {
       "id": "unit-1",
-      "title": "Part A: Foundations",
-      "description": "Core texts and foundational concepts.",
+      "title": "Ralph Waldo Emerson",
+      "description": "Study materials for Ralph Waldo Emerson",
       "topics": [
         {
-          "id": "topic-1",
-          "title": "Introduction and Context",
+          "id": "ralph-waldo-emerson-the-american-scholar",
+          "title": "The American Scholar",
           "isLocked": false,
-          "isCompleted": false
-        },
-        {
-          "id": "topic-2",
-          "title": "Key Themes and Motifs",
-          "isLocked": true,
-          "isCompleted": false
-        },
-        {
-          "id": "topic-3",
-          "title": "Critical Analysis",
-          "isLocked": true,
           "isCompleted": false
         }
       ]
     },
     {
       "id": "unit-2",
-      "title": "Part B: Major Works",
-      "description": "In-depth study of selected pieces.",
+      "title": "Henry David Thoreau",
+      "description": "Study materials for Henry David Thoreau",
       "topics": [
         {
-          "id": "topic-4",
-          "title": "Detailed Textual Analysis I",
-          "isLocked": true,
-          "isCompleted": false
-        },
-        {
-          "id": "topic-5",
-          "title": "Detailed Textual Analysis II",
-          "isLocked": true,
+          "id": "henry-david-thoreau-civil-disobedience",
+          "title": "Civil Disobedience",
+          "isLocked": false,
           "isCompleted": false
         }
       ]
     },
     {
       "id": "unit-3",
-      "title": "Part C: Review and Practice",
-      "description": "Exam preparation and previous questions.",
+      "title": "Virginia Woolf",
+      "description": "Study materials for Virginia Woolf",
       "topics": [
         {
-          "id": "topic-6",
-          "title": "Previous Years' Questions",
-          "isLocked": true,
+          "id": "virginia-woolf-shakespeare-s-sister",
+          "title": "Shakespeare's Sister",
+          "isLocked": false,
           "isCompleted": false
-        },
+        }
+      ]
+    },
+    {
+      "id": "unit-4",
+      "title": "T.S. Eliot",
+      "description": "Study materials for T.S. Eliot",
+      "topics": [
         {
-          "id": "topic-7",
-          "title": "Model Answers",
-          "isLocked": true,
+          "id": "t-s-eliot-tradition-and-the-individual-talent",
+          "title": "Tradition and the Individual Talent",
+          "isLocked": false,
+          "isCompleted": false
+        }
+      ]
+    },
+    {
+      "id": "unit-5",
+      "title": "F. R. Leavis",
+      "description": "Study materials for F. R. Leavis",
+      "topics": [
+        {
+          "id": "f-r-leavis-literature-and-society",
+          "title": "Literature and Society",
+          "isLocked": false,
           "isCompleted": false
         }
       ]

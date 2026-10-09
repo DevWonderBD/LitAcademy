@@ -2,67 +2,69 @@
   "title": "Twentieth Century American Literature",
   "code": "311115",
   "year": "Masters Final",
-  "description": "Comprehensive syllabus and reading materials for Twentieth Century American Literature (311115).",
+  "description": "Comprehensive syllabus and reading materials for Twentieth Century American Literature.",
   "units": [
     {
       "id": "unit-1",
-      "title": "Part A: Foundations",
-      "description": "Core texts and foundational concepts.",
+      "title": "William Faulkner",
+      "description": "Study materials for William Faulkner",
       "topics": [
         {
-          "id": "topic-1",
-          "title": "Introduction and Context",
+          "id": "william-faulkner-the-sound-and-the-fury",
+          "title": "The Sound and the Fury",
           "isLocked": false,
-          "isCompleted": false
-        },
-        {
-          "id": "topic-2",
-          "title": "Key Themes and Motifs",
-          "isLocked": true,
-          "isCompleted": false
-        },
-        {
-          "id": "topic-3",
-          "title": "Critical Analysis",
-          "isLocked": true,
           "isCompleted": false
         }
       ]
     },
     {
       "id": "unit-2",
-      "title": "Part B: Major Works",
-      "description": "In-depth study of selected pieces.",
+      "title": "Toni Morrison",
+      "description": "Study materials for Toni Morrison",
       "topics": [
         {
-          "id": "topic-4",
-          "title": "Detailed Textual Analysis I",
-          "isLocked": true,
-          "isCompleted": false
-        },
-        {
-          "id": "topic-5",
-          "title": "Detailed Textual Analysis II",
-          "isLocked": true,
+          "id": "toni-morrison-beloved",
+          "title": "Beloved",
+          "isLocked": false,
           "isCompleted": false
         }
       ]
     },
     {
       "id": "unit-3",
-      "title": "Part C: Review and Practice",
-      "description": "Exam preparation and previous questions.",
+      "title": "Saul Bellow",
+      "description": "Study materials for Saul Bellow",
       "topics": [
         {
-          "id": "topic-6",
-          "title": "Previous Years' Questions",
-          "isLocked": true,
+          "id": "saul-bellow-seize-the-day",
+          "title": "Seize the Day",
+          "isLocked": false,
           "isCompleted": false
-        },
+        }
+      ]
+    },
+    {
+      "id": "unit-4",
+      "title": "Arthur Miller",
+      "description": "Study materials for Arthur Miller",
+      "topics": [
         {
-          "id": "topic-7",
-          "title": "Model Answers",
-          "isLocked": true,
+          "id": "arthur-miller-the-crucible",
+          "title": "The Crucible",
+          "isLocked": false,
+          "isCompleted": false
+        }
+      ]
+    },
+    {
+      "id": "unit-5",
+      "title": "Robert Frost",
+      "description": "Study materials for Robert Frost",
+      "topics": [
+        {
+          "id": "robert-frost-selected-poems-e-g-mending-wall-the-road-not-taken",
+          "title": "Selected Poems (e.g. Mending Wall, The Road Not Taken)",
+          "isLocked": false,
           "isCompleted": false
         }
       ]
