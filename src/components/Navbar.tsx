@@ -197,9 +197,9 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Literary Terms", href: "/literary-terms" },
     { name: "Study Method", href: "/study-method" },
-    { name: "FAQ", href: "/faq" },
+    { name: "Literary Terms", href: "/literary-terms" },
+    { name: "Community", href: "/community" },
   ];
 
   return (

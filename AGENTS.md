@@ -2,6 +2,11 @@
 
 Instructions for AI coding agents (and humans) working in this repository. Read `docs/PRD.md` first; it is the source of truth for scope, pages, data model and design. If this file and the PRD disagree, stop and ask.
 
+## Agent Rules (CRITICAL)
+- **Always stay on point:** Do exactly what the user asks and nothing more.
+- **Understand intent:** Read the prompt carefully to understand if the user is asking you to actually change/write code, or if they are just asking a question (e.g. "what else can be added").
+- **Do not overstep:** If the user just asks for information, DO NOT write or change code unless explicitly requested. Only implement changes when asked.
+
 ## Project in one paragraph
 LitAcademy is a premium, syllabus-based platform for **National University (Bangladesh) English Literature students** (Honours 4 years, Masters 1 year): structured topic notes, hover-to-learn literary terms, personal notes, quizzes, and an AI guide named **Pythia**. Hierarchy: **Program → Year (Honours only) → Paper → Unit → Topic**.
 
