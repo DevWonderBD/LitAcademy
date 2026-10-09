@@ -2,67 +2,56 @@
   "title": "Modern Drama",
   "code": "311107",
   "year": "Masters Final",
-  "description": "Comprehensive syllabus and reading materials for Modern Drama (311107).",
+  "description": "Comprehensive syllabus and reading materials for Modern Drama.",
   "units": [
     {
       "id": "unit-1",
-      "title": "Part A: Foundations",
-      "description": "Core texts and foundational concepts.",
+      "title": "G.B. Shaw",
+      "description": "Study materials for G.B. Shaw",
       "topics": [
         {
-          "id": "topic-1",
-          "title": "Introduction and Context",
+          "id": "g-b-shaw-you-never-can-tell",
+          "title": "You Never Can Tell",
           "isLocked": false,
-          "isCompleted": false
-        },
-        {
-          "id": "topic-2",
-          "title": "Key Themes and Motifs",
-          "isLocked": true,
-          "isCompleted": false
-        },
-        {
-          "id": "topic-3",
-          "title": "Critical Analysis",
-          "isLocked": true,
           "isCompleted": false
         }
       ]
     },
     {
       "id": "unit-2",
-      "title": "Part B: Major Works",
-      "description": "In-depth study of selected pieces.",
+      "title": "Eugene O'Neill",
+      "description": "Study materials for Eugene O'Neill",
       "topics": [
         {
-          "id": "topic-4",
-          "title": "Detailed Textual Analysis I",
-          "isLocked": true,
-          "isCompleted": false
-        },
-        {
-          "id": "topic-5",
-          "title": "Detailed Textual Analysis II",
-          "isLocked": true,
+          "id": "eugene-o-neill-desire-under-the-elms",
+          "title": "Desire Under the Elms",
+          "isLocked": false,
           "isCompleted": false
         }
       ]
     },
     {
       "id": "unit-3",
-      "title": "Part C: Review and Practice",
-      "description": "Exam preparation and previous questions.",
+      "title": "Arthur Miller",
+      "description": "Study materials for Arthur Miller",
       "topics": [
         {
-          "id": "topic-6",
-          "title": "Previous Years' Questions",
-          "isLocked": true,
+          "id": "arthur-miller-death-of-a-salesman",
+          "title": "Death of a Salesman",
+          "isLocked": false,
           "isCompleted": false
-        },
+        }
+      ]
+    },
+    {
+      "id": "unit-4",
+      "title": "Tennessee Williams",
+      "description": "Study materials for Tennessee Williams",
+      "topics": [
         {
-          "id": "topic-7",
-          "title": "Model Answers",
-          "isLocked": true,
+          "id": "tennessee-williams-the-glass-menagerie",
+          "title": "The Glass Menagerie",
+          "isLocked": false,
           "isCompleted": false
         }
       ]
