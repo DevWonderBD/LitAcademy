@@ -157,17 +157,18 @@ const Navbar = () => {
           if (!targetHref.startsWith('/')) {
             targetHref = '/' + targetHref;
           }
-          // Fix legacy paths in user's localStorage exactly to avoid false positive matching
-          if (targetHref === '/programs/honours/1st-year') {
-            targetHref = '/honours/1st-year';
-          } else if (targetHref === '/programs/honours/2nd-year') {
-            targetHref = '/honours/2nd-year';
-          } else if (targetHref === '/programs/honours/3rd-year') {
-            targetHref = '/honours/3rd-year';
-          } else if (targetHref === '/programs/honours/4th-year') {
-            targetHref = '/honours/4th-year';
-          } else if (targetHref === '/programs/masters/final' || targetHref === '/masters' || targetHref === '/programs/honours/masters-final') {
-            targetHref = '/honours/masters-final';
+          // Fix legacy paths in user's localStorage
+          // Convert any old '/programs/...' or '/masters...' to the new '/honours/...' format
+          let fixedHref = targetHref;
+          
+          if (fixedHref.includes('1st-year')) fixedHref = '/honours/1st-year';
+          else if (fixedHref.includes('2nd-year')) fixedHref = '/honours/2nd-year';
+          else if (fixedHref.includes('3rd-year')) fixedHref = '/honours/3rd-year';
+          else if (fixedHref.includes('4th-year')) fixedHref = '/honours/4th-year';
+          else if (fixedHref.includes('masters')) fixedHref = '/masters';
+
+          if (fixedHref !== targetHref) {
+            targetHref = fixedHref;
           }
           
           if (targetHref !== parsed.href) {
@@ -196,7 +197,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Glossary", href: "/glossary" },
+    { name: "Literary Terms", href: "/literary-terms" },
     { name: "Study Method", href: "/study-method" },
     { name: "FAQ", href: "/faq" },
   ];
@@ -230,7 +231,7 @@ const Navbar = () => {
                 <NavigationMenuTrigger
                   className={cn(
                     "bg-transparent hover:bg-transparent hover:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent font-bold text-sm",
-                    pathname.startsWith("/programs") ? "text-primary" : "text-foreground"
+                    pathname.startsWith("/honours") || pathname.startsWith("/masters") ? "text-primary" : "text-foreground"
                   )}
                 >
                   {selectedProgram ? (
@@ -292,16 +293,16 @@ const Navbar = () => {
                           Masters
                         </h4>
                         <div className="flex flex-col gap-1">
-                          <ProgramLink name="Masters Final" desc="Specialised Advanced Studies" href="/honours/masters-final" onSelect={handleProgramSelect} />
+                          <ProgramLink name="Masters Final" desc="Specialised Advanced Studies" href="/masters" onSelect={handleProgramSelect} />
                         </div>
 
                         {/* Quick Links / Resources */}
                         <div className="mt-8 bg-slate-50/80 border border-slate-100 p-5 rounded-2xl shadow-sm">
                           <h5 className="font-bold text-slate-400 text-[10px] uppercase tracking-widest mb-4">Quick Resources</h5>
                           <div className="flex flex-col gap-3">
-                            <Link href="/glossary" className="text-sm font-bold text-slate-700 hover:text-primary transition-colors flex items-center gap-2.5">
+                            <Link href="/literary-terms" className="text-sm font-bold text-slate-700 hover:text-primary transition-colors flex items-center gap-2.5">
                               <span className="w-1.5 h-1.5 rounded-full bg-primary/60"></span>
-                              Literary Terms Glossary
+                              Literary Terms
                             </Link>
                             <Link href="/study-method" className="text-sm font-bold text-slate-700 hover:text-primary transition-colors flex items-center gap-2.5">
                               <span className="w-1.5 h-1.5 rounded-full bg-accent/60"></span>
@@ -392,7 +393,7 @@ const Navbar = () => {
                     <SheetClose render={<Link onClick={() => handleProgramSelect("4th Year", "/honours/4th-year")} href="/honours/4th-year" className="text-sm text-foreground hover:text-primary font-bold" />}>4th Year</SheetClose>
                     
                     <h5 className="text-sm font-semibold text-muted-foreground mt-3 flex items-center gap-2"><GraduationCap className="w-4 h-4" /> Masters</h5>
-                    <SheetClose render={<Link onClick={() => handleProgramSelect("Masters Final", "/honours/masters-final")} href="/honours/masters-final" className="text-sm text-foreground hover:text-primary font-bold" />}>Masters Final</SheetClose>
+                    <SheetClose render={<Link onClick={() => handleProgramSelect("Masters Final", "/masters")} href="/masters" className="text-sm text-foreground hover:text-primary font-bold" />}>Masters Final</SheetClose>
                   </div>
                 </div>
 
