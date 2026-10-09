@@ -39,7 +39,7 @@ export default async function HonoursYearPage({ params }: { params: Promise<{ ye
         <div className="container mx-auto max-w-7xl relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white text-[11px] font-bold uppercase tracking-widest mb-6">
             <BookOpen className="w-3.5 h-3.5" />
-            Honours Program
+            {resolvedParams.year === "masters-final" ? "Masters Program" : "Honours Program"}
           </div>
           <h1 className="text-4xl md:text-5xl font-black text-white mb-4 font-heading">
             {formatYearName(resolvedParams.year)}

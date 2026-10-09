@@ -66,7 +66,10 @@ export default function RootLayout({
       )}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-ui bg-background text-foreground">
+      <body 
+        className="min-h-full flex flex-col font-ui bg-background text-foreground"
+        suppressHydrationWarning
+      >
         <main className="flex-1 flex flex-col">{children}</main>
         <Toaster position="top-center" />
       </body>

@@ -2,67 +2,87 @@
   "title": "South Asian and African Literature",
   "code": "311113",
   "year": "Masters Final",
-  "description": "Comprehensive syllabus and reading materials for South Asian and African Literature (311113).",
+  "description": "Comprehensive syllabus and reading materials for South Asian and African Literature.",
   "units": [
     {
       "id": "unit-1",
-      "title": "Part A: Foundations",
-      "description": "Core texts and foundational concepts.",
+      "title": "Syed Waliullah",
+      "description": "Study materials for Syed Waliullah",
       "topics": [
         {
-          "id": "topic-1",
-          "title": "Introduction and Context",
+          "id": "syed-waliullah-tree-without-roots",
+          "title": "Tree Without Roots",
           "isLocked": false,
-          "isCompleted": false
-        },
-        {
-          "id": "topic-2",
-          "title": "Key Themes and Motifs",
-          "isLocked": true,
-          "isCompleted": false
-        },
-        {
-          "id": "topic-3",
-          "title": "Critical Analysis",
-          "isLocked": true,
           "isCompleted": false
         }
       ]
     },
     {
       "id": "unit-2",
-      "title": "Part B: Major Works",
-      "description": "In-depth study of selected pieces.",
+      "title": "Arundhati Roy",
+      "description": "Study materials for Arundhati Roy",
       "topics": [
         {
-          "id": "topic-4",
-          "title": "Detailed Textual Analysis I",
-          "isLocked": true,
-          "isCompleted": false
-        },
-        {
-          "id": "topic-5",
-          "title": "Detailed Textual Analysis II",
-          "isLocked": true,
+          "id": "arundhati-roy-the-god-of-small-things",
+          "title": "The God of Small Things",
+          "isLocked": false,
           "isCompleted": false
         }
       ]
     },
     {
       "id": "unit-3",
-      "title": "Part C: Review and Practice",
-      "description": "Exam preparation and previous questions.",
+      "title": "Kazi Nazrul Islam",
+      "description": "Study materials for Kazi Nazrul Islam",
       "topics": [
         {
-          "id": "topic-6",
-          "title": "Previous Years' Questions",
-          "isLocked": true,
+          "id": "kazi-nazrul-islam-the-rebel",
+          "title": "The Rebel",
+          "isLocked": false,
           "isCompleted": false
         },
         {
-          "id": "topic-7",
-          "title": "Model Answers",
-          "isLocked": true,
+          "id": "kazi-nazrul-islam-of-equality-and-the-happy-land",
+          "title": "Of Equality and the Happy Land",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "kazi-nazrul-islam-man",
+          "title": "Man",
+          "isLocked": false,
+          "isCompleted": false
+        },
+        {
+          "id": "kazi-nazrul-islam-beware-my-captain",
+          "title": "Beware My Captain",
+          "isLocked": false,
+          "isCompleted": false
+        }
+      ]
+    },
+    {
+      "id": "unit-4",
+      "title": "Chinua Achebe",
+      "description": "Study materials for Chinua Achebe",
+      "topics": [
+        {
+          "id": "chinua-achebe-things-fall-apart",
+          "title": "Things Fall Apart",
+          "isLocked": false,
+          "isCompleted": false
+        }
+      ]
+    },
+    {
+      "id": "unit-5",
+      "title": "Ngugi wa Thiong'o",
+      "description": "Study materials for Ngugi wa Thiong'o",
+      "topics": [
+        {
+          "id": "ngugi-wa-thiong-o-petals-of-blood",
+          "title": "Petals of Blood",
+          "isLocked": false,
           "isCompleted": false
         }
       ]
