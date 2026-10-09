@@ -41,7 +41,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-footer-bg pt-20 pb-8 px-6 lg:px-20 border-t border-slate-200">
+    <footer className="bg-footer-bg pt-12 md:pt-20 pb-8 px-6 lg:px-20 border-t border-slate-200">
       <div className="container mx-auto max-w-7xl">
         
         {/* Main Footer Content */}
@@ -98,7 +98,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {data.topPrograms.map((program, index) => (
                 <li key={index}>
-                  <Link href={program.href} className="text-slate-500 font-medium hover:text-primary transition-colors text-sm">
+                  <Link href={program.href} className="text-slate-500 font-medium hover:text-primary transition-colors text-sm flex items-center gap-2">
                     {program.label}
                   </Link>
                 </li>
