@@ -5,6 +5,8 @@ import PythiaLogo, { PythiaMood } from "./PythiaLogo";
 import { Send, X, MessageCircle } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { toast } from "react-hot-toast";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface Message {
   id: string;
@@ -245,7 +247,21 @@ export function PythiaChat() {
                           : "bg-slate-50 border border-slate-100 text-slate-800"
                       } ${isBengali(msg.content) ? "font-[family-name:var(--font-anek-bangla)]" : ""}`}
                     >
-                      {msg.content}
+                      <ReactMarkdown 
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                          p: ({node, ...props}) => <p className="mb-2 last:mb-0" {...props} />,
+                          ul: ({node, ...props}) => <ul className="list-disc pl-5 mb-2 last:mb-0 space-y-1" {...props} />,
+                          ol: ({node, ...props}) => <ol className="list-decimal pl-5 mb-2 last:mb-0 space-y-1" {...props} />,
+                          li: ({node, ...props}) => <li className="" {...props} />,
+                          strong: ({node, ...props}) => <strong className="font-semibold" {...props} />,
+                          table: ({node, ...props}) => <div className="overflow-x-auto mb-2 last:mb-0 my-2"><table className="min-w-full divide-y divide-slate-200 border border-slate-200 rounded-md text-sm bg-white" {...props} /></div>,
+                          th: ({node, ...props}) => <th className="px-3 py-2 bg-slate-100 font-semibold text-left border-b border-slate-200" {...props} />,
+                          td: ({node, ...props}) => <td className="px-3 py-2 border-t border-slate-200" {...props} />,
+                        }}
+                      >
+                        {msg.content}
+                      </ReactMarkdown>
                       {msg.role === "assistant" && isStreamingThis && msg.content === "" && (
                         <div className="flex flex-col gap-2 py-1 w-32">
                           <div className="h-2 w-full animate-pulse rounded-full bg-slate-200"></div>
