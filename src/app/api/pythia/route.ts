@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
     });
     
     const userId = session?.user?.id;
-    const ip = req.headers.get("x-forwarded-for") || req.ip || "unknown_ip";
+    const ip = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "unknown_ip";
     
     // Limits: 7 without login, 30 with login
     const identifier = userId ? `user_${userId}` : `ip_${ip}`;
