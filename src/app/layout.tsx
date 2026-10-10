@@ -46,6 +46,8 @@ export const metadata = {
   description: "A premium, syllabus-based learning platform for English Literature students of National University (NU), Bangladesh.",
 };
 
+import { PythiaChat } from "@/components/pythia/PythiaChat";
+
 export default function RootLayout({
   children,
 }: {
@@ -71,6 +73,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <main className="flex-1 flex flex-col">{children}</main>
+        <PythiaChat />
         <Toaster position="top-center" />
       </body>
     </html>

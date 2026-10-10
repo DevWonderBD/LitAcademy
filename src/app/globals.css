@@ -18,6 +18,10 @@
   --accent-hover: #e06510; /* Accent hover state */
   --accent-highlight: #f8b188; /* Accent soft text highlight */
   --accent-badge-bg: #fad4c4; /* Accent light badge / pill background */
+  --pythia-gold: #b7791f; /* Pythia's restrained antique-gold mark */
+  --color-primary: #0F766E;
+  --color-accent: #B7791F;
+  --color-accent-light: #EBC474;
 
   /* ==========================================================================
      Surfaces & Background Tokens
@@ -67,6 +71,10 @@
   --accent-hover: #f8b188;
   --accent-highlight: #e06510;
   --accent-badge-bg: #431407;
+  --pythia-gold: #b7791f;
+  --color-primary: #0F766E;
+  --color-accent: #B7791F;
+  --color-accent-light: #EBC474;
 
   --background: #0f172a;
   --foreground: #f8fafc;
