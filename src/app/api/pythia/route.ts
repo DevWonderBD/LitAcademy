@@ -6,7 +6,10 @@ import { checkRateLimit } from "@/lib/ratelimit";
 export async function POST(req: NextRequest) {
   try {
     if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
-      return new Response(JSON.stringify({ error: "API Key is missing. Please restart your dev server." }), { status: 500 });
+      return new Response(
+        JSON.stringify({ error: { code: "CONFIG_ERROR", message: "API Key is missing. Please check your environment variables." } }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
+      );
     }
 
     const session = await auth.api.getSession({
@@ -25,14 +28,20 @@ export async function POST(req: NextRequest) {
       const errorMsg = userId 
         ? "You have reached your daily limit of 30 messages. Please come back tomorrow!" 
         : "You have reached the free limit of 5 messages. Please log in to continue chatting!";
-      return new Response(JSON.stringify({ error: errorMsg }), { status: 429, headers: { "Content-Type": "application/json" } });
+      return new Response(
+        JSON.stringify({ error: { code: "RATE_LIMIT_EXCEEDED", message: errorMsg } }),
+        { status: 429, headers: { "Content-Type": "application/json" } }
+      );
     }
 
     const body = await req.json();
     const { messages, contextData } = body;
 
     if (!messages || !Array.isArray(messages)) {
-      return new Response("Invalid messages array", { status: 400 });
+      return new Response(
+        JSON.stringify({ error: { code: "BAD_REQUEST", message: "Invalid messages array" } }),
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      );
     }
 
     const stream = new ReadableStream({
@@ -61,6 +70,9 @@ export async function POST(req: NextRequest) {
     });
   } catch (error: any) {
     console.error("Pythia API error:", error);
-    return new Response(JSON.stringify({ error: error.message }), { status: 500, headers: { "Content-Type": "application/json" } });
+    return new Response(
+      JSON.stringify({ error: { code: "INTERNAL_SERVER_ERROR", message: "An unexpected error occurred." } }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
+    );
   }
 }

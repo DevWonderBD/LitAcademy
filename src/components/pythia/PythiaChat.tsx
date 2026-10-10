@@ -87,8 +87,19 @@ export function PythiaChat() {
       });
 
       if (!res.ok) {
-        const text = await res.text(); const errData = (() => { try { return JSON.parse(text); } catch { return { error: `HTTP ${res.status}: ${text.slice(0, 50)}` }; } })();
-        throw new Error(errData.error || "Network response was not ok");
+        let errorMessage = "Network response was not ok";
+        try {
+          const errData = await res.json();
+          if (errData.error && errData.error.message) {
+            errorMessage = errData.error.message;
+          } else if (errData.error) {
+            errorMessage = errData.error;
+          }
+        } catch (e) {
+          // If response is not JSON (e.g. Vercel 500 HTML page), use a generic error
+          errorMessage = `HTTP ${res.status} Error`;
+        }
+        throw new Error(errorMessage);
       }
 
       const reader = res.body?.getReader();
@@ -132,10 +143,18 @@ export function PythiaChat() {
       setMood("happy"); // briefly happy after answering
     } catch (error: any) {
       console.error("Chat error:", error);
+      
+      // If the error contains HTML or looks like a raw server crash, show a friendly localized English message.
+      // We check if it's the specific rate limit message to show it directly, otherwise fallback to generic.
+      const isRateLimit = error.message.includes("limit");
+      const displayMessage = isRateLimit 
+        ? error.message 
+        : "Pythia couldn't answer right now. Please try again.";
+
       setMessages((prev) =>
         prev.map((msg) =>
           msg.id === assistantMessageId
-            ? { ...msg, content: `দুঃখিত, একটি সমস্যা হয়েছে: ${error.message}` }
+            ? { ...msg, content: displayMessage }
             : msg
         )
       );
