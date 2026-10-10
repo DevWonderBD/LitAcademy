@@ -87,7 +87,7 @@ export function PythiaChat() {
       });
 
       if (!res.ok) {
-        const errData = await res.json().catch(() => ({}));
+        const text = await res.text(); const errData = (() => { try { return JSON.parse(text); } catch { return { error: `HTTP ${res.status}: ${text.slice(0, 50)}` }; } })();
         throw new Error(errData.error || "Network response was not ok");
       }
 
