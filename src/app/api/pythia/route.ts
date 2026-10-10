@@ -16,15 +16,15 @@ export async function POST(req: NextRequest) {
     const userId = session?.user?.id;
     const ip = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "unknown_ip";
     
-    // Limits: 7 without login, 30 with login
+    // Limits: 5 without login, 30 with login
     const identifier = userId ? `user_${userId}` : `ip_${ip}`;
-    const limit = userId ? 30 : 7;
+    const limit = userId ? 30 : 5;
     
     const isAllowed = await checkRateLimit(identifier, limit);
     if (!isAllowed) {
       const errorMsg = userId 
         ? "You have reached your daily limit of 30 messages. Please come back tomorrow!" 
-        : "You have reached the free limit of 7 messages. Please log in to continue chatting!";
+        : "You have reached the free limit of 5 messages. Please log in to continue chatting!";
       return new Response(JSON.stringify({ error: errorMsg }), { status: 429, headers: { "Content-Type": "application/json" } });
     }
 
