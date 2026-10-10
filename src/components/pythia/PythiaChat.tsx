@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import PythiaLogo, { PythiaMood } from "./PythiaLogo";
 import { Send, X, MessageCircle } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import { toast } from "react-hot-toast";
 
 interface Message {
   id: string;
@@ -51,18 +52,7 @@ export function PythiaChat() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, status]);
 
-  // Handle mood changes based on input and streaming status
-  useEffect(() => {
-    if (status === "streaming") {
-      setMood("thinking");
-    } else if (status === "error") {
-      setMood("unsure");
-    } else if (input.trim().length > 0) {
-      setMood("listening");
-    } else {
-      setMood("idle");
-    }
-  }, [input, status]);
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,6 +62,7 @@ export function PythiaChat() {
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setStatus("streaming");
+    setMood("thinking");
 
     // Add empty assistant message to stream into
     const assistantMessageId = (Date.now() + 1).toString();
@@ -123,6 +114,17 @@ export function PythiaChat() {
                 try {
                   const parsed = JSON.parse(data);
                   if (parsed.text) {
+                    // TESTING: Check if this is the special provider tag
+                    if (parsed.text.startsWith("__PROVIDER__")) {
+                      const providerName = parsed.text.split("__")[2];
+                      toast.success(`Powered by: ${providerName.toUpperCase()}`, { 
+                        id: 'ai-provider-toast',
+                        position: 'top-center',
+                        icon: '🤖'
+                      });
+                      continue;
+                    }
+
                     setMessages((prev) =>
                       prev.map((msg) =>
                         msg.id === assistantMessageId
@@ -159,6 +161,7 @@ export function PythiaChat() {
         )
       );
       setStatus("error");
+      setMood("unsure");
     }
   };
 
@@ -236,7 +239,7 @@ export function PythiaChat() {
                       </div>
                     )}
                     <div
-                      className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-[15px] leading-relaxed ${
+                      className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-[15px] leading-relaxed whitespace-pre-wrap ${
                         msg.role === "user"
                           ? "bg-[var(--color-primary)] text-white"
                           : "bg-slate-50 border border-slate-100 text-slate-800"
@@ -263,7 +266,14 @@ export function PythiaChat() {
                 <input
                   type="text"
                   value={input}
-                  onChange={(e) => setInput(e.target.value)}
+                  onChange={(e) => {
+                    setInput(e.target.value);
+                    if (e.target.value.trim().length > 0 && status !== "streaming") {
+                      setMood("listening");
+                    } else if (status !== "streaming") {
+                      setMood("idle");
+                    }
+                  }}
                   placeholder="Ask Pythia a question..."
                   className="w-full rounded-full border border-slate-200 bg-slate-50 py-3 pl-4 pr-12 text-[15px] outline-none transition-colors focus:border-[var(--color-primary)] focus:bg-white"
                   disabled={status === "streaming"}

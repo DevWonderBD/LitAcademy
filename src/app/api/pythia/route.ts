@@ -5,9 +5,10 @@ import { checkRateLimit } from "@/lib/ratelimit";
 
 export async function POST(req: NextRequest) {
   try {
-    if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+    const hasAnyKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GROQ_API_KEY;
+    if (!hasAnyKey) {
       return new Response(
-        JSON.stringify({ error: { code: "CONFIG_ERROR", message: "API Key is missing. Please check your environment variables." } }),
+        JSON.stringify({ error: { code: "CONFIG_ERROR", message: "API Keys are missing. Please check your environment variables." } }),
         { status: 500, headers: { "Content-Type": "application/json" } }
       );
     }
@@ -21,12 +22,12 @@ export async function POST(req: NextRequest) {
     
     // Limits: 5 without login, 30 with login
     const identifier = userId ? `user_${userId}` : `ip_${ip}`;
-    const limit = userId ? 30 : 5;
+    const limit = userId ? 50 : 5;
     
     const isAllowed = await checkRateLimit(identifier, limit);
     if (!isAllowed) {
       const errorMsg = userId 
-        ? "You have reached your daily limit of 30 messages. Please come back tomorrow!" 
+        ? "You have reached your daily limit of 50 messages. Please come back tomorrow!" 
         : "You have reached the free limit of 5 messages. Please log in to continue chatting!";
       return new Response(
         JSON.stringify({ error: { code: "RATE_LIMIT_EXCEEDED", message: errorMsg } }),
@@ -35,7 +36,7 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const { messages, contextData } = body;
+    const { messages, contextData, sessionLang, uiLocale } = body;
 
     if (!messages || !Array.isArray(messages)) {
       return new Response(
@@ -44,13 +45,27 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const generator = streamPythiaChat({
+      messages,
+      contextData,
+      sessionLang,
+      uiLocale
+    });
+    
+    // Attempt to pull the first chunk BEFORE returning the HTTP response.
+    // If all providers fail, it will throw here, and the outer catch block will handle it
+    // and return a proper 500 JSON response instead of a broken stream.
+    const firstResult = await generator.next();
+
     const stream = new ReadableStream({
       async start(controller) {
         try {
-          const generator = streamPythiaChat(messages, contextData);
-          for await (const chunk of generator) {
-            // Send as SSE format
-            controller.enqueue(new TextEncoder().encode(`data: ${JSON.stringify({ text: chunk })}\n\n`));
+          if (!firstResult.done) {
+            controller.enqueue(new TextEncoder().encode(`data: ${JSON.stringify({ text: firstResult.value })}\n\n`));
+            
+            for await (const chunk of generator) {
+              controller.enqueue(new TextEncoder().encode(`data: ${JSON.stringify({ text: chunk })}\n\n`));
+            }
           }
           controller.enqueue(new TextEncoder().encode("data: [DONE]\n\n"));
           controller.close();
@@ -70,8 +85,9 @@ export async function POST(req: NextRequest) {
     });
   } catch (error: any) {
     console.error("Pythia API error:", error);
+    const errorMessage = error.message || "An unexpected error occurred.";
     return new Response(
-      JSON.stringify({ error: { code: "INTERNAL_SERVER_ERROR", message: "An unexpected error occurred." } }),
+      JSON.stringify({ error: { code: "INTERNAL_SERVER_ERROR", message: errorMessage } }),
       { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }
