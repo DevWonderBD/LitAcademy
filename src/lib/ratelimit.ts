@@ -20,3 +20,4 @@ export async function checkRateLimit(identifier: string, limit: number): Promise
   const count = result?.count || 1;
   return count <= limit;
 }
+
